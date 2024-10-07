@@ -1,16 +1,24 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+// src/lib.rs
+
+// Exposing the linear_models module
+pub mod linear_models;
+
+// Exposing the classification module
+pub mod classification;
+
+// You can also add utility functions here
+
+pub mod clustering;
+
+// crate specific util functions
+pub(crate) mod utils;
 
 
 
 #[cfg(test)]
 mod tests {
-    use super::*;
-
     #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+    fn lib_test() {
+        unimplemented!()
     }
 }
