@@ -13,9 +13,3 @@ pub mod clustering;
 mod common;
 mod regression;
 
-mod tests {
-    #[test]
-    fn lib_test() {
-        unimplemented!()
-    }
-}
