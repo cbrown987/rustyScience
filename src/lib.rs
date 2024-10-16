@@ -10,12 +10,9 @@ pub mod classification;
 
 pub mod clustering;
 
-// crate specific util functions
-pub(crate) mod utils;
+mod common;
+mod regression;
 
-
-
-#[cfg(test)]
 mod tests {
     #[test]
     fn lib_test() {
