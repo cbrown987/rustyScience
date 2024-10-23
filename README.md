@@ -4,8 +4,8 @@ Implementation table
 
 | Model             | Implemented? |
 |-------------------|--------------|
-| KNNClassifier     |              |
-| KNNRegression     |              |
+| KNNClassifier     | Yes          |
+| KNNRegression     | Yes          |
 | KNNCluster        |              |
 | Decision trees    |              |
 | perceptron        |              |
