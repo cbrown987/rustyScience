@@ -11,5 +11,5 @@ pub mod classification;
 pub mod clustering;
 
 mod common;
-mod regression;
+pub mod regression;
 

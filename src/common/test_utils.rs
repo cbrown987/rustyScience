@@ -1,24 +1,42 @@
 #![cfg(test)]
 
-use rand;
-use rand::Rng;
+use std::collections::HashMap;
 
-pub(crate) fn generate_data(num_samples: usize, num_features: usize) -> (Vec<Vec<f64>>, Vec<f64>) {
-    let mut rng = rand::thread_rng();  // Create a random number generator
+pub(crate) fn create_data_unlabeled () -> HashMap<String, Vec<Vec<f64>>> {
+    let small_data: Vec<Vec<f64>> = vec![
+        vec![0.0, 0.0],
+        vec![1.0, 1.0],
+        vec![2.0, 2.0]
+    ];
 
-    // Generate random features
-    let features: Vec<Vec<f64>> = (0..num_samples)
-        .map(|_| {
-            (0..num_features)
-                .map(|_| rng.gen_range(0.0..100.0))  // Random floats between 0 and 100
-                .collect()
-        })
-        .collect();
+    let mut datasets = HashMap::new();
 
-    // Generate random binary labels (0 or 1)
-    let labels: Vec<f64> = (0..num_samples)
-        .map(|_| rng.gen_range(0.0..2.0))  // Random integers (0 or 1)
-        .collect();
+    // Insert datasets with names
+    datasets.insert("small_data".to_string(), small_data);
 
-    (features, labels)
+    datasets
+}
+pub(crate) struct LabeledDataset {
+    pub(crate) data: Vec<Vec<f64>>,
+    pub(crate) labels: Vec<i64>
+}
+pub(crate) fn create_data_labeled () -> HashMap<String, LabeledDataset> {
+    let small_data: Vec<Vec<f64>> = vec![
+        vec![0.0, 0.0],
+        vec![1.0, 1.0],
+        vec![2.0, 2.0]
+    ];
+    let small_labels: Vec<i64> = vec![
+        1,
+        1,
+        10
+    ];
+    let small_data_joined = LabeledDataset { data: small_data, labels: small_labels };
+
+    let mut datasets = HashMap::new();
+
+    // Insert datasets with names
+    datasets.insert("small_data".to_string(), small_data_joined);
+
+    datasets
 }
