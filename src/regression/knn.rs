@@ -25,7 +25,7 @@ impl KNNRegression {
     }
 
     // Sets the method that will determine the weights, uniform or distance
-    fn set_weights(&mut self, weight_type: String) {
+    fn set_weight_type(&mut self, weight_type: String) {
         if weight_type.to_lowercase() == "uniform" || weight_type.to_lowercase() == "distance" {
             self.weight_type = weight_type;
         } else { panic!("Unsupported or unknown weight type, use uniform or distance"); }
@@ -36,25 +36,36 @@ impl KNNRegression {
         self.distance_metric = distance_metric;
     }
     fn _predict(&self, target: Vec<f64>) -> f64 {
-        let mut calculate_distance: bool = false;
-        
-        if self.weight_type == "distance" {
-            calculate_distance = true;
-        }
+        let calculate_distance = self.weight_type == "distance";
 
         let neighbors = neighbors(
             self.data.clone(), None, Option::from(self.labels.clone()), Option::from(target), self.k,
             self.distance_metric.clone(), calculate_distance);
-        
-        
-        let sum: f64 = neighbors
-            .iter()
-            .map(|neighbor| *neighbor.last().unwrap())  // Get the label (last element)
-            .sum();
 
-        let prediction = sum / neighbors.len() as f64;
 
-        prediction
+        let mut weighted_sum = 0.0;
+        let mut total_weight = 0.0;
+
+        for neighbor in &neighbors {
+            let label = *neighbor.last().unwrap(); 
+            let distance = neighbor[neighbor.len() - 2]; 
+
+            let weight = if calculate_distance && distance != 0.0 {
+                1.0 / distance 
+            } else {
+                1.0 
+            };
+
+            weighted_sum += weight * label;
+            total_weight += weight;
+        }
+
+        // Compute weighted average
+        if total_weight == 0.0 {
+            neighbors.iter().map(|neighbor| *neighbor.last().unwrap()).sum::<f64>() / neighbors.len() as f64
+        } else {
+            weighted_sum / total_weight
+        }
     }
     pub fn predict(&self, target: Vec<f64>) -> f64 {
         self._predict(target)
@@ -89,10 +100,10 @@ mod tests {
     #[test]
     fn test_set_weights() {
         let mut knn = KNNRegression::new(3);
-        knn.set_weights("distance".to_string());
+        knn.set_weight_type("distance".to_string());
         assert_eq!(knn.weight_type, "distance");
 
-        knn.set_weights("uniform".to_string());
+        knn.set_weight_type("uniform".to_string());
         assert_eq!(knn.weight_type, "uniform");
     }
     
@@ -100,7 +111,7 @@ mod tests {
     #[test]
     fn test_unsupported_weights() {
         let mut knn = KNNRegression::new(3);
-        knn.set_weights("unsupported".to_string());
+        knn.set_weight_type("unsupported".to_string());
     }
 
     #[test]
@@ -128,6 +139,23 @@ mod tests {
         let target = vec![2.5, 2.5];
         let prediction = knn.predict(target);
         
+        assert!(prediction >= 2.0 && prediction <= 3.0);
+    }
+    #[test]
+    fn test_knn_regression_non_default_weight(){
+        let mut knn = KNNRegression::new(3);
+        let data = vec![
+            vec![1.0, 1.0],
+            vec![2.0, 2.0],
+            vec![3.0, 3.0],
+            vec![4.0, 4.0],
+        ];
+        let labels = vec![1.0, 2.0, 3.0, 4.0];
+        knn.fit(data, labels);
+        knn.set_weight_type(String::from("uniform"));
+        let target = vec![2.5, 2.5];
+        let prediction = knn.predict(target);
+
         assert!(prediction >= 2.0 && prediction <= 3.0);
     }
 }
