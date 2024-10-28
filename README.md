@@ -11,4 +11,4 @@ Implementation table
 | perceptron        |              |
 | MLP Classifier    |              |
 | MLP Regressor     |              |
-| Linear Regression |              |
+| Linear Regression | IP           |
