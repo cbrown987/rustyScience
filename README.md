@@ -13,5 +13,5 @@ Implementation table
 | MLP Regressor     |              |
 | Linear Regression | IP           |
 | Dummy Datasets    |              |
-| Metrics           |              |
+| Metrics           | IP           |
 | Graphing?         |              |
