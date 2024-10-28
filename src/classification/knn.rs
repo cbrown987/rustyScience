@@ -80,7 +80,7 @@ mod tests {
             let prediction = knn.predict(target);
 
             assert_eq!(prediction, 1);
-            
+
             let target = vec![2.0, 2.0];
             let mut knn = KNNClassifier::new( 1);
             knn.fit(dataset.data.clone(), dataset.labels.clone());
@@ -88,7 +88,7 @@ mod tests {
 
             assert_eq!(prediction, 10);
         }
-        
+
     }
 
 }

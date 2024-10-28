@@ -1,10 +1,11 @@
 use crate::common::utils::{euclidean_distance, manhattan_distance};
 
-pub(crate) fn neighbors(data: Vec<Vec<f64>>, data_labels_categorical: Option<Vec<i64>>, 
+
+pub(crate) fn neighbors(data: Vec<Vec<f64>>, data_labels_categorical: Option<Vec<i64>>,
                         data_labels_regression: Option<Vec<f64>>, target_point: Option<Vec<f64>>,
                         n_neighbors: usize, distance_metric:String, calculate_distance: bool) -> Vec<Vec<f64>> {
 
-    fn _handle_labels(mut neighbor: Vec<f64>, i: usize, data_labels_regression: &Option<Vec<f64>>, 
+    fn _handle_labels(mut neighbor: Vec<f64>, i: usize, data_labels_regression: &Option<Vec<f64>>,
                       data_labels_categorical: &Option<Vec<i64>>, ) -> Vec<f64> {
         if let Some(labels) = data_labels_regression {
             let data_label = labels[i];
@@ -17,7 +18,7 @@ pub(crate) fn neighbors(data: Vec<Vec<f64>>, data_labels_categorical: Option<Vec
     }
 
     fn _process_neighbors(neighbor_indices: &[usize], data: &[Vec<f64>], distances: &[(usize, f64)],
-                          calculate_distance: bool, data_labels_regression: &Option<Vec<f64>>, 
+                          calculate_distance: bool, data_labels_regression: &Option<Vec<f64>>,
                           data_labels_categorical: &Option<Vec<i64>>) -> Vec<Vec<f64>> {
         neighbor_indices
             .iter()
@@ -31,7 +32,7 @@ pub(crate) fn neighbors(data: Vec<Vec<f64>>, data_labels_categorical: Option<Vec
             })
             .collect()
     }
-    
+
     let distance_fn: Box<dyn Fn(&[f64], &[f64]) -> f64> = match distance_metric.as_str() {
         "euclidean" => Box::new(euclidean_distance),
         "manhattan" => Box::new(manhattan_distance),
@@ -40,10 +41,23 @@ pub(crate) fn neighbors(data: Vec<Vec<f64>>, data_labels_categorical: Option<Vec
 
     // If no target_point is provided, find neighbors for all points in the dataset
     if target_point.is_none() {
-        // TODO: Implement
-        unimplemented!("Handling neighbors for each point not yet implemented.");
+        let mut neighbors_for_all_points = Vec::new();
+        for (idx, point) in data.iter().enumerate() {
+            let mut distances: Vec<(usize, f64)> = data
+                .iter()
+                .enumerate()
+                .filter(|&(i, _)| i != idx)
+                .map(|(i, other_point)| (i, distance_fn(point, other_point)))
+                .collect();
+
+            distances.sort_by(|a, b| a.1.partial_cmp(&b.1).unwrap());
+            let neighbor_indices: Vec<usize> = distances.iter().take(n_neighbors).map(|(i, _)| *i).collect();
+            let neighbors = _process_neighbors(&neighbor_indices, &data, &distances, calculate_distance, &data_labels_regression, &data_labels_categorical);
+            neighbors_for_all_points.push(neighbors);
+        }
+        return neighbors_for_all_points.concat();
     }
-    
+
     if !data_labels_categorical.is_none() & !data_labels_regression.is_none() {
         panic!("Only one type of data labels is allowed")
     }
@@ -75,6 +89,7 @@ pub(crate) fn neighbors(data: Vec<Vec<f64>>, data_labels_categorical: Option<Vec
         &data_labels_categorical,
     )
 }
+
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -2,13 +2,16 @@
 
 Implementation table
 
-| Model             | Implemented? |
-|-------------------|--------------|
+| Feature           | Implemented? |
+|:------------------|--------------|
 | KNNClassifier     | Yes          |
 | KNNRegression     | Yes          |
-| KNNCluster        |              |
+| KNNCluster        | Yes          |
 | Decision trees    |              |
 | perceptron        |              |
 | MLP Classifier    |              |
 | MLP Regressor     |              |
 | Linear Regression | IP           |
+| Dummy Datasets    |              |
+| Metrics           |              |
+| Graphing?         |              |
