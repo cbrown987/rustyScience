@@ -3,8 +3,7 @@ use crate::common::utils::{euclidean_distance, manhattan_distance};
 
 pub(crate) fn neighbors(data: Vec<Vec<f64>>, data_labels_categorical: Option<Vec<i64>>,
                         data_labels_regression: Option<Vec<f64>>, target_point: Option<Vec<f64>>,
-                        n_neighbors: usize, distance_metric:String, calculate_distance: bool) -> Vec<Vec<f64>> {
-
+                        n_neighbors: usize, distance_metric: String, calculate_distance: bool) -> Vec<Vec<f64>> {
     fn _handle_labels(mut neighbor: Vec<f64>, i: usize, data_labels_regression: &Option<Vec<f64>>,
                       data_labels_categorical: &Option<Vec<i64>>, ) -> Vec<f64> {
         if let Some(labels) = data_labels_regression {
@@ -98,7 +97,7 @@ mod tests {
     #[test]
     fn test_neighbors_euclidean_with_distance() {
         let data = create_data_unlabeled().get("small_data").unwrap().clone();
-        
+
         let target_point = Some(vec![1.0, 1.0]);
         let n_neighbors = 2;
         let distance_metric = String::from("euclidean");
@@ -122,7 +121,7 @@ mod tests {
         let distance_metric = String::from("euclidean");
         let calculate_distance = false;
 
-        let result = neighbors(data, None, None, target_point,n_neighbors, distance_metric, calculate_distance);
+        let result = neighbors(data, None, None, target_point, n_neighbors, distance_metric, calculate_distance);
 
         // Check that the correct neighbors are returned without distances
         assert_eq!(result.len(), 2);
@@ -178,15 +177,14 @@ mod tests {
         // This should panic because the distance metric is invalid
         neighbors(data, None, None, target_point, n_neighbors, distance_metric, calculate_distance);
     }
-    
+
     #[test]
-    fn test_neighbors_with_labels_with_distance(){
-        
+    fn test_neighbors_with_labels_with_distance() {
         let target_point = Some(vec![1.0, 1.0]);
         let n_neighbors = 3;
         let distance_metric = String::from("euclidean");
         let calculate_distance = true;
-        
+
         if let Some(dataset) = create_data_labeled().get("small_data") {
             let result = neighbors(dataset.data.clone(), Option::from(dataset.labels.clone()), None, target_point, n_neighbors, distance_metric, calculate_distance);
             // Check that the correct neighbors are returned with distances
@@ -195,9 +193,6 @@ mod tests {
             assert_eq!(result[0], vec![1.0, 1.0, 0.0, 1.0]); // The first point is itself, label
             assert_eq!(result[1][3], 1.0);    // Test the label of second point is correct
             assert_eq!(result[2][3], 10.0);
-            
         } else { assert!(false, "Failed to create dataset"); }
-
-       
     }
 }

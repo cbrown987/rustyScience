@@ -2,7 +2,6 @@
 
 // Global utility functions
 
-
 pub(crate) fn euclidean_distance(x: &[f64], y: &[f64]) -> f64 {
     x.iter().zip(y.iter())
         .map(|(a, b)| (a - b).powi(2))
@@ -86,7 +85,5 @@ mod tests {
         let result = manhattan_distance(&a, &b);
         assert_eq!(result, 0.0);
     }
-
-
 }
 

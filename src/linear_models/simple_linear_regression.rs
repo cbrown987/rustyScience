@@ -3,13 +3,13 @@
 
 pub struct SimpleLinearRegression {
     pub slope: f64,
-    pub intercept: f64
+    pub intercept: f64,
 }
 
 
 impl SimpleLinearRegression {
-    pub fn new() -> Self{
-        SimpleLinearRegression{
+    pub fn new() -> Self {
+        SimpleLinearRegression {
             slope: 0.0,
             intercept: 0.0,
         }
@@ -17,7 +17,7 @@ impl SimpleLinearRegression {
     //least squares
 
     //***REMOVE PREFIX UNDERSCORES BEFORE IMPLEMENTATION***
-    pub fn fit(&mut self, x: &[f64], y: &[f64]){
+    pub fn fit(&mut self, x: &[f64], y: &[f64]) {
         let _n = x.len() as f64;
         let _sum_x = x.iter().sum::<f64>();
         let _sum_y = y.iter().sum::<f64>();
@@ -27,10 +27,9 @@ impl SimpleLinearRegression {
 
         //slope + intercept
 
-    //eval method
-    
-    //prediction method
-    } 
+        //eval method
 
+        //prediction method
+    }
 }
 

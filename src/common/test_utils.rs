@@ -2,7 +2,7 @@
 
 use std::collections::HashMap;
 
-pub(crate) fn create_data_unlabeled () -> HashMap<String, Vec<Vec<f64>>> {
+pub(crate) fn create_data_unlabeled() -> HashMap<String, Vec<Vec<f64>>> {
     let small_data: Vec<Vec<f64>> = vec![
         vec![0.0, 0.0],
         vec![1.0, 1.0],
@@ -18,9 +18,9 @@ pub(crate) fn create_data_unlabeled () -> HashMap<String, Vec<Vec<f64>>> {
 }
 pub(crate) struct LabeledDataset {
     pub(crate) data: Vec<Vec<f64>>,
-    pub(crate) labels: Vec<i64>
+    pub(crate) labels: Vec<i64>,
 }
-pub(crate) fn create_data_labeled () -> HashMap<String, LabeledDataset> {
+pub(crate) fn create_data_labeled() -> HashMap<String, LabeledDataset> {
     let small_data: Vec<Vec<f64>> = vec![
         vec![0.0, 0.0],
         vec![1.0, 1.0],

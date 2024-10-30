@@ -13,5 +13,13 @@ Implementation table
 | MLP Regressor     |              |
 | Linear Regression | IP           |
 | Dummy Datasets    |              |
-| Metrics           | IP           |
 | Graphing?         |              |
+
+
+| Metric    | Implemented |
+|-----------|-------------|
+| Accuracy  | Yes         |
+| r2        | Yes         |
+| MAE       | Yes         |
+| MSE       |             |
+| Precision | IP          |
