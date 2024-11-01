@@ -3,7 +3,7 @@ name: Deploy Rust Docs
 on:
   push:
     branches:
-      - main  # Trigger on pushes to the main branch
+      - main
 
 jobs:
   deploy:
@@ -19,7 +19,9 @@ jobs:
           toolchain: stable
 
       - name: Generate Documentation
-        run: cargo doc --no-deps
+        run: |
+          cargo doc --no-deps
+          touch target/doc/.nojekyll  # Add .nojekyll file to target/doc
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
