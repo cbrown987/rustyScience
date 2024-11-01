@@ -1,9 +1,11 @@
+use std::collections::HashMap;
 use crate::common::utils::{euclidean_distance, manhattan_distance};
 
 pub struct KNNCluster {
     k: usize,
     data: Vec<Vec<f64>>,
     distance_metric: String,
+    clusters: Vec<usize>,
 }
 
 fn _calculate_distance(a: &Vec<f64>, b: &Vec<f64>, distance_metric: String) -> f64 {
@@ -38,6 +40,7 @@ impl KNNCluster {
             k,
             data: vec![vec![]],
             distance_metric: "euclidean".to_string(),
+            clusters: vec![]
         }
     }
 
@@ -126,8 +129,29 @@ impl KNNCluster {
 
             centroids = new_centroids;
         }
-
+        self.clusters = labels.clone();
         labels
+    }
+
+    pub fn map_cluster_to_label(&self, labels: Vec<i64>) -> HashMap<usize, i64> {
+        let mut label_map: HashMap<usize, i64> = HashMap::new();
+        let mut cluster_label_counts: HashMap<usize, HashMap<i64, usize>> = HashMap::new();
+
+        // Iterate over each data point and update label counts per cluster
+        for (idx, &cluster_id) in self.clusters.iter().enumerate() {
+            let label = labels[idx];
+            let label_counts = cluster_label_counts.entry(cluster_id).or_insert_with(HashMap::new);
+            *label_counts.entry(label).or_insert(0) += 1;
+        }
+
+        // Determine the most frequent label for each cluster
+        for (cluster_id, counts) in cluster_label_counts.iter() {
+            if let Some((&most_common_label, _)) = counts.iter().max_by_key(|&(_, count)| count) {
+                label_map.insert(*cluster_id, most_common_label);
+            }
+        }
+
+        label_map
     }
 }
 
@@ -170,5 +194,33 @@ mod tests {
         ];
         let distance = _calculate_distance(&data[0], &data[1], "euclidean".to_string());
         assert_eq!(distance, 5.0);
+    }
+
+    #[test]
+    fn test_map_cluster_to_label() {
+        let mut knn_cluster = KNNCluster::new(2);
+
+        // Mock data points and labels (simulating a result of clustering)
+        let data = vec![
+            vec![1.0, 2.0], // Cluster 0
+            vec![1.5, 1.8], // Cluster 0
+            vec![5.0, 8.0], // Cluster 1
+            vec![6.0, 7.5]  // Cluster 1
+        ];
+
+        knn_cluster.fit(data);
+
+
+        let labels = vec![1, 1, 2, 2]; // Points 0 and 1 get label 1; points 2 and 3 get label 2
+
+        let label_map = knn_cluster.map_cluster_to_label(labels);
+
+        // Expected mapping: Cluster 0 -> Label 1, Cluster 1 -> Label 2
+        let mut expected_map = HashMap::new();
+        expected_map.insert(0, 1);
+        expected_map.insert(1, 2);
+
+        // Assert the label map is as expected
+        assert_eq!(label_map, expected_map);
     }
 }

@@ -1,6 +1,6 @@
 use rustyScience::regression::knn::KNNRegression;
 #[test]
-fn test_knn_regression_integration(){
+pub(crate) fn test_knn_regression_integration(){
     let dataset = vec![
         vec![0.0, 0.0],
         vec![1.0, 1.0],

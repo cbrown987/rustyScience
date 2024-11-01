@@ -232,5 +232,26 @@ mod tests {
 
         assert!(prediction >= 2.0 && prediction <= 3.0);
     }
+    
+    #[test]
+    #[should_panic]
+    fn test_knn_zero_k(){
+        let _ = KNNRegression::new(0);
+    }
+    
+    #[test]
+    fn set_weight_type() {
+        let data = vec![
+            vec![1.0, 1.0],
+            vec![2.0, 2.0],
+            vec![3.0, 3.0],
+            vec![4.0, 4.0],
+        ];
+        let labels = vec![1.0, 2.0, 3.0, 4.0];
+        let mut knn = KNNRegression::new(3);
+        knn.set_weight_type("distance".to_string());
+        knn.fit(data, labels);
+        knn.predict(vec![1.0, 2.0]);
+    }
 }
 

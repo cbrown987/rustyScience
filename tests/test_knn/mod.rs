@@ -1,3 +1,3 @@
-mod test_knn_classification;
-mod test_knn_regression;
-mod test_knn_clutering;
+pub(crate) mod test_knn_classification;
+pub(crate) mod test_knn_clustering;
+pub(crate) mod test_knn_regression;
