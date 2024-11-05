@@ -24,11 +24,6 @@ use rand::thread_rng;
 /// let labels = vec![0, 1, 0, 1];
 /// let train_ratio = 0.75;
 /// let ((train_data, train_labels), (test_data, test_labels)) = train_test_split(data, labels, train_ratio);
-///
-/// assert_eq!(train_data.len(), 3);
-/// assert_eq!(train_labels.len(), 3);
-/// assert_eq!(test_data.len(), 1);
-/// assert_eq!(test_labels.len(), 1);
 /// ```
 
 

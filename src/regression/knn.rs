@@ -19,7 +19,7 @@ impl KNNRegression {
     ///
     /// # Examples
     /// ```
-    /// use rustyScience::regression::knn::KNNRegression;
+    /// use rustyScience::regression::KNNRegression;
     /// let knn = KNNRegression::new(3);
     /// ```
     pub fn new(k: usize) -> Self {
@@ -45,7 +45,7 @@ impl KNNRegression {
     ///
     /// # Examples
     /// ```
-    /// use rustyScience::regression::knn::KNNRegression;
+    /// use rustyScience::regression::KNNRegression;
     /// let mut knn = KNNRegression::new(3);
     /// knn.set_weight_type("uniform".to_string());
     /// ```
@@ -64,7 +64,7 @@ impl KNNRegression {
     ///
     /// # Examples
     /// ```
-    /// use rustyScience::regression::knn::KNNRegression;
+    /// use rustyScience::regression::KNNRegression;
     /// let mut knn = KNNRegression::new(3);
     /// knn.set_distance_metrics("manhattan".to_string());
     /// ```
@@ -80,7 +80,7 @@ impl KNNRegression {
     ///
     /// # Examples
     /// ```
-    /// use rustyScience::regression::knn::KNNRegression;
+    /// use rustyScience::regression::KNNRegression;
     /// let mut knn = KNNRegression::new(3);
     /// let data = vec![vec![1.0, 2.0], vec![2.0, 3.0], vec![3.0, 4.0]];
     /// let labels = vec![0.72, 1.0, 0.26];
@@ -101,7 +101,7 @@ impl KNNRegression {
     ///
     /// # Examples
     /// ```
-    /// use rustyScience::regression::knn::KNNRegression;
+    /// use rustyScience::regression::KNNRegression;
     /// let mut knn = KNNRegression::new(3);
     /// let data = vec![vec![1.0, 2.0], vec![2.0, 3.0], vec![3.0, 4.0]];
     /// let labels = vec![0.72, 1.0, 0.26];

@@ -1,6 +1,8 @@
 #![cfg(test)]
 
+use std::io::Write;
 use std::collections::HashMap;
+use std::fs::File;
 
 pub(crate) fn create_data_unlabeled() -> HashMap<String, Vec<Vec<f64>>> {
     let small_data: Vec<Vec<f64>> = vec![
@@ -39,4 +41,12 @@ pub(crate) fn create_data_labeled() -> HashMap<String, LabeledDataset> {
     datasets.insert("small_data".to_string(), small_data_joined);
 
     datasets
+}
+
+pub(crate) fn create_temp_csv(content: &str) -> String {
+    let temp_dir = std::env::temp_dir();
+    let file_path = temp_dir.join("_test_data.csv");
+    let mut file = File::create(&file_path).expect("Unable to create test file");
+    writeln!(file, "{}", content).expect("Unable to write to test file");
+    file_path.to_string_lossy().into_owned()
 }

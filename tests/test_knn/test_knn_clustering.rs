@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 use rustyScience::clustering::knn::KNNCluster;
-use crate::data::test_import_data::load_iris_data_labeled;
+use rustyScience::data::datasets::load_iris;
 
 
 fn _evaluate_accuracy(predicted_clusters: Vec<usize>, actual_labels: Vec<i64>, cluster_label_map: &HashMap<usize, i64>) -> f64 {
@@ -15,8 +15,10 @@ fn _evaluate_accuracy(predicted_clusters: Vec<usize>, actual_labels: Vec<i64>, c
 
 #[test]
 pub(crate) fn test_knn_clustering_integration() {
-    let (data, labels) = load_iris_data_labeled();
-    
+    let iris_data = load_iris();
+    let (data, labels) = iris_data.to_numerical_labels();
+
+
     let n_clusters = 3;
     let mut knn = KNNCluster::new(n_clusters);
     let predicted_clusters = knn.fit(data);

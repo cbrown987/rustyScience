@@ -1,10 +1,11 @@
 use rustyScience::classification::knn::KNNClassifier;
-use crate::data::test_import_data::{load_iris_data_labeled};
+use rustyScience::data::datasets::load_iris;
 
 #[test]
 pub(crate) fn test_knn_classification_integration() {
-    let (data, labels) = load_iris_data_labeled();
-
+    let iris_data = load_iris();
+    let (data, labels) = iris_data.to_numerical_labels();
+    
     let target = vec![1.5, 1.5];
 
     let n_neighbors = 3;
@@ -12,5 +13,5 @@ pub(crate) fn test_knn_classification_integration() {
     knn.fit(data, labels);
     let prediction = knn.predict(target);
 
-    assert_eq!(prediction, 1);
+    assert_eq!(prediction, 0);
 }

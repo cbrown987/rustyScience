@@ -30,7 +30,7 @@ impl KNNCluster {
     ///
     /// # Example
     /// ```
-    /// use rustyScience::clustering::knn::KNNCluster;
+    /// use rustyScience::clustering::KNNCluster;
     /// let knn_cluster = KNNCluster::new(3);
     pub fn new(k: usize) -> Self {
         if k <= 0 {
@@ -51,7 +51,7 @@ impl KNNCluster {
     ///
     /// # Example
     /// ```
-    /// use rustyScience::clustering::knn::KNNCluster;
+    /// use rustyScience::clustering::KNNCluster;
     /// let mut knn_cluster = KNNCluster::new(3);
     /// knn_cluster.set_distance_metrics("manhattan".to_string());
     /// ```
@@ -69,7 +69,7 @@ impl KNNCluster {
     ///
     /// # Example
     /// ```
-    /// use rustyScience::clustering::knn::KNNCluster;
+    /// use rustyScience::clustering::KNNCluster;
     /// let mut knn_cluster = KNNCluster::new(3);
     /// let data = vec![vec![1.0, 2.0], vec![1.5, 1.8], vec![5.0, 8.0]];
     /// let labels = knn_cluster.fit(data);

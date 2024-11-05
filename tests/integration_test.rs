@@ -1,5 +1,4 @@
 mod test_metrics;
-mod data;
 mod test_knn;
 
 

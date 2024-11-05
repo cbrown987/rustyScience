@@ -20,7 +20,7 @@ impl KNNClassifier {
     ///
     /// # Examples
     /// ```
-    /// use rustyScience::classification::knn::KNNClassifier;
+    /// use rustyScience::classification::KNNClassifier;
     /// let knn = KNNClassifier::new(3);
     /// ```
     pub fn new(k: usize) -> Self {
@@ -46,7 +46,7 @@ impl KNNClassifier {
     ///
     /// # Examples
     /// ```
-    /// use rustyScience::classification::knn::KNNClassifier;
+    /// use rustyScience::classification::KNNClassifier;
     /// let mut knn = KNNClassifier::new(3);
     /// knn.set_weight_type("uniform".to_string());
     /// ```
@@ -65,7 +65,7 @@ impl KNNClassifier {
     ///
     /// # Examples
     /// ```
-    /// use rustyScience::classification::knn::KNNClassifier;
+    /// use rustyScience::classification::KNNClassifier;
     /// let mut knn = KNNClassifier::new(3);
     /// knn.set_distance_metrics("manhattan".to_string());
     /// ```
@@ -81,7 +81,7 @@ impl KNNClassifier {
     ///
     /// # Examples
     /// ```
-    /// use rustyScience::classification::knn::KNNClassifier;
+    /// use rustyScience::classification::KNNClassifier;
     /// let mut knn = KNNClassifier::new(3);
     /// let data = vec![vec![1.0, 2.0], vec![2.0, 3.0], vec![3.0, 4.0]];
     /// let labels = vec![0, 1, 0];
@@ -102,7 +102,7 @@ impl KNNClassifier {
     ///
     /// # Examples
     /// ```
-    /// use rustyScience::classification::knn::KNNClassifier;
+    /// use rustyScience::classification::KNNClassifier;
     /// let mut knn = KNNClassifier::new(3);
     /// let data = vec![vec![1.0, 2.0], vec![2.0, 3.0], vec![3.0, 4.0]];
     /// let labels = vec![0, 1, 0];

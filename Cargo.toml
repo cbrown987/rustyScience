@@ -3,7 +3,6 @@ name = "rustyScience"
 version = "0.1.0-alpha"
 edition = "2021"
 license = "MIT"
-license-file = "LICENSE"
 
 [dependencies]
 rand = "0.9.0-alpha.2"

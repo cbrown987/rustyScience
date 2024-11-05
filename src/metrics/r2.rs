@@ -19,7 +19,7 @@ use std::convert::Into;
 ///
 /// # Example
 /// ```
-/// use rustyScience::metrics::r2::r2;
+/// use rustyScience::metrics::r2;
 /// let y_true = vec![1.0, 2.0, 3.0, 4.0];
 /// let y_pred = vec![0.8, 2.1, 2.9, 4.2];
 /// let r2_score = r2(y_true, y_pred);
