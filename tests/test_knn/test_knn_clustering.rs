@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-use rustyScience::clustering::knn::KNNCluster;
+use rustyScience::clustering::kmeans::KMeansCluster;
 use rustyScience::data::datasets::load_iris;
 
 
@@ -20,7 +20,7 @@ pub(crate) fn test_knn_clustering_integration() {
 
 
     let n_clusters = 3;
-    let mut knn = KNNCluster::new(n_clusters);
+    let mut knn = KMeansCluster::new(n_clusters);
     let predicted_clusters = knn.fit(data);
     let clusters_labeled = knn.map_cluster_to_label(labels.clone());
     let accuracy = _evaluate_accuracy(predicted_clusters, labels, &clusters_labeled);

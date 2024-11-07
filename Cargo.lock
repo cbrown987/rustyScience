@@ -207,6 +207,7 @@ version = "0.1.0-alpha"
 dependencies = [
  "csv",
  "num",
+ "num-traits",
  "rand",
  "serde",
 ]

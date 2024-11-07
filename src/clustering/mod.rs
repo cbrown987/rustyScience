@@ -1,2 +1,2 @@
-pub mod knn;
-pub use knn::*;
+pub mod kmeans;
+pub use kmeans::*;
