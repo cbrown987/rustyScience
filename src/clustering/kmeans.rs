@@ -26,6 +26,19 @@ impl<D> KMeansCluster<D>
 where
     D: Num + Copy + Clone + PartialOrd + ToPrimitive + FromPrimitive,
 {
+    /// Creates a new KMeansCluster with a specified value of k.
+    ///
+    /// # Arguments
+    /// * `k` - The number of neighbors to consider for clustering. Must be greater than zero.
+    ///
+    /// # Panics
+    /// This function will panic if `k` is less than or equal to zero.
+    ///
+    /// # Examples
+    /// ```
+    /// use rustyScience::clustering::KMeansCluster;
+    /// let knn = KMeansCluster::<f64>::new(3);
+    /// ```
     pub fn new(k: usize) -> Self {
         if k == 0 {
             panic!("K cannot be zero");
@@ -38,10 +51,33 @@ where
         }
     }
 
+    /// Sets the distance metric to be used for finding neighbors.
+    ///
+    /// # Arguments
+    /// * `distance_metric` - A string specifying the distance metric, e.g., 'euclidean' or 'manhattan'.
+    ///
+    /// # Examples
+    /// ```
+    /// use rustyScience::clustering::KMeansCluster;
+    /// let mut knn = KMeansCluster::<f64>::new(3);
+    /// knn.set_distance_metrics("manhattan".to_string());
+    /// ```
     pub fn set_distance_metrics(&mut self, distance_metric: String) {
         self.distance_metric = distance_metric;
     }
-
+    
+    /// Creates the clusters with the data provided to the Kmeans clusterer
+    ///
+    /// # Arguments
+    /// * `data` - A 2d Vector of numbers representing the data
+    ///
+    /// # Examples
+    /// ```
+    /// use rustyScience::clustering::KMeansCluster;
+    /// let mut knn = KMeansCluster::<f64>::new(3);
+    /// let data = vec![vec![1.0, 2.0], vec![2.0, 3.0], vec![3.0, 4.0]];
+    /// let clusters = knn.fit(data);
+    /// ```
     pub fn fit(&mut self, data: Vec<Vec<D>>) -> Vec<usize> {
         self._fit(data)
     }
@@ -102,6 +138,24 @@ where
         labels
     }
 
+    /// Maps labels to the generated clusters in fit call
+    /// 
+    /// # Arguments 
+    /// 
+    /// * `labels`: A 1d array of labels representing the data provided to fit
+    /// 
+    /// returns: HashMap<usize, L, RandomState> 
+    /// 
+    /// # Examples 
+    /// 
+    /// ```
+    /// use rustyScience::clustering::KMeansCluster;
+    /// let mut knn = KMeansCluster::<f64>::new(3);
+    /// let data = vec![vec![1.0, 2.0], vec![2.0, 3.0], vec![3.0, 4.0]];
+    /// let labels = vec![1, 1, 2];
+    /// let clusters = knn.fit(data);
+    /// let labeled_clusters = knn.map_cluster_to_label(labels);
+    /// ```
     pub fn map_cluster_to_label<L>(&self, labels: Vec<L>) -> HashMap<usize, L>
     where
         L: Eq + Hash + Clone,
