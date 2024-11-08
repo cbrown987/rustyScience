@@ -1,5 +1,4 @@
 use crate::common::knn::{neighbors, Neighbor};
-use std::hash::Hash;
 use num::Num;
 use num_traits::ToPrimitive;
 
@@ -14,7 +13,7 @@ pub struct KNNClassifier<D, L> {
 impl<D, L> KNNClassifier<D, L>
 where
     D: Num + Copy + Clone + PartialOrd + ToPrimitive,
-    L: Copy + Clone + Eq + Hash,
+    L: Num + Copy + Clone + PartialOrd + ToPrimitive,
 {
     /// Creates a new KNNClassifier with a specified value of k.
     ///
@@ -27,7 +26,7 @@ where
     /// # Examples
     /// ```
     /// use rustyScience::classification::KNNClassifier;
-    /// let knn = KNNClassifier::<f64, f64>::new(3);
+    /// let knn = KNNClassifier::<f64, i64>::new(3);
     /// ```
     pub fn new(k: usize) -> Self {
         if k == 0 {
@@ -53,7 +52,7 @@ where
     /// # Examples
     /// ```
     /// use rustyScience::classification::KNNClassifier;
-    /// let mut knn = KNNClassifier::<f64, f64>::new(3);
+    /// let mut knn = KNNClassifier::<f64, i64>::new(3);
     /// knn.set_weight_type("uniform".to_string());
     /// ```
     pub fn set_weight_type(&mut self, weight_type: String) {
@@ -72,7 +71,7 @@ where
     /// # Examples
     /// ```
     /// use rustyScience::classification::KNNClassifier;
-    /// let mut knn = KNNClassifier::<f64, f64>::new(3);
+    /// let mut knn = KNNClassifier::<f64, i64>::new(3);
     /// knn.set_distance_metrics("manhattan".to_string());
     /// ```
     pub fn set_distance_metrics(&mut self, distance_metric: String) {
@@ -88,9 +87,9 @@ where
     /// # Examples
     /// ```
     /// use rustyScience::classification::KNNClassifier;
-    /// let mut knn = KNNClassifier::<f64, f64>::new(3);
+    /// let mut knn = KNNClassifier::<f64, i64>::new(3);
     /// let data = vec![vec![1.0, 2.0], vec![2.0, 3.0], vec![3.0, 4.0]];
-    /// let labels = vec![0.72, 1.0, 0.26];
+    /// let labels = vec![1, 1, 4];
     /// knn.fit(data, labels);
     /// ```
     pub fn fit(&mut self, data: Vec<Vec<D>>, labels: Vec<L>) {
@@ -131,21 +130,24 @@ where
             calculate_distance,
         );
 
-        let mut label_weights = std::collections::HashMap::new();
-
+        let mut label_weights = Vec::new();
+        
         for neighbor in neighbors.iter() {
-            if let Some(label) = neighbor.label {
+            if let Some(label) = neighbor.label.clone() {
                 let distance = neighbor.distance_to_target;
                 let weight = if calculate_distance {
                     1.0 / (distance + 1e-8)
                 } else {
                     1.0
                 };
-                *label_weights.entry(label).or_insert(0.0) += weight;
+
+                match label_weights.iter_mut().find(|(lbl, _)| *lbl == label) {
+                    Some((_, total_weight)) => *total_weight += weight,
+                    None => label_weights.push((label, weight)),
+                }
             }
         }
 
-        // Get the label with the highest weighted count
         label_weights
             .into_iter()
             .max_by(|a, b| a.1.partial_cmp(&b.1).unwrap())
