@@ -1,5 +1,5 @@
-use rustyScience::classification::knn::KNNClassifier;
-use rustyScience::data::datasets::load_iris;
+use rusty_science::classification::knn::KNNClassifier;
+use rusty_science::data::datasets::load_iris;
 
 #[test]
 pub(crate) fn test_knn_classification_integration() {

@@ -18,7 +18,7 @@ mod load_csv;
 /// # Example
 ///
 /// ```
-/// use rustyScience::data::load_iris;
+/// use rusty_science::data::load_iris;
 /// let iris_data = load_iris();
 /// ```
 pub fn load_iris() -> IrisData {
@@ -47,7 +47,7 @@ pub fn load_iris() -> IrisData {
 /// # Example
 ///
 /// ```
-/// use rustyScience::data::load_brest_cancer;
+/// use rusty_science::data::load_brest_cancer;
 /// let breast_cancer_data = load_brest_cancer();
 /// ```
 pub fn load_brest_cancer() -> BreastCancerData {
@@ -77,7 +77,7 @@ pub fn load_brest_cancer() -> BreastCancerData {
 /// # Example
 ///
 /// ```
-/// use rustyScience::data::load_housing;
+/// use rusty_science::data::load_housing;
 /// let housing_data = load_housing();
 /// ```
 pub fn load_housing() -> HousingData {

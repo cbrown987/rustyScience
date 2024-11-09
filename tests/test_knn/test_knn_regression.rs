@@ -1,4 +1,4 @@
-use rustyScience::regression::knn::KNNRegression;
+use rusty_science::regression::knn::KNNRegression;
 #[test]
 pub(crate) fn test_knn_regression_integration(){
     let dataset = vec![

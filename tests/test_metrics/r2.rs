@@ -1,5 +1,5 @@
 use rand::{thread_rng, Rng};
-use rustyScience::metrics::r2::r2;
+use rusty_science::metrics::r2::r2;
 #[test]
 fn test_random_data_with_high_correlation() {
     let mut rng = thread_rng();

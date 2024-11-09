@@ -34,7 +34,7 @@ where
     ///
     /// # Example
     /// ```
-    /// use rustyScience::classification::TreeClassifier;
+    /// use rusty_science::classification::TreeClassifier;
     ///
     /// let mut classifier: TreeClassifier<f64, i32> = TreeClassifier::new();
     /// classifier.set_criterion("entropy");
@@ -50,7 +50,7 @@ where
     ///
     /// # Example
     /// ```
-    /// use rustyScience::classification::TreeClassifier;
+    /// use rusty_science::classification::TreeClassifier;
     ///
     /// let mut classifier: TreeClassifier<f64, i32> = TreeClassifier::new();
     /// classifier.set_max_depth(5);
@@ -66,7 +66,7 @@ where
     ///
     /// # Example
     /// ```
-    /// use rustyScience::classification::TreeClassifier;
+    /// use rusty_science::classification::TreeClassifier;
     ///
     /// let mut classifier: TreeClassifier<f64, i32> = TreeClassifier::new();
     /// classifier.set_min_samples_split(4);
@@ -82,7 +82,7 @@ where
     ///
     /// # Example
     /// ```
-    /// use rustyScience::classification::TreeClassifier;
+    /// use rusty_science::classification::TreeClassifier;
     ///
     /// let mut classifier: TreeClassifier<f64, i32> = TreeClassifier::new();
     /// classifier.set_min_samples_leaf(3);
@@ -102,7 +102,7 @@ where
     ///
     /// # Example
     /// ```
-    /// use rustyScience::classification::TreeClassifier;
+    /// use rusty_science::classification::TreeClassifier;
     ///
     /// let data = vec![
     ///     vec![2.771244718, 1.784783929],
@@ -214,7 +214,7 @@ where
     ///
     /// # Example
     /// ```
-    /// use rustyScience::classification::TreeClassifier;
+    /// use rusty_science::classification::TreeClassifier;
     ///
     /// let data = vec![
     ///     vec![2.771244718, 1.784783929],

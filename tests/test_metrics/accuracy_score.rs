@@ -1,4 +1,4 @@
-use rustyScience::metrics::accuracy_score::{accuracy_score, accuracy_score_normalize};
+use rusty_science::metrics::accuracy_score::{accuracy_score, accuracy_score_normalize};
 
 #[test]
 pub(crate) fn test_accuracy_score() {

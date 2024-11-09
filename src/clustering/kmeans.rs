@@ -36,7 +36,7 @@ where
     ///
     /// # Examples
     /// ```
-    /// use rustyScience::clustering::KMeansCluster;
+    /// use rusty_science::clustering::KMeansCluster;
     /// let knn = KMeansCluster::<f64>::new(3);
     /// ```
     pub fn new(k: usize) -> Self {
@@ -58,7 +58,7 @@ where
     ///
     /// # Examples
     /// ```
-    /// use rustyScience::clustering::KMeansCluster;
+    /// use rusty_science::clustering::KMeansCluster;
     /// let mut knn = KMeansCluster::<f64>::new(3);
     /// knn.set_distance_metrics("manhattan".to_string());
     /// ```
@@ -73,7 +73,7 @@ where
     ///
     /// # Examples
     /// ```
-    /// use rustyScience::clustering::KMeansCluster;
+    /// use rusty_science::clustering::KMeansCluster;
     /// let mut knn = KMeansCluster::<f64>::new(3);
     /// let data = vec![vec![1.0, 2.0], vec![2.0, 3.0], vec![3.0, 4.0]];
     /// let clusters = knn.fit(data);
@@ -149,7 +149,7 @@ where
     /// # Examples 
     /// 
     /// ```
-    /// use rustyScience::clustering::KMeansCluster;
+    /// use rusty_science::clustering::KMeansCluster;
     /// let mut knn = KMeansCluster::<f64>::new(3);
     /// let data = vec![vec![1.0, 2.0], vec![2.0, 3.0], vec![3.0, 4.0]];
     /// let labels = vec![1, 1, 2];

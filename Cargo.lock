@@ -202,7 +202,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "rustyScience"
+name = "rusty_science"
 version = "0.1.0-alpha"
 dependencies = [
  "csv",

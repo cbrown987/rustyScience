@@ -19,7 +19,7 @@ use rand::thread_rng;
 /// # Example
 /// ```
 ///
-/// use rustyScience::data::utils::train_test_split;
+/// use rusty_science::data::utils::train_test_split;
 /// let data = vec![vec![1.0, 2.0], vec![3.0, 4.0], vec![5.0, 6.0], vec![7.0, 8.0]];
 /// let labels = vec![0, 1, 0, 1];
 /// let train_ratio = 0.75;

@@ -1,6 +1,6 @@
 use std::collections::HashMap;
-use rustyScience::clustering::kmeans::KMeansCluster;
-use rustyScience::data::datasets::load_iris;
+use rusty_science::clustering::kmeans::KMeansCluster;
+use rusty_science::data::datasets::load_iris;
 
 
 fn _evaluate_accuracy(predicted_clusters: Vec<usize>, actual_labels: Vec<i64>, cluster_label_map: &HashMap<usize, i64>) -> f64 {

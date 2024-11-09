@@ -1,5 +1,5 @@
-use rustyScience::classification::TreeClassifier;
-use rustyScience::data::datasets::load_iris;
+use rusty_science::classification::TreeClassifier;
+use rusty_science::data::datasets::load_iris;
 
 #[test]
 pub(crate) fn test_tree_classification_integration() {

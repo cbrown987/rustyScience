@@ -1,4 +1,4 @@
-//! # RustyScience
+//! # rusty_science
 //!
 //! [Short Description]
 //! A general port of scikit-learn functionality into rust.
@@ -21,7 +21,7 @@
 //! ## Usage Example
 //!
 //! ```rust
-//! use rustyScience::classification::knn::KNNClassifier;
+//! use rusty_science::classification::knn::KNNClassifier;
 //! let mut knn = KNNClassifier::new(3);
 //! let data = vec![vec![1.0, 2.0], vec![2.0, 3.0], vec![3.0, 4.0]];
 //! let labels = vec![0, 1, 0];

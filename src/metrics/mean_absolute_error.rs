@@ -16,7 +16,7 @@
 ///
 /// # Example
 /// ```
-/// use rustyScience::metrics::mean_absolute_error;
+/// use rusty_science::metrics::mean_absolute_error;
 /// let y_true = vec![1.0, 2.0, 3.0];
 /// let y_pred = vec![1.5, 2.5, 3.0];
 /// let mae = mean_absolute_error(y_true, y_pred);

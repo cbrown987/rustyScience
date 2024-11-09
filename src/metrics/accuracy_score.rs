@@ -14,7 +14,7 @@ use num::Num;
 ///
 /// # Example
 /// ```
-/// use rustyScience::metrics::accuracy_score_normalize;
+/// use rusty_science::metrics::accuracy_score_normalize;
 /// let data_true = vec![1, 2, 3, 4, 5];
 /// let data_pred = vec![1, 2, 2, 4, 5];
 /// let accuracy = accuracy_score_normalize(data_true, data_pred);
@@ -47,7 +47,7 @@ pub fn accuracy_score_normalize<T: Num>(data_true: Vec<T>, data_pred: Vec<T>) ->
 ///
 /// # Example
 /// ```
-/// use rustyScience::metrics::accuracy_score;
+/// use rusty_science::metrics::accuracy_score;
 /// let data_true = vec![1, 2, 3, 4, 5];
 /// let data_pred = vec![1, 2, 2, 4, 5];
 /// let accuracy = accuracy_score(data_true, data_pred);
