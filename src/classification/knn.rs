@@ -93,6 +93,10 @@ where
     /// knn.fit(data, labels);
     /// ```
     pub fn fit(&mut self, data: Vec<Vec<D>>, labels: Vec<L>) {
+        self._fit(data, labels);
+    }
+    
+    fn _fit(&mut self, data: Vec<Vec<D>>, labels: Vec<L>){
         self.data = data;
         self.labels = labels;
     }
@@ -131,7 +135,7 @@ where
         );
 
         let mut label_weights = Vec::new();
-        
+
         for neighbor in neighbors.iter() {
             if let Some(label) = neighbor.label.clone() {
                 let distance = neighbor.distance_to_target;

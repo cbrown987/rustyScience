@@ -2,7 +2,6 @@ use std::cmp::Ordering;
 use num_traits::{Num, ToPrimitive};
 use crate::common::utils::{euclidean_distance, manhattan_distance};
 
-/// Neighbor struct to store point data, label, and distance
 pub(crate) struct Neighbor<D, L> {
     pub(crate) point: Vec<D>,
     pub(crate) label: Option<L>,
@@ -16,7 +15,6 @@ where
     data_labels.as_ref().map(|labels| labels[i])
 }
 
-/// Helper function to process neighbors
 fn _process_neighbors<D, L>(
     neighbor_indices: &[usize],
     data: &[Vec<D>],
@@ -65,7 +63,7 @@ where
     D: Num + ToPrimitive + Copy + PartialOrd,
     L: Copy + Clone,
 {
-    let distance_fn: Box<dyn Fn(&[D], &[D]) -> f64> = match distance_metric.as_str() {
+    let distance_fn: Box<dyn Fn(&[D], &[D]) -> f64> = match distance_metric.to_lowercase().as_str() {
         "euclidean" => Box::new(euclidean_distance),
         "manhattan" => Box::new(manhattan_distance),
         _ => panic!("Unknown distance metric"),

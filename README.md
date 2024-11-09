@@ -7,7 +7,8 @@ Implementation table
 | KNNClassifier                     | Yes                         |
 | KNNRegression                     | Yes                         |
 | KNNCluster                        | Yes                         |
-| Decision trees                    | IP                          |
+| Decision Tree Repressor           | IP                          |
+| Decision tree Classifier          | Yes                         |
 | perceptron                        |                             |
 | MLP Classifier                    |                             |
 | MLP Regressor                     |                             |

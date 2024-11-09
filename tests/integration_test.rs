@@ -1,7 +1,6 @@
 mod test_metrics;
 mod test_knn;
-
-
+mod test_tree;
 
 #[cfg(test)]
 mod tests {
