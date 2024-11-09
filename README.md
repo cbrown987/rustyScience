@@ -1,4 +1,7 @@
-# Rusty Science
+<div style="display: flex; align-items: center;">
+    <img src="./logoIcon.svg" alt="SVG Icon" width="75">
+    <h1>RustyScience</h1>
+</div>
 
 An easy-to-use Machine Learning toolkit for Rust.
 
