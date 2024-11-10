@@ -46,21 +46,21 @@ fn main() {
 
 ## Implementation table
 
-| Feature                           | Implemented?                |
-|:----------------------------------|-----------------------------|
-| KNNClassifier                     | ✅ Implemented               |                     |
-| KNNRegression                     | ✅ Implemented               |
-| KNNCluster                        | ✅ Implemented               |
-| Decision Tree Repressor           | 🚧 In Progress              |
-| Decision tree Classifier          | ✅ Implemented               |
-| perceptron                        | ❌ Not Implemented           |
-| MLP Classifier                    | ❌ Not Implemented           |
-| MLP Regressor                     | ❌ Not Implemented           |
-| Linear Regression                 | 🚧 In Progress              |
-| Data Functions (train-test split) | ❌ Not Implemented           |
-| Dummy Datasets                    | ❌ Not Implemented           |
-| Sample Datasets                   | Iris, Housing, Brest Cancer |
-| Graphing?                         | ❌ Not Implemented           |
+| Feature                                  | Implemented?                |
+|:-----------------------------------------|-----------------------------|
+| KNNClassifier                            | ✅ Implemented               |                     |
+| KNNRegression                            | ✅ Implemented               |
+| KNNCluster                               | ✅ Implemented               |
+| Decision Tree Repressor                  | ✅ Implemented               |
+| Decision tree Classifier                 | ✅ Implemented               |
+| perceptron                               | ❌ Not Implemented           |
+| MLP Classifier                           | ❌ Not Implemented           |
+| MLP Regressor                            | ❌ Not Implemented           |
+| Linear Regression                        | 🚧 In Progress              |
+| Data Functions (train-test split)        | ❌ Not Implemented           |
+| Dummy Datasets                           | ❌ Not Implemented           |
+| Sample Datasets                          | Iris, Housing, Brest Cancer |
+| Graphing - Integrate the plotters crate? | ❌ Not Implemented           |
 
 
 | Metric    | Implemented       |

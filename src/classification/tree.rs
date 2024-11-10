@@ -1,12 +1,26 @@
 use num_traits::{FromPrimitive, Num, ToPrimitive};
-use crate::common::tree::{find_best_split, Instance, Node};
+
+#[derive(Debug, Clone)]
+pub(crate) struct InstanceClassifier<D, L> {
+    pub(crate) data: Vec<D>,
+    pub(crate) target: L,
+}
+
+pub(crate) struct NodeClassifier<D, L> {
+    pub(crate) is_leaf: bool,
+    pub(crate) prediction: Option<L>,
+    pub(crate) feature_index: Option<usize>,
+    pub(crate) threshold: Option<D>,
+    pub(crate) left: Option<Box<NodeClassifier<D, L>>>,
+    pub(crate) right: Option<Box<NodeClassifier<D, L>>>,
+}
 
 pub struct TreeClassifier<D, L> {
     criterion: String,
     max_depth: usize,
     min_samples_split: usize,
     min_samples_leaf: usize,
-    root: Option<Box<Node<D, L>>>,
+    root: Option<Box<NodeClassifier<D, L>>>,
     expected_feature_count: usize
 }
 
@@ -123,10 +137,10 @@ where
     
     fn _fit(&mut self, data: Vec<Vec<D>>, label: Vec<L>){
         self.expected_feature_count = data[0].len(); // Set expected feature count
-        let instances: Vec<Instance<D, L>> = data
+        let instances: Vec<InstanceClassifier<D, L>> = data
             .into_iter()
             .zip(label.into_iter())
-            .map(|(d, l)| Instance { data: d, label: l })
+            .map(|(d, l)| InstanceClassifier { data: d, target: l })
             .collect();
         self.root = Some(Box::from(self._build_tree(
             instances,
@@ -134,20 +148,20 @@ where
         )));
     }
 
-    fn _build_tree(&self, instances: Vec<Instance<D, L>>, depth: usize) -> Node<D, L> {
+    fn _build_tree(&self, instances: Vec<InstanceClassifier<D, L>>, depth: usize) -> NodeClassifier<D, L> {
         // Check stopping conditions
         if instances.is_empty() {
             panic!("No instances to split on.");
         }
 
         // Get labels
-        let labels: Vec<&L> = instances.iter().map(|inst| &inst.label).collect();
+        let labels: Vec<&L> = instances.iter().map(|inst| &inst.target).collect();
 
         // Check if all labels are the same or max depth reached
         if self._is_pure(&labels) || depth >= self.max_depth || instances.len() < self.min_samples_split {
             // Create a leaf node with the most common label
             let prediction = self._majority_label(&labels);
-            return Node {
+            return NodeClassifier {
                 is_leaf: true,
                 prediction: Some(prediction),
                 feature_index: None,
@@ -159,13 +173,13 @@ where
 
         // Find the best split
         if let Some((best_feature, best_threshold, left_instances, right_instances)) =
-            find_best_split(&instances)
+            find_best_split_classification(&instances)
         {
             // Check for minimum samples in leaves
             if left_instances.len() < self.min_samples_leaf || right_instances.len() < self.min_samples_leaf {
                 // Create a leaf node with the most common label
                 let prediction = self._majority_label(&labels);
-                return Node {
+                return NodeClassifier {
                     is_leaf: true,
                     prediction: Some(prediction),
                     feature_index: None,
@@ -179,7 +193,7 @@ where
             let left_node = self._build_tree(left_instances, depth + 1);
             let right_node = self._build_tree(right_instances, depth + 1);
 
-            Node {
+            NodeClassifier {
                 is_leaf: false,
                 prediction: None,
                 feature_index: Some(best_feature),
@@ -190,7 +204,7 @@ where
         } else {
             // Cannot find a valid split, create a leaf node
             let prediction = self._majority_label(&labels);
-            Node {
+            NodeClassifier {
                 is_leaf: true,
                 prediction: Some(prediction),
                 feature_index: None,
@@ -233,7 +247,7 @@ where
         self._predict(self.root.as_deref(), &target)
     }
 
-    fn _predict(&self, node: Option<&Node<D, L>>, target: &Vec<D>) -> L {
+    fn _predict(&self, node: Option<&NodeClassifier<D, L>>, target: &Vec<D>) -> L {
         if target.len() != self.expected_feature_count {
             panic!(
                 "Input feature vector length ({}) does not match expected length ({})",
@@ -295,6 +309,105 @@ where
             .map(|(label, _)| label)
             .unwrap()
     }
+}
+
+fn find_best_split_classification<D, L>(
+    instances: &[InstanceClassifier<D, L>]) -> Option<(usize, Option<D>, Vec<InstanceClassifier<D, L>>, Vec<InstanceClassifier<D, L>>)>
+where
+    D: Num + Copy + Clone + PartialOrd + ToPrimitive,
+    L: Num + Copy + Clone + PartialOrd + ToPrimitive,
+{
+    if instances.is_empty() {
+        return None;
+    }
+
+    let num_features = instances[0].data.len();
+    let mut best_feature = 0;
+    let mut best_threshold: Option<D> = None;
+    let mut best_impurity = f64::INFINITY;
+    let mut best_left = Vec::new();
+    let mut best_right = Vec::new();
+
+    for feature_index in 0..num_features {
+        // Collect and sort unique thresholds
+        let mut thresholds: Vec<D> = instances
+            .iter()
+            .map(|inst| inst.data[feature_index])
+            .collect();
+        thresholds.sort_by(|a, b| a.partial_cmp(b).unwrap());
+        thresholds.dedup();
+
+        for &threshold in &thresholds {
+            let (left, right): (Vec<InstanceClassifier<D, L>>, Vec<InstanceClassifier<D, L>>) = instances
+                .iter()
+                .cloned()
+                .partition(|inst| inst.data[feature_index] <= threshold);
+
+            if left.is_empty() || right.is_empty() {
+                continue;
+            }
+
+            let impurity_left = gini_impurity(&left);
+            let impurity_right = gini_impurity(&right);
+
+            let total_len = instances.len() as f64;
+            let impurity = (left.len() as f64 * impurity_left
+                + right.len() as f64 * impurity_right)
+                / total_len;
+
+            if impurity < best_impurity {
+                best_impurity = impurity;
+                best_feature = feature_index;
+                best_threshold = Some(threshold);
+                best_left = left;
+                best_right = right;
+            }
+        }
+    }
+
+    if best_impurity == f64::INFINITY {
+        None
+    } else {
+        Some((best_feature, best_threshold, best_left, best_right))
+    }
+}
+
+pub(crate) fn gini_impurity<D, L>(instances: &[InstanceClassifier<D, L>]) -> f64
+where
+    L: PartialEq + Clone,
+{
+    let mut label_counts: Vec<(L, usize)> = Vec::new();
+
+    for instance in instances {
+        let mut found = false;
+        for (label, count) in &mut label_counts {
+            if *label == instance.target {
+                *count += 1;
+                found = true;
+                break;
+            }
+        }
+        if !found {
+            label_counts.push((instance.target.clone(), 1));
+        }
+    }
+
+    let total_instances = instances.len() as f64;
+
+    if total_instances == 0.0 {
+        return 0.0; // Handle the case with no instances
+    }
+
+    // Calculate the Gini impurity
+    let impurity = label_counts
+        .iter()
+        .map(|(_, count)| {
+            let probability = *count as f64 / total_instances;
+            probability * probability
+        })
+        .sum::<f64>();
+
+    1.0 - impurity
 }
 
 
