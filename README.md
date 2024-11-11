@@ -19,7 +19,7 @@ Add Rusty Science to your `Cargo.toml` dependencies:
 
 ```toml
 [dependencies]
-rusty_science = "0.1.0"
+rusty_science = "0.1.0-alpha"
 ```
 
 ### Usage
@@ -34,7 +34,7 @@ fn main() {
     let target = vec![1.5, 1.5, 1.5, 1.5];
 
     let n_neighbors = 3;
-    let mut knn = KNNClassifier::new(n_neighbors);
+    let knn = KNNClassifier::<f64, i64>::new(3);
     knn.fit(data, labels);
     let prediction = knn.predict(target);
 }
@@ -51,16 +51,18 @@ fn main() {
 | KNNClassifier                            | ✅ Implemented               |                     |
 | KNNRegression                            | ✅ Implemented               |
 | KNNCluster                               | ✅ Implemented               |
-| Decision Tree Repressor                  | ✅ Implemented               |
+| Decision Tree Regression                 | ✅ Implemented               |
 | Decision tree Classifier                 | ✅ Implemented               |
 | perceptron                               | ❌ Not Implemented           |
 | MLP Classifier                           | ❌ Not Implemented           |
-| MLP Regressor                            | ❌ Not Implemented           |
+| MLP Regression                           | ❌ Not Implemented           |
 | Linear Regression                        | 🚧 In Progress              |
 | Data Functions (train-test split)        | ❌ Not Implemented           |
 | Dummy Datasets                           | ❌ Not Implemented           |
 | Sample Datasets                          | Iris, Housing, Brest Cancer |
 | Graphing - Integrate the plotters crate? | ❌ Not Implemented           |
+| SVC                                      | 🚧 In Progress              |
+| SVR                                      | ❌ Not Implemented           |
 
 
 | Metric    | Implemented       |
