@@ -34,7 +34,7 @@ fn main() {
     let target = vec![1.5, 1.5, 1.5, 1.5];
 
     let n_neighbors = 3;
-    let knn = KNNClassifier::<f64, i64>::new(3);
+    let knn = KNNClassifier::<f64, i64>::new(n_neighbors);
     knn.fit(data, labels);
     let prediction = knn.predict(target);
 }
