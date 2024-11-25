@@ -2,6 +2,7 @@ use std::cmp::Ordering;
 use num_traits::{Num, ToPrimitive};
 use crate::common::utils::{euclidean_distance, manhattan_distance};
 
+#[allow(dead_code)]
 pub(crate) struct Neighbor<D, L> {
     pub(crate) point: Vec<D>,
     pub(crate) label: Option<L>,
