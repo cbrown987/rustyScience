@@ -1,10 +1,8 @@
-<div style="display: flex; align-items: center;">
-    <img src="./logoIcon.svg" alt="SVG Icon" width="75">
-    <h1>RustyScience</h1>
-</div>
+<img src="./banner.svg" alt="Rusty Science" width="100%">
 
-An easy-to-use Machine Learning toolkit for Rust.
 
+## Summary
+An easy to use and learn ML toolkit for Rust
 ## Features
 
 - **Simple and intuitive API** for common Machine Learning tasks.
@@ -46,6 +44,8 @@ fn main() {
 
 ## Implementation table
 
+#### Features:
+
 | Feature                                  | Implemented?                |
 |:-----------------------------------------|-----------------------------|
 | KNNClassifier                            | ✅ Implemented               |                     |
@@ -61,8 +61,10 @@ fn main() {
 | Dummy Datasets                           | ❌ Not Implemented           |
 | Sample Datasets                          | Iris, Housing, Brest Cancer |
 | Graphing - Integrate the plotters crate? | ❌ Not Implemented           |
-| SVC                                      | 🚧 In Progress              |
+| Binary SVC                               | ✅ Implemented               |
 | SVR                                      | ❌ Not Implemented           |
+
+#### Metrics:
 
 
 | Metric    | Implemented       |
