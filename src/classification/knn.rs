@@ -2,6 +2,9 @@ use crate::common::knn::{neighbors, Neighbor};
 use num::Num;
 use num_traits::ToPrimitive;
 
+#[cfg(feature = "graphing")]
+use plotters::prelude::*;
+
 pub struct KNNClassifier<D, L> {
     k: usize,
     data: Vec<Vec<D>>,
@@ -158,6 +161,63 @@ where
             .map(|(label, _)| label)
             .expect("Neighbor list should not be empty")
     }
+    #[cfg(feature = "graphing")]
+    pub fn graph_data_to_image(&self, title: &str, path: &str){
+        let drawing_area = BitMapBackend::new(path, (800, 600))
+            .into_drawing_area();
+        drawing_area.fill(&WHITE).unwrap();
+
+        let (x_min, x_max) = self.data.iter().flat_map(|v| v.get(0)).fold((f64::INFINITY, f64::NEG_INFINITY), |(min, max), &val| {
+            let val = val.to_f64().unwrap();
+            (min.min(val), max.max(val))
+        });
+        let (y_min, y_max) = self.data.iter().flat_map(|v| v.get(1)).fold((f64::INFINITY, f64::NEG_INFINITY), |(min, max), &val| {
+            let val = val.to_f64().unwrap();
+            (min.min(val), max.max(val))
+        });
+
+        // Create the chart.
+        let mut chart = ChartBuilder::on(&drawing_area)
+            .caption(title, ("sans-serif", 20).into_font())
+            .margin(10)
+            .x_label_area_size(30)
+            .y_label_area_size(30)
+            .build_cartesian_2d(x_min..x_max, y_min..y_max)
+            .unwrap();
+
+        chart.configure_mesh()
+            .x_desc("Feature 1")
+            .y_desc("Feature 2")
+            .draw()
+            .unwrap();
+
+        // Plot each data point, color-coded by label.
+        for (point, &label) in self.data.iter().zip(self.labels.iter()) {
+            if let (Some(&x), Some(&y)) = (point.get(0), point.get(1)) {
+                let x = x.to_f64().unwrap();
+                let y = y.to_f64().unwrap();
+                let color = if label.to_f64().unwrap() > 0.5 {
+                    &BLUE
+                } else {
+                    &RED
+                };
+
+                chart
+                    .draw_series(PointSeries::of_element(
+                        [(x, y)],
+                        5,
+                        color,
+                        &|c, s, st| {
+                            EmptyElement::at(c)
+                                + Circle::new((0, 0), s, st.filled())
+                        },
+                    ))
+                    .unwrap();
+            }
+        }
+
+        drawing_area.present().expect("Failed to save the chart as an image");
+    }
 }
 
 
@@ -255,5 +315,21 @@ mod tests {
         knn.set_distance_metrics("invalid_metric".to_string());
         knn.fit(vec![vec![1.0, 2.0]], vec![0]);
         knn.predict(vec![1.0, 2.0]);
+    }
+    
+    #[test]
+    #[cfg(feature = "graphing")]
+    fn test_knnclassifier_graph_data() {
+        let mut knn = KNNClassifier::<f64, i32>::new(3);
+        let data = vec![
+            vec![1.0, 2.0],
+            vec![2.0, 3.0],
+            vec![3.0, 3.0],
+            vec![4.0, 4.0],
+        ];
+        let labels = vec![0, 0, 1, 4];
+        knn.fit(data, labels);
+        knn.graph_data_to_image("Title", "knn_plot.png")
+        
     }
 }
