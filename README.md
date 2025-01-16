@@ -57,7 +57,7 @@ fn main() {
 | MLP Classifier                           | ❌ Not Implemented           |
 | MLP Regression                           | ❌ Not Implemented           |
 | Linear Regression                        | 🚧 In Progress              |
-| Data Functions (train-test split)        | ❌ Not Implemented           |
+| Data Functions (train-test split)        | ✅ Train test split          |
 | Dummy Datasets                           | ❌ Not Implemented           |
 | Sample Datasets                          | Iris, Housing, Brest Cancer |
 | Graphing - Integrate the plotters crate? | ❌ Not Implemented           |

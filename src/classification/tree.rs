@@ -26,7 +26,7 @@ pub struct TreeClassifier<D, L> {
 
 impl<D, L> TreeClassifier<D, L>
 where
-    D: Num + Copy + Clone + PartialOrd + ToPrimitive,
+    D: Num + Copy + Clone + PartialOrd + ToPrimitive + FromPrimitive,
     L: Num + Copy + Clone + PartialOrd + ToPrimitive + FromPrimitive,
 {
     pub fn new() -> Self {
@@ -134,21 +134,19 @@ where
         }
         self._fit(data, label);
     }
-    
-    fn _fit(&mut self, data: Vec<Vec<D>>, label: Vec<L>){
-        self.expected_feature_count = data[0].len(); // Set expected feature count
-        let instances: Vec<InstanceClassifier<D, L>> = data
-            .into_iter()
+
+    fn _fit(&mut self, data: Vec<Vec<D>>, label: Vec<L>) {
+        self.expected_feature_count = data[0].len();
+        let instances: Vec<InstanceClassifier<D, L>> = data.into_iter()
             .zip(label.into_iter())
             .map(|(d, l)| InstanceClassifier { data: d, target: l })
             .collect();
-        self.root = Some(Box::from(self._build_tree(
-            instances,
-            0, // current depth
-        )));
+
+        let features_data = precompute_sorted_features(&instances);
+        self.root = Some(Box::from(self._build_tree(instances, 0, &features_data)));
     }
 
-    fn _build_tree(&self, instances: Vec<InstanceClassifier<D, L>>, depth: usize) -> NodeClassifier<D, L> {
+    fn _build_tree(&self, instances: Vec<InstanceClassifier<D, L>>, depth: usize, features_data: &[Vec<(D, L)>]) -> NodeClassifier<D, L> {
         // Check stopping conditions
         if instances.is_empty() {
             panic!("No instances to split on.");
@@ -173,7 +171,7 @@ where
 
         // Find the best split
         if let Some((best_feature, best_threshold, left_instances, right_instances)) =
-            find_best_split_classification(&instances)
+            find_best_split_classification(&instances, features_data)
         {
             // Check for minimum samples in leaves
             if left_instances.len() < self.min_samples_leaf || right_instances.len() < self.min_samples_leaf {
@@ -190,8 +188,8 @@ where
             }
 
             // Recursively build the left and right subtrees
-            let left_node = self._build_tree(left_instances, depth + 1);
-            let right_node = self._build_tree(right_instances, depth + 1);
+            let left_node = self._build_tree(left_instances, depth + 1, features_data);
+            let right_node = self._build_tree(right_instances, depth + 1, features_data);
 
             NodeClassifier {
                 is_leaf: false,
@@ -312,56 +310,85 @@ where
 }
 
 fn find_best_split_classification<D, L>(
-    instances: &[InstanceClassifier<D, L>]) -> Option<(usize, Option<D>, Vec<InstanceClassifier<D, L>>, Vec<InstanceClassifier<D, L>>)>
+    instances: &[InstanceClassifier<D, L>],
+    features_data: &[Vec<(D, L)>] // pre-sorted feature data
+) -> Option<(usize, Option<D>, Vec<InstanceClassifier<D, L>>, Vec<InstanceClassifier<D, L>>)>
 where
-    D: Num + Copy + Clone + PartialOrd + ToPrimitive,
+    D: Num + Copy + Clone + PartialOrd + ToPrimitive + FromPrimitive,
     L: Num + Copy + Clone + PartialOrd + ToPrimitive,
 {
     if instances.is_empty() {
         return None;
     }
 
-    let num_features = instances[0].data.len();
+    let num_features = features_data.len();
     let mut best_feature = 0;
     let mut best_threshold: Option<D> = None;
     let mut best_impurity = f64::INFINITY;
     let mut best_left = Vec::new();
     let mut best_right = Vec::new();
 
+    // Convert the entire dataset into a vector of (data, label) for partitioning reference
+    // In a more optimized version, you'd just keep track of indices.
+    let total_instances = instances.len() as f64;
+
     for feature_index in 0..num_features {
-        // Collect and sort unique thresholds
-        let mut thresholds: Vec<D> = instances
-            .iter()
-            .map(|inst| inst.data[feature_index])
-            .collect();
-        thresholds.sort_by(|a, b| a.partial_cmp(b).unwrap());
-        thresholds.dedup();
+        let feature_vals = &features_data[feature_index];
 
-        for &threshold in &thresholds {
-            let (left, right): (Vec<InstanceClassifier<D, L>>, Vec<InstanceClassifier<D, L>>) = instances
-                .iter()
-                .cloned()
-                .partition(|inst| inst.data[feature_index] <= threshold);
+        // If all values are the same for this feature, no valid split
+        if feature_vals.first().unwrap().0 == feature_vals.last().unwrap().0 {
+            continue;
+        }
 
-            if left.is_empty() || right.is_empty() {
+        // We will move a 'split point' through feature_vals, and at each new distinct value,
+        // consider the threshold. Initially, all instances are considered "right".
+        // We'll move them "left" one by one and compute Gini as we go.
+
+        // Start: all instances on the "right" side
+        let mut right_counts: Vec<(L, usize)> = Vec::new();
+        for &(_, lbl) in feature_vals {
+            update_counts(&mut right_counts, lbl);
+        }
+
+        let mut left_counts: Vec<(L, usize)> = Vec::new();
+
+        // We'll consider splits between distinct values
+        for i in 0..(feature_vals.len() - 1) {
+            let (val, lbl) = feature_vals[i];
+
+            // Move this instance from right to left
+            decrement_counts(&mut right_counts, lbl);
+            update_counts(&mut left_counts, lbl);
+
+            // If next value is the same as current, no split here
+            let next_val = feature_vals[i+1].0;
+            if next_val == val {
                 continue;
             }
 
-            let impurity_left = gini_impurity(&left);
-            let impurity_right = gini_impurity(&right);
+            // Potential threshold is between val and next_val
+            let mid_val = (val.to_f64().unwrap() + next_val.to_f64().unwrap()) / 2.0;
+            let threshold = FromPrimitive::from_f64(mid_val).unwrap();
+            // Compute Gini on left and right using counts
+            let left_len = count_total(&left_counts) as f64;
+            let right_len = count_total(&right_counts) as f64;
 
-            let total_len = instances.len() as f64;
-            let impurity = (left.len() as f64 * impurity_left
-                + right.len() as f64 * impurity_right)
-                / total_len;
+            let impurity_left = gini_from_counts(&left_counts, left_len);
+            let impurity_right = gini_from_counts(&right_counts, right_len);
 
+            let impurity = (left_len * impurity_left + right_len * impurity_right) / total_instances;
             if impurity < best_impurity {
                 best_impurity = impurity;
                 best_feature = feature_index;
                 best_threshold = Some(threshold);
-                best_left = left;
-                best_right = right;
+
+                // We need to reconstruct actual left/right sets from this threshold.
+                // Since we know threshold = val, let's partition the original instances:
+                let (l_set, r_set) = instances.iter().cloned().partition(|inst| inst.data[feature_index] <= threshold);
+                best_left = l_set;
+                best_right = r_set;
             }
+
         }
     }
 
@@ -371,6 +398,49 @@ where
         Some((best_feature, best_threshold, best_left, best_right))
     }
 }
+
+// Helper functions for label counting
+
+fn update_counts<L: PartialEq + Clone>(counts: &mut Vec<(L, usize)>, lbl: L) {
+    for (existing_label, count) in counts.iter_mut() {
+        if *existing_label == lbl {
+            *count += 1;
+            return;
+        }
+    }
+    counts.push((lbl, 1));
+}
+
+
+fn decrement_counts<L: PartialEq>(counts: &mut Vec<(L, usize)>, lbl: L) {
+    for &mut (ref existing_label, ref mut count) in counts {
+        if *existing_label == lbl {
+            *count -= 1;
+            return;
+        }
+    }
+    // If not found, that's unexpected. 
+    // This would indicate a logic error in the approach.
+    // In a debug build, you might panic here.
+}
+
+fn count_total<L>(counts: &[(L, usize)]) -> usize {
+    counts.iter().map(|&(_, c)| c).sum()
+}
+
+fn gini_from_counts<L>(counts: &[(L, usize)], total: f64) -> f64 {
+    if total == 0.0 {
+        return 0.0;
+    }
+
+    let sum_of_squares = counts.iter().map(|&(_, c)| {
+        let p = c as f64 / total;
+        p * p
+    }).sum::<f64>();
+
+    1.0 - sum_of_squares
+}
+
 
 pub(crate) fn gini_impurity<D, L>(instances: &[InstanceClassifier<D, L>]) -> f64
 where
@@ -408,6 +478,33 @@ where
         .sum::<f64>();
 
     1.0 - impurity
+}
+
+fn precompute_sorted_features<D, L>(instances: &[InstanceClassifier<D, L>]) -> Vec<Vec<(D, L)>>
+where
+    D: Num + Copy + Clone + PartialOrd + ToPrimitive,
+    L: Num + Copy + Clone + PartialOrd + ToPrimitive,
+{
+    if instances.is_empty() {
+        return Vec::new();
+    }
+
+    let num_features = instances[0].data.len();
+    let mut features_data: Vec<Vec<(D, L)>> = vec![Vec::new(); num_features];
+
+    // Fill each feature vector with (value, label) tuples
+    for inst in instances {
+        for (f_idx, &val) in inst.data.iter().enumerate() {
+            features_data[f_idx].push((val, inst.target));
+        }
+    }
+
+    // Sort each feature's data by the feature value
+    for feature_vector in &mut features_data {
+        feature_vector.sort_by(|a, b| a.0.partial_cmp(&b.0).unwrap());
+    }
+
+    features_data
 }
 
 

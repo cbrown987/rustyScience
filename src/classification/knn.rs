@@ -95,7 +95,7 @@ where
     pub fn fit(&mut self, data: Vec<Vec<D>>, labels: Vec<L>) {
         self._fit(data, labels);
     }
-    
+
     fn _fit(&mut self, data: Vec<Vec<D>>, labels: Vec<L>){
         self.data = data;
         self.labels = labels;
