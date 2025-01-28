@@ -53,7 +53,7 @@ fn main() {
 | KNNCluster                               | ✅ Implemented               |
 | Decision Tree Regression                 | ✅ Implemented               |
 | Decision tree Classifier                 | ✅ Implemented               |
-| perceptron                               | ❌ Not Implemented           |
+| Perceptron                               | 🚧 In Progress              |
 | MLP Classifier                           | ❌ Not Implemented           |
 | MLP Regression                           | ❌ Not Implemented           |
 | Linear Regression                        | 🚧 In Progress              |
@@ -76,4 +76,4 @@ fn main() {
 | Precision | ❌ Not Implemented |
 
 ## Contact
-If you want to contact us email us at cooper.brown@drake.edu or jack.welsh@drake.edu
+If you want to contact us email us at cooper.brown197@gmail.com or jack.welsh@drake.edu

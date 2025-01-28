@@ -2,7 +2,10 @@
 name = "rusty_science"
 version = "0.1.0-alpha"
 edition = "2021"
+authors = ["Cooper Brown <cooper.brown197@gmail.com>, Jack Welsh <jack.welsh@drake.edu>"]
 license = "MIT"
+repository = "https://github.com/cbrown987/rustyScience/"
+description = "An easy to learn and use ML toolkit for rust"
 
 [dependencies]
 rand = "0.8.5"
@@ -10,7 +13,6 @@ num = "0.4"
 num-traits = "0.2"
 
 [dev-dependencies]
-serde = { version = "1.0.214", features = ["derive"] }
 criterion = { version = "0.5.1", features = ["html_reports"] }
 
 [[bench]]
