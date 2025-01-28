@@ -1,3 +1,4 @@
+#![recursion_limit = "8192"]
 //! # rusty_science
 //!
 //! [Short Description]
@@ -68,5 +69,3 @@ pub mod regression;
 pub mod metrics;
 
 pub mod data;
-
-
