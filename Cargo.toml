@@ -9,7 +9,8 @@ rand = "0.8.5"
 num = "0.4"
 num-traits = "0.2"
 ndarray = "0.15"
-ndarray-linalg = "0.15"
+ndarray-linalg = { version = "0.16", features = ["openblas"] }
+openssl = { version = "0.10", features = ["vendored"] }
 
 
 [dev-dependencies]

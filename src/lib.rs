@@ -57,6 +57,7 @@
 
 // Exposing the linear_models module
 pub mod linear_models;
+pub mod utils;
 
 // Exposing the classification module
 pub mod classification;
