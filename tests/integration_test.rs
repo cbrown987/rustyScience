@@ -3,6 +3,7 @@ mod test_knn;
 mod test_tree;
 mod test_data;
 mod test_svc;
+mod test_perceptron;
 
 #[cfg(test)]
 mod tests {

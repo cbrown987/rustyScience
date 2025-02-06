@@ -1,6 +1,6 @@
 [package]
 name = "rusty_science"
-version = "0.1.0-alpha"
+version = "0.1.1-alpha"
 edition = "2021"
 authors = ["Cooper Brown <cooper.brown197@gmail.com>, Jack Welsh <jack.welsh@drake.edu>"]
 license = "MIT"

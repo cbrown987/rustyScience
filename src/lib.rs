@@ -1,11 +1,7 @@
 //! # rusty_science
 //!
-//! [Short Description]
-//! A general port of scikit-learn functionality into rust.
+//!  An easy to learn and use ML toolkit for rust 
 //!
-//! ## Features
-//!
-//! - [Feature 1]: Implements general machine learning models for data analytics
 //!
 //! ## Installation
 //!

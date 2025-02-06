@@ -118,6 +118,54 @@ impl BreastCancerData {
             fractal_dimension_worst: Vec::new(),
         }
     }
+    pub fn to_numerical_labels(&self) -> (Vec<Vec<f32>>, Vec<i32>) {
+        let mut data = Vec::new();
+        let mut labels = Vec::new();
+
+        for i in 0..self.diagnoses.len() {
+            let features = vec![
+                self.radius_mean[i],
+                self.texture_mean[i],
+                self.perimeter_mean[i],
+                self.area_mean[i],
+                self.smoothness_mean[i],
+                self.compactness_mean[i],
+                self.concavity_mean[i],
+                self.concave_points_mean[i],
+                self.symmetry_mean[i],
+                self.fractal_dimension_mean[i],
+                self.radius_se[i],
+                self.texture_se[i],
+                self.perimeter_se[i],
+                self.area_se[i],
+                self.smoothness_se[i],
+                self.compactness_se[i],
+                self.concavity_se[i],
+                self.concave_points_se[i],
+                self.symmetry_se[i],
+                self.fractal_dimension_se[i],
+                self.radius_worst[i],
+                self.texture_worst[i],
+                self.perimeter_worst[i],
+                self.area_worst[i],
+                self.smoothness_worst[i],
+                self.compactness_worst[i],
+                self.concavity_worst[i],
+                self.concave_points_worst[i],
+                self.symmetry_worst[i],
+                self.fractal_dimension_worst[i],
+            ];
+            data.push(features);
+
+            let label = match self.diagnoses[i].as_str() {
+                "M" => 1,  // Malignant
+                "B" => 0,  // Benign
+                _ => panic!("Unknown diagnosis label"),
+            };
+            labels.push(label);
+        }
+        (data, labels)
+    }
 }
 
 #[derive(Debug)]

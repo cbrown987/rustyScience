@@ -30,6 +30,23 @@ where
         .sum()
 }
 
+pub(crate) fn shuffle_data_labels<D, L>(data: &mut Vec<Vec<D>>, labels: &mut Vec<L>) 
+where
+    L: Clone,
+    D: Clone
+{
+    use rand::seq::SliceRandom;
+    use rand::thread_rng;
+
+    let mut indices: Vec<usize> = (0..data.len()).collect();
+    indices.shuffle(&mut thread_rng());
+
+    let shuffled_data: Vec<Vec<D>> = indices.iter().map(|&i| data[i].clone()).collect();
+    let shuffled_labels: Vec<L> = indices.iter().map(|&i| labels[i].clone()).collect();
+
+    *data = shuffled_data;
+    *labels = shuffled_labels;
+}
 
 
 #[cfg(test)]

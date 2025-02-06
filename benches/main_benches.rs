@@ -7,7 +7,7 @@ use crate::modules::regression::benchmark_regression;
 fn custom_criterion() -> Criterion {
     Criterion::default()
         // Increase allotted time to 100 seconds
-        // .measurement_time(std::time::Duration::from_secs(100))
+        .measurement_time(std::time::Duration::from_secs(100))
         // Set amount of samples collected to 50
         .sample_size(50)
 }
