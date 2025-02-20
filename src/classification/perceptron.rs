@@ -91,6 +91,10 @@ where
 
         self.weights = vec![vec![0.0; num_features]; num_classes];
         self.biases = vec![0.0; num_classes];
+        
+        for _ in 0..self.epochs{
+            self._fit()
+        }
     }
     
     fn _fit(&mut self) {
