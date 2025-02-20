@@ -44,7 +44,7 @@ fn main() {
 
 ## Implementation table
 
-#### Features:
+### Features:
 
 | Feature                                  | Implemented?                |
 |:-----------------------------------------|-----------------------------|
@@ -58,13 +58,20 @@ fn main() {
 | MLP Regression                           | ❌ Not Implemented           |
 | Linear Regression                        | 🚧 In Progress              |
 | Data Functions (train-test split)        | ✅ Train test split          |
-| Dummy Datasets                           | ❌ Not Implemented           |
-| Sample Datasets                          | Iris, Housing, Brest Cancer |
+| Dummy Datasets                           | ✅ Implemented               |
 | Graphing - Integrate the plotters crate? | ❌ Not Implemented           |
 | Binary SVC                               | ✅ Implemented               |
 | SVR                                      | ❌ Not Implemented           |
+| DBSCAN clustering                        | ❌ Not Implemented           |
+| Gaussian Mixture Model                   | ❌ Not Implemented           |
+| BIRCH algorithm                          | ❌ Not Implemented           |
+| Lasso Regression                         | ❌ Not Implemented           |
+| PCA                                      | ❌ Not Implemented           |
+| Ridge Regression                         | ❌ Not Implemented           |
+| ElasticNet                               | ❌ Not Implemented           |
+| Lars                                     | ❌ Not Implemented           |
 
-#### Metrics:
+### Metrics:
 
 
 | Metric    | Implemented       |
@@ -74,6 +81,15 @@ fn main() {
 | MAE       | ✅ Implemented     |
 | MSE       | ❌ Not Implemented |
 | Precision | ❌ Not Implemented |
+
+### Datasets:
+
+| Dataset      | Implemented   |
+|--------------|---------------|
+| Iris         | ✅ Implemented |
+| Housing      | ✅ Implemented |
+| Brest Cancer | ✅ Implemented |
+
 
 ## Contact
 If you want to contact us email us at cooper.brown197@gmail.com or jack.welsh@drake.edu
