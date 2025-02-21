@@ -16,7 +16,6 @@ impl SimpleLinearRegression {
     }
     //least squares
 
-    //***REMOVE PREFIX UNDERSCORES BEFORE IMPLEMENTATION***
     pub fn fit(&mut self, x: &[f64], y: &[f64]) {
         let _n = x.len() as f64;
         let _sum_x = x.iter().sum::<f64>();
