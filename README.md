@@ -56,12 +56,12 @@ fn main() {
 | Perceptron                               | 🚧 In Progress              |
 | MLP Classifier                           | ❌ Not Implemented           |
 | MLP Regression                           | ❌ Not Implemented           |
-| Linear Regression                        | 🚧 In Progress              |
+| Linear Regression                        | ✅ In Progress              |
 | Data Functions (train-test split)        | ✅ Train test split          |
 | Dummy Datasets                           | ✅ Implemented               |
 | Graphing - Integrate the plotters crate? | ❌ Not Implemented           |
 | Binary SVC                               | ✅ Implemented               |
-| SVR                                      | ❌ Not Implemented           |
+| SVR                                      | 🚧 Not Implemented           |
 | DBSCAN clustering                        | ❌ Not Implemented           |
 | Gaussian Mixture Model                   | ❌ Not Implemented           |
 | BIRCH algorithm                          | ❌ Not Implemented           |
