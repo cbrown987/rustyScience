@@ -11,6 +11,8 @@ description = "An easy to learn and use ML toolkit for rust"
 rand = "0.8.5"
 num = "0.4"
 num-traits = "0.2"
+ndarray = "0.15"
+ndarray-linalg = "0.16"
 
 [dev-dependencies]
 criterion = { version = "0.5.1", features = ["html_reports"] }
