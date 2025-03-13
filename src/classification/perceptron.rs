@@ -92,30 +92,31 @@ where
         self.weights = vec![vec![0.0; num_features]; num_classes];
         self.biases = vec![0.0; num_classes];
         
-        self._fit()
+        if self.shuffle {
+            shuffle_data_labels(&mut self.data, &mut self.labels);
+        }
+        
+        for _ in 0..self.epochs {
+            self._fit()
+        }
     }
     
     fn _fit(&mut self) {
-        for _ in 0..self.epochs {
-            if self.shuffle {
-                shuffle_data_labels(&mut self.data, &mut self.labels);
-            }
+        for (row, label) in self.data.iter().zip(self.labels.iter()) {
+            let features_f64: Vec<f64> = row.iter().map(|x| x.to_f64().unwrap_or(0.0)).collect();
+            let pred_class_index =  perceptron_predict_idx(&features_f64, &self.weights, &self.biases);
 
-            for (row, label) in self.data.iter().zip(self.labels.iter()) {
-                let features_f64: Vec<f64> = row.iter().map(|x| x.to_f64().unwrap_or(0.0)).collect();
-                let pred_class_index =  perceptron_predict_idx(&features_f64, &self.weights, &self.biases);
+            let actual_class_index = self
+                .distinct_labels
+                .iter()
+                .position(|&l| l == *label)
+                .unwrap();
 
-                let actual_class_index = self
-                    .distinct_labels
-                    .iter()
-                    .position(|&l| l == *label)
-                    .unwrap();
-
-                if pred_class_index != actual_class_index {
-                    update_weights_biases(&mut self.weights, &mut self.biases, self.learning_rate, features_f64, actual_class_index, pred_class_index)
-                }
+            if pred_class_index != actual_class_index {
+                update_weights_biases(&mut self.weights, &mut self.biases, self.learning_rate, features_f64, actual_class_index, pred_class_index)
             }
         }
+        
     }
 
     /// Predict the label for a single data sample.

@@ -46,30 +46,30 @@ fn main() {
 
 ### Features:
 
-| Feature                                  | Implemented?                |
-|:-----------------------------------------|-----------------------------|
-| KNNClassifier                            | ✅ Implemented               |                     |
-| KNNRegression                            | ✅ Implemented               |
-| KNNCluster                               | ✅ Implemented               |
-| Decision Tree Regression                 | ✅ Implemented               |
-| Decision tree Classifier                 | ✅ Implemented               |
-| Perceptron                               | 🚧 In Progress              |
-| MLP Classifier                           | ❌ Not Implemented           |
-| MLP Regression                           | ❌ Not Implemented           |
-| Linear Regression                        | 🚧 In Progress              |
-| Data Functions (train-test split)        | ✅ Train test split          |
-| Dummy Datasets                           | ✅ Implemented               |
-| Graphing - Integrate the plotters crate? | ❌ Not Implemented           |
-| Binary SVC                               | ✅ Implemented               |
-| SVR                                      | ❌ Not Implemented           |
-| DBSCAN clustering                        | ❌ Not Implemented           |
-| Gaussian Mixture Model                   | ❌ Not Implemented           |
-| BIRCH algorithm                          | ❌ Not Implemented           |
-| Lasso Regression                         | ❌ Not Implemented           |
-| PCA                                      | ❌ Not Implemented           |
-| Ridge Regression                         | ❌ Not Implemented           |
-| ElasticNet                               | ❌ Not Implemented           |
-| Lars                                     | ❌ Not Implemented           |
+| Feature                                  | Implemented?       |
+|:-----------------------------------------|--------------------|
+| KNNClassifier                            | ✅ Implemented      |                     |
+| KNNRegression                            | ✅ Implemented      |
+| KNNCluster                               | ✅ Implemented      |
+| Decision Tree Regression                 | ✅ Implemented      |
+| Decision tree Classifier                 | ✅ Implemented      |
+| Perceptron                               | ✅ Implemented      |
+| MLP Classifier                           | ❌ Not Implemented  |
+| MLP Regression                           | ❌ Not Implemented  |
+| Linear Regression                        | 🚧 In Progress     |
+| Data Functions (train-test split)        | ✅ Train test split |
+| Dummy Datasets                           | ✅ Implemented      |
+| Graphing - Integrate the plotters crate? | ❌ Not Implemented  |
+| Binary SVC                               | ✅ Implemented      |
+| SVR                                      | ❌ Not Implemented  |
+| DBSCAN clustering                        | ❌ Not Implemented  |
+| Gaussian Mixture Model                   | ❌ Not Implemented  |
+| BIRCH algorithm                          | ❌ Not Implemented  |
+| Lasso Regression                         | ❌ Not Implemented  |
+| PCA                                      | ❌ Not Implemented  |
+| Ridge Regression                         | ❌ Not Implemented  |
+| ElasticNet                               | ❌ Not Implemented  |
+| Lars                                     | ❌ Not Implemented  |
 
 ### Metrics:
 

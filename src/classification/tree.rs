@@ -340,11 +340,6 @@ where
             continue;
         }
 
-        // We will move a 'split point' through feature_vals, and at each new distinct value,
-        // consider the threshold. Initially, all instances are considered "right".
-        // We'll move them "left" one by one and compute Gini as we go.
-
-        // Start: all instances on the "right" side
         let mut right_counts: Vec<(L, usize)> = Vec::new();
         for &(_, lbl) in feature_vals {
             update_counts(&mut right_counts, lbl);
@@ -360,16 +355,13 @@ where
             decrement_counts(&mut right_counts, lbl);
             update_counts(&mut left_counts, lbl);
 
-            // If next value is the same as current, no split here
             let next_val = feature_vals[i+1].0;
             if next_val == val {
                 continue;
             }
 
-            // Potential threshold is between val and next_val
             let mid_val = (val.to_f64().unwrap() + next_val.to_f64().unwrap()) / 2.0;
             let threshold = FromPrimitive::from_f64(mid_val).unwrap();
-            // Compute Gini on left and right using counts
             let left_len = count_total(&left_counts) as f64;
             let right_len = count_total(&right_counts) as f64;
 
@@ -419,9 +411,6 @@ fn decrement_counts<L: PartialEq>(counts: &mut Vec<(L, usize)>, lbl: L) {
             return;
         }
     }
-    // If not found, that's unexpected. 
-    // This would indicate a logic error in the approach.
-    // In a debug build, you might panic here.
 }
 
 fn count_total<L>(counts: &[(L, usize)]) -> usize {
@@ -439,45 +428,6 @@ fn gini_from_counts<L>(counts: &[(L, usize)], total: f64) -> f64 {
     }).sum::<f64>();
 
     1.0 - sum_of_squares
-}
-
-
-pub(crate) fn gini_impurity<D, L>(instances: &[InstanceClassifier<D, L>]) -> f64
-where
-    L: PartialEq + Clone,
-{
-    let mut label_counts: Vec<(L, usize)> = Vec::new();
-
-    for instance in instances {
-        let mut found = false;
-        for (label, count) in &mut label_counts {
-            if *label == instance.target {
-                *count += 1;
-                found = true;
-                break;
-            }
-        }
-        if !found {
-            label_counts.push((instance.target.clone(), 1));
-        }
-    }
-
-    let total_instances = instances.len() as f64;
-
-    if total_instances == 0.0 {
-        return 0.0; // Handle the case with no instances
-    }
-
-    // Calculate the Gini impurity
-    let impurity = label_counts
-        .iter()
-        .map(|(_, count)| {
-            let probability = *count as f64 / total_instances;
-            probability * probability
-        })
-        .sum::<f64>();
-
-    1.0 - impurity
 }
 
 fn precompute_sorted_features<D, L>(instances: &[InstanceClassifier<D, L>]) -> Vec<Vec<(D, L)>>

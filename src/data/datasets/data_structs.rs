@@ -205,4 +205,28 @@ impl HousingData {
             medv: Vec::new(),
         }
     }
+
+    pub fn to_numerical_values(&self) -> (Vec<Vec<f64>>, Vec<f64>) {
+        let mut data = Vec::new();
+        let mut labels = Vec::new();
+
+        for i in 0..self.crim.len() {
+            let row = vec![
+                self.crim[i], self.zn[i], self.indus[i], self.chas[i],
+                self.nox[i], self.rm[i], self.age[i], self.dis[i],
+                self.rad[i], self.tax[i], self.ptratio[i], self.b[i],
+                self.lstat[i]
+            ];
+
+            let has_nan = row.iter().any(|&x| x.is_nan());
+            let label_is_nan = self.medv[i].is_nan();
+
+            if !has_nan && !label_is_nan {
+                data.push(row);
+                labels.push(self.medv[i]);
+            }
+        }
+
+        (data, labels)
+    }
 }

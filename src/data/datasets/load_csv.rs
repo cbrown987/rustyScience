@@ -149,7 +149,6 @@ pub(crate) fn read_housing_csv(filename: &str) -> io::Result<HousingData> {
             continue; // Skip this row if it doesn't have enough fields
         }
 
-        // Use the provided parse_and_push_f32 function for parsing
         parse_and_push_f64(fields[0], idx, "CRIM", &mut data.crim);
         parse_and_push_f64(fields[1], idx, "ZN", &mut data.zn);
         parse_and_push_f64(fields[2], idx, "INDUS", &mut data.indus);
