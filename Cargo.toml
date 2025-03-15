@@ -5,14 +5,20 @@ edition = "2021"
 authors = ["Cooper Brown <cooper.brown197@gmail.com>, Jack Welsh <jack.welsh@drake.edu>"]
 license = "MIT"
 repository = "https://github.com/cbrown987/rustyScience/"
+documentation = "https://docs.rs/rusty_science"  
+homepage = "https://github.com/cbrown987/rustyScience/"
+keywords = ["machine-learning", "ml", "data-science", "clustering"]
+categories = ["science", "algorithms", "mathematics"]
 description = "An easy to learn and use ML toolkit for rust"
 
 [dependencies]
 rand = "0.8.5"
 num = "0.4"
 num-traits = "0.2"
-ndarray = "0.15"
-ndarray-linalg = "0.16"
+ndarray = "0.16.1"
+ndarray-linalg = "0.17.0"
+kdtree = "0.7.0"
+
 
 [dev-dependencies]
 criterion = { version = "0.5.1", features = ["html_reports"] }
