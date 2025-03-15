@@ -4,6 +4,7 @@ mod test_tree;
 mod test_data;
 mod test_svc;
 mod test_perceptron;
+mod test_dbscan;
 
 #[cfg(test)]
 mod tests {
