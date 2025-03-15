@@ -340,7 +340,7 @@ where
     ///     vec![3f64 , 3.1]
     /// ];
     ///     
-    /// dbscan.predict(target)
+    /// let value = dbscan.predict(target);
     /// ```
     pub fn predict(&self, new_data: Vec<Vec<D>>) -> Vec<L> {
         if self.core_samples.is_empty() {

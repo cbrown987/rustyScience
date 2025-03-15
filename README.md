@@ -62,7 +62,7 @@ fn main() {
 | Graphing - Integrate the plotters crate? | ❌ Not Implemented  |
 | Binary SVC                               | ✅ Implemented      |
 | SVR                                      | 🚧 Not Implemented |
-| DBSCAN clustering                        | 🚧 In Progress     |
+| DBSCAN clustering                        | ✅ Implemented      |
 | Gaussian Mixture Model                   | ❌ Not Implemented  |
 | BIRCH algorithm                          | ❌ Not Implemented  |
 | Lasso Regression                         | ❌ Not Implemented  |
