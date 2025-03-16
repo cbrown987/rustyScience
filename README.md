@@ -17,7 +17,7 @@ Add Rusty Science to your `Cargo.toml` dependencies:
 
 ```toml
 [dependencies]
-rusty_science = "0.1.0-alpha"
+rusty_science = "0.1.1"
 ```
 
 ### Usage
