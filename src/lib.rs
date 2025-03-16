@@ -1,19 +1,14 @@
 //! # rusty_science
 //!
-//!  An easy to learn and use ML toolkit for rust 
-//!
+//!  An easy to learn and use ML toolkit for rust
 //!
 //! ## Installation
 //!
-//! Add the following to your `Cargo.toml`:
 //!
 //! ```toml
 //! [dependencies]
-//! crate_name = "0.1.0-alpha"
+//! rusty_science = "0.1.1"
 //! ```
-//!
-//! Replace `crate_name` with the name of this crate and `version` with the desired version.
-//!
 //! ## Usage Example
 //!
 //! ```rust
@@ -50,10 +45,8 @@
 //! ## Contributors
 //! Cooper Brown, Jack Welsh
 
-// Exposing the linear_models module
 pub mod linear_models;
 
-// Exposing the classification module
 pub mod classification;
 
 pub mod clustering;
