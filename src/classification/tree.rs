@@ -1,3 +1,99 @@
+//! # Decision Tree Classification Algorithm
+//!
+//! ## Theoretical Background
+//!
+//! Decision Trees are versatile machine learning algorithms that create a model resembling a tree-like structure of decisions:
+//!
+//! - They partition the feature space into regions, with each region assigned a class label
+//! - They make decisions by recursively splitting data based on feature values
+//! - They can handle both numerical and categorical features
+//! - They form the foundation for more powerful ensemble methods like Random Forests and Gradient Boosting
+//!
+//! The algorithm works by finding optimal splits in the data that maximize the information gain
+//! or minimize impurity (like Gini impurity) at each step, creating a hierarchical structure
+//! of decision rules.
+//!
+//! ## Parameters
+//!
+//! - `criterion`: Measure used to evaluate the quality of a split.
+//!    - "gini": Uses Gini impurity (measures the probability of incorrect classification)
+//!    - "entropy": Uses information gain (measures the reduction in disorder)
+//!    - Typical default: "gini" (computationally simpler)
+//!
+//! - `max_depth`: Maximum depth of the tree.
+//!    - Too small: Underfitting, inability to capture complex patterns
+//!    - Too large: Overfitting, capturing noise in the training data
+//!    - Typical values: 3 to 10, depending on data complexity
+//!
+//! - `min_samples_split`: Minimum number of samples required to split an internal node.
+//!    - Higher values: Prevents creating splits with small sample sizes
+//!    - Lower values: Allows more detailed splits, risking overfitting
+//!    - Typical values: 2 to 20
+//!
+//! - `min_samples_leaf`: Minimum number of samples required in a leaf node.
+//!    - Higher values: Smoother decision boundaries, better generalization
+//!    - Lower values: More complex patterns captured, risk of overfitting
+//!    - Typical values: 1 to 10
+//!
+//! ## Usage Examples
+//!
+//! ```rust
+//! use rusty_science::classification::TreeClassifier;
+//!
+//! // Create example data
+//! let data = vec![
+//!     vec![2.5, 2.4], vec![1.0, 0.9], vec![3.3, 4.4], 
+//!     vec![4.2, 3.1], vec![4.0, 4.5], vec![2.2, 1.8]
+//! ];
+//! let labels = vec![0, 0, 1, 1, 1, 0];
+//!
+//! // Create and configure the decision tree
+//! let mut tree = TreeClassifier::new();
+//! tree.set_criterion("gini");
+//! tree.set_max_depth(5);
+//! tree.set_min_samples_split(2);
+//! tree.set_min_samples_leaf(1);
+//!
+//! // Fit the model
+//! tree.fit(data.clone(), labels);
+//!
+//! // Make a prediction
+//! let prediction = tree.predict(vec![3.8, 4.0]);
+//! println!("Predicted class: {}", prediction);
+//! ```
+//!
+//! ## Performance Characteristics
+//!
+//! - **Time Complexity**:
+//!   - Training: O(n * d * log(n)), where:
+//!     - n is the number of training examples
+//!     - d is the number of features
+//!   - Prediction: O(log(n)) for a single prediction (average case), where n is the number of training samples
+//!
+//! - **Space Complexity**: O(n) in the worst case (completely imbalanced tree)
+//!
+//! - **Strengths**:
+//!   - Simple to understand and interpret
+//!   - Requires little data preprocessing (no need for normalization)
+//!   - Handles both numerical and categorical data
+//!   - Can handle multi-output problems
+//!   - Implicitly performs feature selection
+//!   - Non-parametric, capturing non-linear patterns
+//!   - Robust to outliers
+//!   - Computationally efficient
+//!   - Handles missing values effectively
+//!
+//! - **Weaknesses**:
+//!   - Prone to overfitting, especially with deep trees
+//!   - Can create biased trees if classes are imbalanced
+//!   - Unstable: small variations in data can result in very different trees
+//!   - Cannot extrapolate beyond the training data range
+//!   - May create overly complex trees that don't generalize well
+//!   - Greedy algorithm that doesn't guarantee globally optimal trees
+//!   - Struggles with tasks requiring diagonal decision boundaries
+//!   - Sensitive to rotation of the feature space
+//!
+
 use num_traits::{FromPrimitive, Num, ToPrimitive};
 
 #[derive(Debug, Clone)]

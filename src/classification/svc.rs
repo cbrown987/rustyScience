@@ -1,3 +1,92 @@
+//! # Support Vector Classification (SVC) Algorithm
+//!
+//! ## Theoretical Background
+//!
+//! Support Vector Classification (SVC) is a powerful supervised learning algorithm for binary classification:
+//!
+//! - It finds the optimal hyperplane that maximizes the margin between classes
+//! - It uses a "maximum margin" approach to improve generalization to unseen data
+//! - It can be extended to non-linear classification using kernel functions
+//! - It's robust against overfitting, especially in high-dimensional spaces
+//!
+//! The algorithm works by finding support vectors (data points closest to the decision boundary) and maximizing
+//! the distance between the hyperplane and these support vectors, creating the widest possible margin.
+//!
+//! ## Parameters
+//!
+//! - `learning_rate`: Step size for gradient descent updates.
+//!    - Too small: Slow convergence, may require many epochs
+//!    - Too large: May overshoot the optimal solution or diverge
+//!    - Typical values: 0.001 to 0.1
+//!
+//! - `epochs`: Number of complete passes through the training data.
+//!    - Too few: May not reach optimal solution
+//!    - Too many: Diminishing returns, potential overfitting with noisy data
+//!    - Typical values: 100 to 1000
+//!
+//! - `regularization_factor`: Controls the trade-off between maximizing the margin and minimizing classification error.
+//!    - Higher values: Lower regularization, fits training data more closely
+//!    - Lower values: Stronger regularization, potentially better generalization
+//!    - Typical values: 0.01 to 1.0
+//!
+//! ## Usage Examples
+//!
+//! ### Binary Classification
+//!
+//! ```rust
+//! use rusty_science::classification::BinarySVC;
+//!
+//! // Create example data for binary classification
+//! let data = vec![
+//!     vec![2.0, 3.0], vec![1.0, 5.0], vec![3.0, 2.0],
+//!     vec![5.0, 1.0], vec![4.0, 6.0], vec![3.0, 5.0]
+//! ];
+//! let labels = vec![0, 0, 0, 1, 1, 1];  // Binary classes (0, 1)
+//!
+//! // Create and configure the SVC model
+//! let mut svc = BinarySVC::new();
+//! svc.set_learning_rate(0.001);
+//! svc.set_epochs(500);
+//! svc.set_regularization_factor(0.1);
+//!
+//! // Fit the model
+//! svc.fit(data.clone(), labels);
+//!
+//! // Make a prediction
+//! let prediction = svc.predict(vec![4.5, 1.5]);
+//! println!("Predicted class: {}", prediction);
+//! ```
+//!
+//! ## Performance Characteristics
+//!
+//! - **Time Complexity**:
+//!   - Training: O(n * d * e), where:
+//!     - n is the number of training examples
+//!     - d is the number of features
+//!     - e is the number of epochs
+//!   - Prediction: O(d) for a single prediction, where d is the number of features
+//!
+//! - **Space Complexity**: O(d + s), where d is the number of features and s is the number of support vectors
+//!
+//! - **Strengths**:
+//!   - Effective in high-dimensional spaces
+//!   - Memory efficient as it only uses a subset of training points (support vectors)
+//!   - Versatile through different kernel functions (linear, polynomial, RBF)
+//!   - Robust against overfitting when properly regularized
+//!   - Well-suited for cases with clear margin of separation
+//!   - Theoretically well-founded with strong mathematical guarantees
+//!   - Finds the globally optimal solution (convex optimization)
+//!
+//! - **Weaknesses**:
+//!   - Training can be slow for large datasets
+//!   - Sensitive to feature scaling and requires preprocessing
+//!   - Performs poorly with overlapping classes and noisy data
+//!   - Requires careful tuning of hyperparameters
+//!   - Not directly suitable for multi-class classification (requires extension)
+//!   - No native probabilistic output (though calibration techniques exist)
+//!   - May struggle with highly imbalanced datasets
+//!
+
 use std::fmt::Debug;
 use num_traits::{Num, NumCast, ToPrimitive};
 

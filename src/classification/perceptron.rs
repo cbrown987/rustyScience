@@ -1,3 +1,130 @@
+//! # Perceptron Classification Algorithm
+//!
+//! ## Theoretical Background
+//!
+//! The Perceptron is one of the oldest and simplest forms of neural networks, designed for binary and multi-class classification:
+//!
+//! - It models a decision boundary as a linear hyperplane in feature space
+//! - It learns incrementally by updating weights and biases when misclassifications occur
+//! - It is guaranteed to converge if the data is linearly separable
+//! - It forms the building block for more complex neural network architectures
+//!
+//! The algorithm works by iteratively adjusting a set of weights and biases to correctly classify training examples, moving the decision boundary to minimize classification errors.
+//!
+//! ## Parameters
+//!
+//! - `learning_rate`: Step size for weight updates.
+//!    - Too small: Slow convergence, may get stuck in local minima
+//!    - Too large: May oscillate around the solution or diverge
+//!    - Typical values: 0.01 to 0.1
+//!
+//! - `epochs`: Number of complete passes through the training data.
+//!    - Too few: Insufficient learning, especially for complex datasets
+//!    - Too many: Generally not problematic for Perceptron, but can be inefficient
+//!    - Typical values: 10 to 1000, depending on data complexity
+//!
+//! - `penalty`: Type of regularization to apply.
+//!    - "l1": Lasso regularization (encourages sparsity)
+//!    - "l2": Ridge regularization (discourages large weights)
+//!    - "none": No regularization
+//!
+//! - `alpha`: Regularization strength.
+//!    - Higher values: Stronger regularization
+//!    - Lower values: Weaker regularization
+//!    - Typical values: 0.0001 to 0.01
+//!
+//! - `shuffle`: Whether to shuffle the training data before each epoch.
+//!    - true: Helps avoid cycles in learning, recommended for most cases
+//!    - false: Deterministic updates, useful for debugging
+//!
+//! ## Usage Examples
+//!
+//! ### Binary Classification
+//!
+//! ```rust
+//! use rusty_science::classification::BinaryPerceptron;
+//!
+//! // Create example data for binary classification
+//! let data = vec![
+//!     vec![2.0, 3.0], vec![1.0, 5.0], vec![3.0, 2.0],
+//!     vec![5.0, 1.0], vec![4.0, 6.0], vec![3.0, 5.0]
+//! ];
+//! let labels = vec![0, 0, 0, 1, 1, 1];  // Binary classes (0, 1)
+//!
+//! // Create and configure the Binary Perceptron
+//! let mut perceptron = BinaryPerceptron::new();
+//! perceptron.set_learning_rate(0.01);
+//! perceptron.set_epochs(100);
+//! perceptron.set_penalty("l2".to_string());
+//! perceptron.set_alpha(0.001);
+//! perceptron.set_shuffle(true);
+//!
+//! // Fit the model
+//! perceptron.fit(data.clone(), labels);
+//!
+//! // Make a prediction
+//! let prediction = perceptron.predict(vec![4.5, 1.5]);
+//! println!("Predicted class: {}", prediction);
+//! ```
+//!
+//! ### Multi-Class Classification
+//!
+//! ```rust
+//! use rusty_science::classification::MultiClassPerceptron;
+//!
+//! // Create example data for multi-class classification
+//! let data = vec![
+//!     vec![2.0, 3.0], vec![1.0, 5.0], vec![3.0, 2.0],
+//!     vec![5.0, 1.0], vec![4.0, 6.0], vec![7.0, 2.0]
+//! ];
+//! let labels = vec![0, 0, 1, 1, 2, 2];  // Three classes (0, 1, 2)
+//!
+//! // Create and configure the Multi-Class Perceptron
+//! let mut perceptron = MultiClassPerceptron::new();
+//! perceptron.set_learning_rate(0.01);
+//! perceptron.set_epochs(200);
+//! perceptron.set_penalty("none".to_string());
+//! perceptron.set_shuffle(true);
+//!
+//! // Fit the model
+//! perceptron.fit(data.clone(), labels);
+//!
+//! // Make a prediction
+//! let prediction = perceptron.predict(vec![6.5, 1.8]);
+//! println!("Predicted class: {}", prediction);
+//! ```
+//!
+//! ## Performance Characteristics
+//!
+//! - **Time Complexity**:
+//!   - Training: O(n * d * e * c), where:
+//!     - n is the number of training examples
+//!     - d is the number of features
+//!     - e is the number of epochs
+//!     - c is the number of classes (1 for binary)
+//!   - Prediction: O(d * c), where d is the number of features and c is the number of classes
+//!
+//! - **Space Complexity**: O(d * c), where d is the number of features and c is the number of classes
+//!
+//! - **Strengths**:
+//!   - Simple implementation and intuitive understanding
+//!   - Computationally efficient
+//!   - Online learning capability (can learn incrementally)
+//!   - Low memory requirements
+//!   - Guaranteed convergence for linearly separable data
+//!   - Scales well to large datasets with appropriate learning rate
+//!   - Forms the building block for more complex neural networks
+//!
+//! - **Weaknesses**:
+//!   - Only works well for linearly separable data
+//!   - No convergence guarantee for non-linearly separable data
+//!   - Limited expressiveness for complex decision boundaries
+//!   - Sensitive to feature scaling
+//!   - May require careful tuning of hyperparameters
+//!   - Can get stuck in local minima with poor initialization
+//!   - No natural way to output probabilities
+//!
+
 use num::Integer;
 use num_traits::{Num, NumCast, ToPrimitive};
 use crate::common::utils::shuffle_data_labels;

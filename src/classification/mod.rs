@@ -8,3 +8,5 @@ pub use svc::*;
 pub use knn::*;
 
 pub use tree::*;
+
+pub use perceptron::*;
