@@ -1,3 +1,95 @@
+//! # Decision Tree Regression Algorithm
+//!
+//! ## Theoretical Background
+//!
+//! Decision Tree Regression is a non-parametric supervised learning algorithm that:
+//!
+//! - Creates a model in the form of a tree structure
+//! - Recursively splits the data based on feature values to minimize prediction error
+//! - Can capture non-linear relationships without assuming specific functional forms
+//! - Makes predictions by traversing from the root to a leaf node
+//!
+//! The algorithm works by finding the feature and threshold that best split the data at each node, aiming to create homogeneous groups with respect to the target variable.
+//!
+//! ## Parameters
+//!
+//! - `criterion`: The function to measure the quality of a split.
+//!    - "mse": Mean Squared Error - sensitive to outliers, mathematically convenient
+//!    - "mae": Mean Absolute Error - more robust to outliers
+//!    - "huber": Huber loss - combines benefits of MSE and MAE
+//!    - Default: "mse"
+//!
+//! - `max_depth`: The maximum depth of the tree.
+//!    - Controls model complexity and prevents overfitting
+//!    - None: Expand until leaves are pure or contain min_samples_split samples
+//!    - Typical values: 3 to 10, depending on dataset size
+//!
+//! - `min_samples_split`: The minimum number of samples required to split an internal node.
+//!    - Higher values prevent overfitting but may lead to underfitting
+//!    - Typical values: 2 to 10
+//!
+//! - `min_samples_leaf`: The minimum number of samples required to be at a leaf node.
+//!    - Ensures leaves have sufficient data for stable predictions
+//!    - Typical values: 1 to 5
+//!
+//! ## Usage Examples
+//!
+//! Basic regression with Decision Tree:
+//!
+//! ```rust
+//! use rusty_science::regression::TreeRegression;
+//!
+//! // Create example data
+//! let data = vec![
+//!     vec![2.5, 2.4], vec![0.5, 0.7], vec![2.2, 2.9], 
+//!     vec![1.9, 2.2], vec![3.1, 3.0], vec![2.3, 2.7]
+//! ];
+//! let target = vec![5.1, 1.2, 5.9, 4.2, 6.5, 5.3];
+//!
+//! // Create and configure the Decision Tree
+//! let mut tree = TreeRegression::new();
+//! tree.set_criterion("mse");
+//! tree.set_max_depth(3);
+//! tree.set_min_samples_split(2);
+//! tree.set_min_samples_leaf(1);
+//!
+//! // Fit the model
+//! tree.fit(data.clone(), target);
+//!
+//! // Make predictions
+//! let prediction = tree.predict(vec![2.0, 2.5]);
+//! println!("Predicted value: {}", prediction);
+//! ```
+//!
+//! ## Performance Characteristics
+//!
+//! - **Time Complexity**:
+//!   - Training: O(n * d * log n), where:
+//!     - n is the number of training samples
+//!     - d is the number of features
+//!   - Prediction: O(log n) in balanced trees, worst case O(h) where h is tree height
+//!
+//! - **Space Complexity**: O(n) to store the tree structure
+//!
+//! - **Strengths**:
+//!   - Easy to understand and interpret (white-box model)
+//!   - Requires minimal data preprocessing
+//!   - Can handle both numerical and categorical data
+//!   - Automatically performs feature selection
+//!   - Can capture non-linear relationships
+//!   - No assumptions about data distribution
+//!   - Handles missing values well (with appropriate implementation)
+//!
+//! - **Weaknesses**:
+//!   - Prone to overfitting, especially with deep trees
+//!   - Can create biased trees if some classes dominate
+//!   - High variance (small changes in data can result in different trees)
+//!   - Not stable (slight changes in data might result in very different trees)
+//!   - Struggles with extrapolation beyond the range of training data
+//!   - May create unnecessarily complex trees that don't generalize well
+//!   - Optimal tree finding is NP-complete, requiring heuristic approaches
+//!
+
 use std::iter::Sum;
 use num_traits::{FromPrimitive, Num, ToPrimitive};
 

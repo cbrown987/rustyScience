@@ -1,3 +1,92 @@
+//! # K-Nearest Neighbors (KNN) Classification Algorithm
+//!
+//! ## Theoretical Background
+//!
+//! K-Nearest Neighbors (KNN) classification is a simple, versatile, and non-parametric algorithm that:
+//!
+//! - Classifies new data points based on the majority class of their k nearest neighbors
+//! - Makes no assumptions about the underlying data distribution (non-parametric)
+//! - Utilizes the entire training dataset for each prediction (lazy learning/instance-based learning)
+//! - Can capture complex, non-linear decision boundaries
+//!
+//! The algorithm works by finding the k closest training examples to a query point and assigning the majority class label, optionally weighting votes by distance.
+//!
+//! ## Parameters
+//!
+//! - `k`: The number of neighbors to use for classification.
+//!    - Too small: High variance, sensitive to noise (overfitting)
+//!    - Too large: High bias, may miss local patterns (underfitting)
+//!    - Typical values: Odd numbers (3, 5, 7) to avoid tied votes
+//!
+//! - `distance_metric`: The metric used to measure distance between data points.
+//!    - "euclidean": Straight-line distance (L2 norm)
+//!    - "manhattan": Sum of absolute differences (L1 norm)
+//!    - "minkowski": Generalization of Euclidean and Manhattan distance
+//!    - Default: "euclidean" distance
+//!
+//! - `weight_type`: How to weight neighbors' votes.
+//!    - "uniform": All neighbors contribute equally
+//!    - "distance": Closer neighbors contribute more than distant ones
+//!    - Default: "uniform"
+//!
+//! ## Usage Examples
+//!
+//! Basic classification with KNN:
+//!
+//! ```rust
+//! use rusty_science::classification::KNNClassifier;
+//!
+//! // Create example data
+//! let data = vec![
+//!     vec![5.1, 3.5], vec![4.9, 3.0], vec![7.0, 3.2],
+//!     vec![6.4, 3.2], vec![5.9, 3.0], vec![6.5, 2.8]
+//! ];
+//! let labels = vec![0, 0, 1, 1, 1, 1];  // Binary classification (0, 1)
+//!
+//! // Create and configure KNN Classifier
+//! let mut knn = KNNClassifier::new(3);  // Use 3 neighbors
+//! knn.set_distance_metrics("euclidean".to_string());
+//! knn.set_weight_type("distance".to_string());  // Weight votes by distance
+//!
+//! // Fit the model with data
+//! knn.fit(data.clone(), labels);
+//!
+//! // Make predictions
+//! let prediction = knn.predict(vec![6.0, 3.0]);
+//! println!("Predicted class: {}", prediction);
+//! ```
+//!
+//! ## Performance Characteristics
+//!
+//! - **Time Complexity**:
+//!   - Training: O(1) - just stores the data
+//!   - Prediction: O(n * d), where:
+//!     - n is the number of training points
+//!     - d is the dimensionality of the data
+//!
+//! - **Space Complexity**: O(n * d) for storing the entire training dataset
+//!
+//! - **Strengths**:
+//!   - Simple to understand and implement
+//!   - No training phase required
+//!   - Can adapt immediately to new training data
+//!   - Works well with multi-class problems
+//!   - Makes no assumptions about data distribution
+//!   - Can model complex decision boundaries
+//!   - Naturally handles class imbalance
+//!
+//! - **Weaknesses**:
+//!   - Computationally intensive for large datasets (prediction time)
+//!   - Sensitive to irrelevant features and the curse of dimensionality
+//!   - Sensitive to the scale of data
+//!   - Requires feature preprocessing
+//!   - Memory-intensive as it stores the entire training dataset
+//!   - Finding the optimal value of k can be challenging
+//!   - Performance degrades with high-dimensional data
+//!   - No probability outputs without additional implementation
+//!
+//! TODO: Implement kd-tree to improve predict time
+
 use crate::common::knn::{neighbors, Neighbor};
 use num::Num;
 use num_traits::ToPrimitive;

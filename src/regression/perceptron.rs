@@ -1,3 +1,101 @@
+//! # Perceptron Regression Algorithm
+//!
+//! ## Theoretical Background
+//!
+//! The Perceptron is one of the earliest forms of neural networks, developed in the 1950s. In its regression form:
+//!
+//! - It models the relationship between inputs and a continuous output through a linear function
+//! - It learns incrementally by adjusting weights based on prediction errors
+//! - It can be seen as a single-layer neural network with linear activation
+//! - It forms the building block for more complex neural network architectures
+//!
+//! The algorithm works by iteratively adjusting weights and bias based on the error between predicted and actual values, gradually converging toward an optimal model.
+//!
+//!
+//! ## Parameters
+//!
+//! - `learning_rate`: Step size for weight updates.
+//!    - Too small: Slow convergence, may get stuck in local minima
+//!    - Too large: May overshoot the optimal solution or diverge
+//!    - Typical values: 0.01 to 0.1
+//!
+//! - `epochs`: Number of complete passes through the training data.
+//!    - Too few: Underfitting, insufficient learning
+//!    - Too many: Possible overfitting, diminishing returns
+//!    - Typical values: 10 to 1000, depending on data complexity
+//!
+//! - `penalty`: Type of regularization to apply.
+//!    - "l1": Lasso regularization (encourages sparsity)
+//!    - "l2": Ridge regularization (discourages large weights)
+//!    - "none": No regularization
+//!
+//! - `alpha`: Regularization strength.
+//!    - Higher values: Stronger regularization
+//!    - Lower values: Weaker regularization
+//!    - Typical values: 0.0001 to 0.01
+//!
+//! - `shuffle`: Whether to shuffle the training data before each epoch.
+//!    - true: Helps prevent cycles in convergence, recommended for most cases
+//!    - false: Deterministic updates, useful for debugging
+//!
+//! ## Usage Examples
+//!
+//! Basic regression with Perceptron:
+//!
+//! ```rust
+//! use rusty_science::regression::RegressionPerceptron;
+//!
+//! // Create example data
+//! let data = vec![
+//!     vec![2.0, 3.0], vec![1.0, 5.0], vec![3.0, 2.0],
+//!     vec![5.0, 1.0], vec![4.0, 6.0], vec![3.0, 5.0]
+//! ];
+//! let labels = vec![8.0, 11.0, 7.0, 7.0, 16.0, 13.0];
+//!
+//! // Create and configure the Perceptron
+//! let mut perceptron = RegressionPerceptron::new();
+//! perceptron.set_learning_rate(0.01);
+//! perceptron.set_epochs(100);
+//! perceptron.set_penalty("l2".to_string());
+//! perceptron.set_alpha(0.001);
+//! perceptron.set_shuffle(true);
+//!
+//! // Fit the model
+//! perceptron.fit(data.clone(), labels);
+//!
+//! // Make predictions
+//! let prediction = perceptron.predict(vec![4.0, 3.0]);
+//! println!("Predicted value: {}", prediction);
+//! ```
+//!
+//! ## Performance Characteristics
+//!
+//! - **Time Complexity**:
+//!   - Training: O(n * d * e), where:
+//!     - n is the number of training samples
+//!     - d is the number of features
+//!     - e is the number of epochs
+//!   - Prediction: O(d), where d is the number of features
+//!
+//! - **Space Complexity**: O(d) for storing the weight vector and bias
+//!
+//! - **Strengths**:
+//!   - Simple implementation and intuitive understanding
+//!   - Computationally efficient
+//!   - Low memory requirements
+//!   - Online learning capability (can learn incrementally)
+//!   - Works well for linearly separable data
+//!   - Serves as a foundation for more complex neural networks
+//!
+//! - **Weaknesses**:
+//!   - Limited to linear relationships between features and target
+//!   - Sensitive to feature scaling
+//!   - May not converge for non-linearly separable data
+//!   - Requires careful tuning of hyperparameters
+//!   - Performance can be sensitive to the initial random weight values
+//!   - May require feature engineering to capture non-linear relationships
+//!
+
 use rand::seq::SliceRandom;
 
 use crate::panic_untrained;

@@ -1,3 +1,68 @@
+//! # K-means Clustering Algorithm
+//!
+//! ## Theoretical Background
+//!
+//! K-means is one of the simplest and most widely used unsupervised machine learning algorithms for clustering. It:
+//!
+//! - Partitions data into k distinct, non-overlapping clusters
+//! - Minimizes the within-cluster sum of squares (inertia)
+//! - Creates clusters of approximately similar sizes and shapes (typically convex)
+//! - Requires specifying the number of clusters (k) beforehand
+//!
+//! The algorithm works by iteratively assigning data points to the nearest cluster centroid and then updating those centroids based on the mean of the assigned points.
+//!
+//! ## Usage Examples
+//!
+//! Basic clustering with K-means:
+//!
+//! ```rust
+//! use rusty_science::clustering::KMeansCluster;
+//!
+//! // Create example data
+//! let data = vec![
+//!     vec![1.0, 2.0], vec![1.1, 2.2], vec![0.9, 1.9], vec![1.0, 2.1],  // Cluster 1
+//!     vec![4.0, 5.0], vec![4.2, 5.1], vec![3.9, 4.8], vec![4.1, 5.2],  // Cluster 2
+//!     vec![10.0, 10.0]  // Outlier
+//! ];
+//!
+//! // Create and configure K-means
+//! let mut kmeans = KMeansCluster::new(2);  // 2 clusters
+//! kmeans.set_distance_metrics("euclidean".to_string());  // Use Euclidean distance
+//!
+//! // Fit the model
+//! let cluster_labels = kmeans.fit(data.clone());
+//! println!("Cluster labels: {:?}", cluster_labels);
+//!
+//! // Map labels to clusters (if you have predefined labels)
+//! let original_labels = vec!["A", "A", "A", "A", "B", "B", "B", "B", "C"];
+//! let cluster_map = kmeans.map_cluster_to_label(original_labels);
+//! println!("Cluster to label mapping: {:?}", cluster_map);
+//! ```
+//!
+//! ## Performance Characteristics
+//!
+//! - **Time Complexity**: O(n * k * d * i), where:
+//!   - n is the number of points
+//!   - k is the number of clusters
+//!   - d is the dimensionality of the data
+//!   - i is the number of iterations
+//!
+//! - **Space Complexity**: O(n + k), for storing point assignments and centroids
+//!
+//! - **Strengths**:
+//!   - Simple implementation and intuitive understanding
+//!   - Scales well to large datasets
+//!   - Guarantees convergence (though potentially to local optima)
+//!   - Works well with spherical or similarly sized clusters
+//!
+//! - **Weaknesses**:
+//!   - Requires specifying k in advance
+//!   - Sensitive to initial centroid selection
+//!   - Struggles with non-spherical clusters
+//!   - Not robust to outliers (they can significantly affect centroid positions)
+//!   - May converge to local optima rather than global
+//!
+
 use std::collections::HashMap;
 use std::hash::Hash;
 use num_traits::{FromPrimitive, Num, ToPrimitive};
