@@ -11,6 +11,8 @@ pub mod kmeans;
 
 
 pub mod dbscan;
+pub mod gaussian_mixture;
 
 pub use kmeans::*;
 pub use dbscan::*;
+pub use gaussian_mixture::*;
