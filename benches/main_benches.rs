@@ -1,8 +1,8 @@
 mod modules;
 
 use criterion::{criterion_group, criterion_main, Criterion};
-use crate::modules::classification::benchmark_classifiers;
-use crate::modules::regression::benchmark_regression;
+use crate::modules::classification::register_classification_benchmarks;
+use crate::modules::regression::register_regression_benchmarks;
 
 fn custom_criterion() -> Criterion {
     Criterion::default()
@@ -15,7 +15,7 @@ criterion_group! {
     name = benches;
     config = custom_criterion();
     targets =
-        benchmark_regression,
-        benchmark_classifiers
+        register_regression_benchmarks,
+        register_classification_benchmarks
 }
 criterion_main!(benches);

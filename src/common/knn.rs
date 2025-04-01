@@ -9,6 +9,18 @@ pub(crate) struct Neighbor<D, L> {
     pub (crate) distance_to_target: f64,
 }
 
+#[derive(Debug, Clone, PartialEq)]
+pub enum DistanceMetric {
+    Euclidean,
+    Manhattan,
+}
+
+#[derive(Debug, Clone, PartialEq)]
+pub enum WeightType {
+    Uniform,
+    Distance,
+}
+
 fn _handle_labels<L>(i: usize, data_labels: &Option<Vec<L>>) -> Option<L>
 where
     L: Copy + Clone,
@@ -57,17 +69,16 @@ pub(crate) fn neighbors<D, L>(
     data_labels: Option<Vec<L>>,
     target_point: Option<Vec<D>>,
     n_neighbors: usize,
-    distance_metric: String,
+    distance_metric: DistanceMetric,
     calculate_distance: bool,
 ) -> Vec<Neighbor<D, L>>
 where
     D: Num + ToPrimitive + Copy + PartialOrd,
     L: Copy + Clone,
 {
-    let distance_fn: Box<dyn Fn(&[D], &[D]) -> f64> = match distance_metric.to_lowercase().as_str() {
-        "euclidean" => Box::new(euclidean_distance),
-        "manhattan" => Box::new(manhattan_distance),
-        _ => panic!("Unknown distance metric"),
+    let distance_fn: Box<dyn Fn(&[D], &[D]) -> f64> = match distance_metric {
+        DistanceMetric::Euclidean => Box::new(euclidean_distance),
+        DistanceMetric::Manhattan => Box::new(manhattan_distance),
     };
 
     if let Some(target_point) = target_point {
@@ -135,7 +146,7 @@ mod tests {
 
         let target_point = Some(vec![1.0, 1.0]);
         let n_neighbors = 2;
-        let distance_metric = String::from("euclidean");
+        let distance_metric = DistanceMetric::Euclidean;
         let calculate_distance = true;
 
         // Adjusted the function call to match the new signature
@@ -168,7 +179,7 @@ mod tests {
 
         let target_point = Some(vec![1.0, 1.0]);
         let n_neighbors = 2;
-        let distance_metric = String::from("euclidean");
+        let distance_metric = DistanceMetric::Euclidean;
         let calculate_distance = false;
 
         let result = neighbors::<f64, f64>(
@@ -200,7 +211,7 @@ mod tests {
 
         let target_point = Some(vec![1.0, 1.0]);
         let n_neighbors = 2;
-        let distance_metric = String::from("manhattan");
+        let distance_metric = DistanceMetric::Manhattan;
         let calculate_distance = true;
 
         let result = neighbors::<f64, f64>(
@@ -232,7 +243,7 @@ mod tests {
 
         let target_point = Some(vec![1.0, 1.0]);
         let n_neighbors = 2;
-        let distance_metric = String::from("manhattan");
+        let distance_metric = DistanceMetric::Manhattan;
         let calculate_distance = false;
 
         let result = neighbors::<f64, f64>(
@@ -256,33 +267,12 @@ mod tests {
         assert_eq!(result[1].point, vec![0.0, 0.0]);
         assert_eq!(result[1].distance_to_target, 0.0);
     }
-
-    #[test]
-    #[should_panic(expected = "Unknown distance metric")]
-    fn test_invalid_distance_metric() {
-        let data = create_data_unlabeled().get("small_data").unwrap().clone();
-
-        let target_point = Some(vec![1.0, 1.0]);
-        let n_neighbors = 2;
-        let distance_metric = String::from("invalid_metric");
-        let calculate_distance = false;
-
-        // This should panic because the distance metric is invalid
-        neighbors::<f64, f64>(
-            data,
-            None,
-            target_point,
-            n_neighbors,
-            distance_metric,
-            calculate_distance,
-        );
-    }
-
+    
     #[test]
     fn test_neighbors_with_labels_with_distance() {
         let target_point = Some(vec![1.0, 1.0]);
         let n_neighbors = 3;
-        let distance_metric = String::from("euclidean");
+        let distance_metric = DistanceMetric::Euclidean;
         let calculate_distance = true;
 
         if let Some(dataset) = create_data_labeled().get("small_data") {

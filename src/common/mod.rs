@@ -4,4 +4,5 @@ pub(crate) mod utils;
 pub(crate) mod test_utils;
 pub(crate) mod knn;
 pub(crate) mod custom_panics;
+pub mod custom_error;
 

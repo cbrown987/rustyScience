@@ -2,25 +2,16 @@ use std::collections::HashMap;
 use std::hash::Hash;
 use num_traits::{FromPrimitive, Num, ToPrimitive};
 use crate::common::utils::{euclidean_distance, manhattan_distance};
+use crate::common::knn::DistanceMetric;
 
 pub struct KMeansCluster<D> {
     k: usize,
     data: Vec<Vec<D>>,
-    distance_metric: String,
+    distance_metric: DistanceMetric,
     clusters: Vec<usize>,
 }
 
 
-fn _calculate_distance<D>(a: &Vec<D>, b: &Vec<D>, distance_metric: &str) -> f64
-where
-    D: ToPrimitive + Copy + Num,
-{
-    match distance_metric.to_lowercase().as_str() {
-        "euclidean" => euclidean_distance(a, b),
-        "manhattan" => manhattan_distance(a, b),
-        _ => panic!("Unsupported distance metric"),
-    }
-}
 
 impl<D> KMeansCluster<D>
 where
@@ -46,7 +37,7 @@ where
         Self {
             k,
             data: vec![],
-            distance_metric: "euclidean".to_string(),
+            distance_metric: DistanceMetric::Euclidean,
             clusters: vec![],
         }
     }
@@ -58,11 +49,11 @@ where
     ///
     /// # Examples
     /// ```
-    /// use rusty_science::clustering::KMeansCluster;
+    /// use rusty_science::clustering::{KMeansCluster, DistanceMetric};
     /// let mut knn = KMeansCluster::<f64>::new(3);
-    /// knn.set_distance_metrics("manhattan".to_string());
+    /// knn.set_distance_metrics(DistanceMetric::Euclidean);
     /// ```
-    pub fn set_distance_metrics(&mut self, distance_metric: String) {
+    pub fn set_distance_metrics(&mut self, distance_metric: DistanceMetric) {
         self.distance_metric = distance_metric;
     }
     
@@ -97,7 +88,7 @@ where
                 let mut nearest_distance = f64::MAX;
 
                 for (centroid_idx, centroid) in centroids.iter().enumerate() {
-                    let distance = _calculate_distance(point, centroid, &self.distance_metric);
+                    let distance = self.calculate_distance(point, centroid);
                     if distance < nearest_distance {
                         nearest_distance = distance;
                         nearest_centroid = centroid_idx;
@@ -181,6 +172,16 @@ where
 
         label_map
     }
+    
+    fn calculate_distance(&self, a: &Vec<D>, b: &Vec<D>) -> f64
+    where
+        D: ToPrimitive + Copy + Num,
+    {
+        match self.distance_metric {
+            DistanceMetric::Euclidean => euclidean_distance(a, b),
+            DistanceMetric::Manhattan => manhattan_distance(a, b),
+        }
+    }
 }
 
 #[cfg(test)]
@@ -212,16 +213,6 @@ mod tests {
         ];
         let clusters = clusterer.fit(data);
         assert!(clusters.iter().all(|&x| x == 0));
-    }
-
-    #[test]
-    fn test_distance_metric() {
-        let data = vec![
-            vec![0.0, 0.0],
-            vec![3.0, 4.0],
-        ];
-        let distance = _calculate_distance(&data[0], &data[1], &*"euclidean".to_string());
-        assert_eq!(distance, 5.0);
     }
 
     #[test]

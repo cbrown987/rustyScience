@@ -1,6 +1,6 @@
 [package]
 name = "rusty_science"
-version = "0.1.1-alpha"
+version = "0.1.1"
 edition = "2021"
 authors = ["Cooper Brown <cooper.brown197@gmail.com>, Jack Welsh <jack.welsh@drake.edu>"]
 license = "MIT"
@@ -16,7 +16,7 @@ rand = "0.8.5"
 num = "0.4"
 num-traits = "0.2"
 ndarray = "0.16.1"
-ndarray-linalg = "0.17.0"
+ndarray-linalg = { version = "0.17.0", features = ["openblas"] }
 kdtree = "0.7.0"
 
 

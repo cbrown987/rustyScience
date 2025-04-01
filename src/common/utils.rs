@@ -1,5 +1,5 @@
 // src/utils.rs
-use ndarray::{Array1, Array2};
+use ndarray::Array2;
 use ndarray_linalg::InverseC;
 use num_traits::{Num, ToPrimitive};
 // Global utility functions
@@ -53,102 +53,6 @@ where
     *data = shuffled_data;
     *labels = shuffled_labels;
 }
-
-/// Calculate the dot product of two vectors
-pub fn dot_product(a: &Array1<f64>, b: &Array1<f64>) -> f64 {
-    a.iter().zip(b.iter()).map(|(x, y)| x * y).sum()
-}
-
-/// Matrix-vector multiplication
-pub fn matrix_vector_mul(matrix: &Array2<f64>, vector: &Array1<f64>) -> Array1<f64> {
-    let nrows = matrix.shape()[0];
-    let mut result = Array1::<f64>::zeros(nrows);
-
-    for i in 0..nrows {
-        let row = matrix.slice(ndarray::s![i, ..]);
-        result[i] = dot_product(&row.to_owned(), vector);
-    }
-
-    result
-}
-
-/// Solve a triangular system (simplified alternative to LAPACK's trtrs)
-/// Only implements upper triangular solvers
-pub fn solve_triangular(a: &Array2<f64>, b: &Array1<f64>) -> Result<Array1<f64>, &'static str> {
-    let n = a.shape()[0];
-    if a.shape()[1] != n || b.len() != n {
-        return Err("Dimension mismatch");
-    }
-
-    // Simple back substitution for upper triangular
-    let mut x = Array1::<f64>::zeros(n);
-
-    for i in (0..n).rev() {
-        let mut sum = 0.0;
-        for j in (i+1)..n {
-            sum += a[[i, j]] * x[j];
-        }
-
-        if a[[i, i]] == 0.0 {
-            return Err("Singular matrix");
-        }
-
-        x[i] = (b[i] - sum) / a[[i, i]];
-    }
-
-    Ok(x)
-}
-
-/// Simple Cholesky decomposition (alternative to LAPACK's potrf)
-pub fn cholesky(a: &Array2<f64>) -> Result<Array2<f64>, &'static str> {
-    let n = a.shape()[0];
-    if a.shape()[1] != n {
-        return Err("Matrix must be square");
-    }
-
-    let mut l = Array2::<f64>::zeros((n, n));
-
-    for i in 0..n {
-        for j in 0..=i {
-            let mut sum = 0.0;
-
-            if j == i {
-                // Diagonal elements
-                for k in 0..j {
-                    sum += l[[j, k]] * l[[j, k]];
-                }
-                let val = a[[j, j]] - sum;
-                if val <= 0.0 {
-                    return Err("Matrix is not positive definite");
-                }
-                l[[j, j]] = val.sqrt();
-            } else {
-                // Off-diagonal elements
-                for k in 0..j {
-                    sum += l[[i, k]] * l[[j, k]];
-                }
-                if l[[j, j]] == 0.0 {
-                    return Err("Division by zero");
-                }
-                l[[i, j]] = (a[[i, j]] - sum) / l[[j, j]];
-            }
-        }
-    }
-
-    Ok(l)
-}
-
-pub fn array2_to_vec(arr: &Array2<f64>) -> Vec<Vec<f64>> {
-    let shape = arr.shape();
-    let mut result = vec![vec![0.0; shape[1]]; shape[0]];
-    for i in 0..shape[0] {
-        for j in 0..shape[1] {
-            result[i][j] = arr[[i, j]];
-        }
-    }
-    result
-}
-
 
 
 #[cfg(test)]
