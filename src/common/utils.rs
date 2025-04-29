@@ -1,6 +1,6 @@
 // src/utils.rs
 use ndarray::Array2;
-use ndarray_linalg::InverseC;
+use ndarray_linalg::Inverse;
 use num_traits::{Num, ToPrimitive};
 // Global utility functions
 
@@ -19,9 +19,9 @@ where
 }
 
 
-pub fn inverse_matrix(matrix: &Array2<f64>) -> Option<Array2<f64>> {
-    matrix.invc().ok()
-}
+// fn invert_matrix(matrix: &Array2<f64>) -> Option<Array2<f64>> {
+//     matrix.inv().ok()
+// }
 
 pub(crate) fn manhattan_distance<D>(a: &[D], b: &[D]) -> f64
 where

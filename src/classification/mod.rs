@@ -10,3 +10,5 @@ pub use knn::*;
 pub use tree::*;
 
 pub use perceptron::*;
+
+pub use crate::classification::perceptron::MultiClassPerceptron as Perceptron;

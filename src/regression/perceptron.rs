@@ -249,6 +249,27 @@ where
         }
         
     }
+    
+    pub fn score(&self, data: Vec<Vec<D>>, true_labels: Vec<f64>) -> f64 {
+        if data.is_empty() || true_labels.is_empty() {
+            return f64::NAN;
+        }
+    
+        let preds: Vec<f64> = data.into_iter()
+            .map(|sample| self.predict(sample))
+            .collect();
+    
+        let mean_label = true_labels.iter().sum::<f64>() / true_labels.len() as f64;
+        let ss_total: f64 = true_labels.iter()
+            .map(|y| (y - mean_label).powi(2))
+            .sum();
+        let ss_res: f64 = preds.iter()
+            .zip(true_labels.iter())
+            .map(|(y_pred, y_true)| (y_true - y_pred).powi(2))
+            .sum();
+        
+        1.0 - (ss_res / ss_total)
+    }
 
     /// Predict the continuous output for a single sample.
     pub fn predict(&self, sample: Vec<D>) -> f64 {

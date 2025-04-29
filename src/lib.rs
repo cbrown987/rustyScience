@@ -51,11 +51,10 @@ pub mod classification;
 
 pub mod clustering;
 
-mod common;
+pub mod common;
+
 pub mod regression;
 
 pub mod metrics;
 
 pub mod data;
-
-

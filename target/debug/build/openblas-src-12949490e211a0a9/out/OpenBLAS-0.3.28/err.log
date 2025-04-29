@@ -1,0 +1,4861 @@
+/usr/bin/ld: warning: /tmp/ccxcnvTU.o: missing .note.GNU-stack section implies executable stack
+/usr/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+make[1]: warning: -j32 forced in makefile: resetting jobserver mode.
+ar: `u' modifier ignored since `D' is the default (see `U')
+ar: creating ../libopenblas_zenp-r0.3.28.a
+make[1]: warning: -j32 forced in makefile: resetting jobserver mode.
+ar: `u' modifier ignored since `D' is the default (see `U')
+make[1]: warning: -j32 forced in makefile: resetting jobserver mode.
+ar: `u' modifier ignored since `D' is the default (see `U')
+make[1]: warning: -j32 forced in makefile: resetting jobserver mode.
+parameter.c: In function ‘blas_set_parameter’:
+parameter.c:273:7: warning: unused variable ‘size’ [-Wunused-variable]
+  273 |   int size = 16;
+      |       ^~~~
+blas_server.c: In function ‘blas_thread_server’:
+blas_server.c:421:29: warning: comparison between pointer and integer
+  421 |         while(!tscq || tscq == 0x1) {
+      |                             ^~
+memory.c: In function ‘blas_shutdown’:
+memory.c:3257:10: warning: passing argument 1 of ‘free’ discards ‘volatile’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 3257 |     free(newmemory);
+      |          ^~~~~~~~~
+In file included from ../../common.h:83,
+                 from memory.c:74:
+/usr/include/stdlib.h:687:25: note: expected ‘void *’ but argument is of type ‘volatile struct newmemstruct *’
+  687 | extern void free (void *__ptr) __THROW;
+      |                   ~~~~~~^~~~~
+memory.c: At top level:
+memory.c:2565:14: warning: ‘alloc_hugetlb’ defined but not used [-Wunused-function]
+ 2565 | static void *alloc_hugetlb(void *address){
+      |              ^~~~~~~~~~~~~
+ar: `u' modifier ignored since `D' is the default (see `U')
+make[1]: warning: -j32 forced in makefile: resetting jobserver mode.
+In file included from ../kernel/x86_64/cscal.c:47:
+../kernel/x86_64/cscal_microk_haswell-2.c:229:13: warning: ‘cscal_kernel_16_zero_i’ defined but not used [-Wunused-function]
+  229 | static void cscal_kernel_16_zero_i( BLASLONG n, FLOAT *alpha, FLOAT *x)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../kernel/x86_64/zscal.c:47:
+../kernel/x86_64/zscal_microk_haswell-2.c:135:13: warning: ‘zscal_kernel_8_zero_r’ defined but not used [-Wunused-function]
+  135 | static void zscal_kernel_8_zero_r( BLASLONG n, FLOAT *alpha, FLOAT *x)
+      |             ^~~~~~~~~~~~~~~~~~~~~
+ar: `u' modifier ignored since `D' is the default (see `U')
+make[1]: warning: -j32 forced in makefile: resetting jobserver mode.
+make[2]: warning: -j32 forced in makefile: resetting jobserver mode.
+getrf_parallel.c: In function ‘inner_advanced_thread’:
+getrf_parallel.c:329:7: warning: this ‘else’ clause does not guard... [-Wmisleading-indentation]
+  329 |     } else
+      |       ^~~~
+In file included from ../../common_macro.h:48,
+                 from ../../common.h:827,
+                 from getrf_parallel.c:40:
+../../common_z.h:62:33: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘else’
+   62 | #define ZGEMM_ITCOPY            zgemm_itcopy
+      |                                 ^~~~~~~~~~~~
+../../common_macro.h:1732:33: note: in expansion of macro ‘ZGEMM_ITCOPY’
+ 1732 | #define GEMM_ITCOPY             ZGEMM_ITCOPY
+      |                                 ^~~~~~~~~~~~
+getrf_parallel.c:198:53: note: in expansion of macro ‘GEMM_ITCOPY’
+  198 | #define ICOPY_OPERATION(M, N, A, LDA, X, Y, BUFFER) GEMM_ITCOPY(M, N, (FLOAT *)(A) + ((Y) + (X) * (LDA)) * COMPSIZE, LDA, BUFFER);
+      |                                                     ^~~~~~~~~~~
+getrf_parallel.c:334:7: note: in expansion of macro ‘ICOPY_OPERATION’
+  334 |       ICOPY_OPERATION(k, min_i, a, lda, 0, is, sa);
+      |       ^~~~~~~~~~~~~~~
+getrf_parallel.c: In function ‘inner_advanced_thread’:
+getrf_parallel.c: In function ‘inner_advanced_thread’:
+getrf_parallel.c:329:7: warning: this ‘else’ clause does not guard... [-Wmisleading-indentation]
+  329 |     } else
+      |       ^~~~
+getrf_parallel.c:329:7: warning: this ‘else’ clause does not guard... [-Wmisleading-indentation]
+  329 |     } else
+      |       ^~~~
+In file included from ../../common_macro.h:43,
+                 from ../../common.h:827,
+                 from getrf_parallel.c:40:
+../../common_s.h:60:33: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘else’
+   60 | #define SGEMM_ITCOPY            sgemm_itcopy
+      |                                 ^~~~~~~~~~~~
+../../common_macro.h:1004:33: note: in expansion of macro ‘SGEMM_ITCOPY’
+ 1004 | #define GEMM_ITCOPY             SGEMM_ITCOPY
+      |                                 ^~~~~~~~~~~~
+getrf_parallel.c:198:53: note: in expansion of macro ‘GEMM_ITCOPY’
+  198 | #define ICOPY_OPERATION(M, N, A, LDA, X, Y, BUFFER) GEMM_ITCOPY(M, N, (FLOAT *)(A) + ((Y) + (X) * (LDA)) * COMPSIZE, LDA, BUFFER);
+      |                                                     ^~~~~~~~~~~
+getrf_parallel.c:334:7: note: in expansion of macro ‘ICOPY_OPERATION’
+  334 |       ICOPY_OPERATION(k, min_i, a, lda, 0, is, sa);
+      |       ^~~~~~~~~~~~~~~
+getrf_parallel.c: In function ‘inner_advanced_thread’:
+In file included from ../../common_macro.h:47,
+                 from ../../common.h:827,
+                 from getrf_parallel.c:40:
+../../common_c.h:62:33: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘else’
+   62 | #define CGEMM_ITCOPY            cgemm_itcopy
+      |                                 ^~~~~~~~~~~~
+../../common_macro.h:2197:33: note: in expansion of macro ‘CGEMM_ITCOPY’
+ 2197 | #define GEMM_ITCOPY             CGEMM_ITCOPY
+      |                                 ^~~~~~~~~~~~
+getrf_parallel.c:198:53: note: in expansion of macro ‘GEMM_ITCOPY’
+  198 | #define ICOPY_OPERATION(M, N, A, LDA, X, Y, BUFFER) GEMM_ITCOPY(M, N, (FLOAT *)(A) + ((Y) + (X) * (LDA)) * COMPSIZE, LDA, BUFFER);
+      |                                                     ^~~~~~~~~~~
+getrf_parallel.c:334:7: note: in expansion of macro ‘ICOPY_OPERATION’
+  334 |       ICOPY_OPERATION(k, min_i, a, lda, 0, is, sa);
+      |       ^~~~~~~~~~~~~~~
+getrf_parallel.c:329:7: warning: this ‘else’ clause does not guard... [-Wmisleading-indentation]
+  329 |     } else
+      |       ^~~~
+In file included from ../../common_macro.h:44,
+                 from ../../common.h:827,
+                 from getrf_parallel.c:40:
+../../common_d.h:54:33: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘else’
+   54 | #define DGEMM_ITCOPY            dgemm_itcopy
+      |                                 ^~~~~~~~~~~~
+../../common_macro.h:388:33: note: in expansion of macro ‘DGEMM_ITCOPY’
+  388 | #define GEMM_ITCOPY             DGEMM_ITCOPY
+      |                                 ^~~~~~~~~~~~
+getrf_parallel.c:198:53: note: in expansion of macro ‘GEMM_ITCOPY’
+  198 | #define ICOPY_OPERATION(M, N, A, LDA, X, Y, BUFFER) GEMM_ITCOPY(M, N, (FLOAT *)(A) + ((Y) + (X) * (LDA)) * COMPSIZE, LDA, BUFFER);
+      |                                                     ^~~~~~~~~~~
+getrf_parallel.c:334:7: note: in expansion of macro ‘ICOPY_OPERATION’
+  334 |       ICOPY_OPERATION(k, min_i, a, lda, 0, is, sa);
+      |       ^~~~~~~~~~~~~~~
+ar: `u' modifier ignored since `D' is the default (see `U')
+make[2]: warning: -j32 forced in makefile: resetting jobserver mode.
+ar: `u' modifier ignored since `D' is the default (see `U')
+make[2]: warning: -j32 forced in makefile: resetting jobserver mode.
+make[3]: warning: -j32 forced in makefile: resetting jobserver mode.
+make[3]: warning: -j32 forced in makefile: resetting jobserver mode.
+make[3]: warning: -j32 forced in makefile: resetting jobserver mode.
+make[3]: warning: -j32 forced in makefile: resetting jobserver mode.
+make[3]: warning: -j32 forced in makefile: resetting jobserver mode.
+make[3]: warning: -j32 forced in makefile: resetting jobserver mode.
+make[3]: warning: -j32 forced in makefile: resetting jobserver mode.
+make[3]: warning: -j32 forced in makefile: resetting jobserver mode.
+ar: `u' modifier ignored since `D' is the default (see `U')
+make[2]: warning: -j32 forced in makefile: resetting jobserver mode.
+ar: `u' modifier ignored since `D' is the default (see `U')
+make[2]: warning: -j32 forced in makefile: resetting jobserver mode.
+ar: `u' modifier ignored since `D' is the default (see `U')
+make[2]: warning: -j32 forced in makefile: resetting jobserver mode.
+ar: `u' modifier ignored since `D' is the default (see `U')
+make[2]: warning: -j32 forced in makefile: resetting jobserver mode.
+ar: `u' modifier ignored since `D' is the default (see `U')
+make[2]: warning: -j32 forced in makefile: resetting jobserver mode.
+ar: `u' modifier ignored since `D' is the default (see `U')
+make[2]: warning: -j32 forced in makefile: resetting jobserver mode.
+ar: `u' modifier ignored since `D' is the default (see `U')
+make[2]: warning: -j32 forced in makefile: resetting jobserver mode.
+ar: `u' modifier ignored since `D' is the default (see `U')
+make[2]: warning: -j32 forced in makefile: resetting jobserver mode.
+ar: `u' modifier ignored since `D' is the default (see `U')
+sgehrd.f:306:72:
+
+  306 |          DO 40 I = ILO, IHI - 1 - NX, NB
+      |                                                                        ^
+Warning: ‘nx’ may be used uninitialized [-Wmaybe-uninitialized]
+sgehrd.f:192:38:
+
+  192 |      $                   NBMIN, NH, NX
+      |                                      ^
+note: ‘nx’ was declared here
+sgbsvx.f:464:72:
+
+  464 |                ROWCND = MAX( RCMIN, SMLNUM ) / MIN( RCMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘bignum’ may be used uninitialized [-Wmaybe-uninitialized]
+sgbsvx.f:398:44:
+
+  398 |       REAL               AMAX, ANORM, BIGNUM, COLCND, RCMAX, RCMIN,
+      |                                            ^
+note: ‘bignum’ was declared here
+sgbsvx.f:464:72:
+
+  464 |                ROWCND = MAX( RCMIN, SMLNUM ) / MIN( RCMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘smlnum’ may be used uninitialized [-Wmaybe-uninitialized]
+sgbsvx.f:399:47:
+
+  399 |      $                   ROWCND, RPVGRW, SMLNUM
+      |                                               ^
+note: ‘smlnum’ was declared here
+sgelsd.f:494:31:
+
+  494 |       ELSE IF( N.GE.MNTHR .AND. LWORK.GE.4*M+M*M+
+      |                               ^
+Warning: ‘mnthr’ may be used uninitialized [-Wmaybe-uninitialized]
+sgelsd.f:228:34:
+
+  228 |      $                   MM, MNTHR, NLVL, NWORK, SMLSIZ, WLALSD
+      |                                  ^
+note: ‘mnthr’ was declared here
+sgelsd.f:494:31:
+
+  494 |       ELSE IF( N.GE.MNTHR .AND. LWORK.GE.4*M+M*M+
+      |                               ^
+Warning: ‘wlalsd’ may be used uninitialized [-Wmaybe-uninitialized]
+sgelsd.f:228:63:
+
+  228 |      $                   MM, MNTHR, NLVL, NWORK, SMLSIZ, WLALSD
+      |                                                               ^
+note: ‘wlalsd’ was declared here
+sgelss.f:532:31:
+
+  532 |       ELSE IF( N.GE.MNTHR .AND. LWORK.GE.4*M+M*M+
+      |                               ^
+Warning: ‘mnthr’ may be used uninitialized [-Wmaybe-uninitialized]
+sgelss.f:195:57:
+
+  195 |      $                   MAXWRK, MINMN, MINWRK, MM, MNTHR
+      |                                                         ^
+note: ‘mnthr’ was declared here
+sgetc2.f:194:13:
+
+  194 |          IF( IPV.NE.I )
+      |             ^
+Warning: ‘ipv’ may be used uninitialized [-Wmaybe-uninitialized]
+sgetc2.f:131:35:
+
+  131 |       INTEGER            I, IP, IPV, J, JP, JPV
+      |                                   ^
+note: ‘ipv’ was declared here
+sgetc2.f:200:13:
+
+  200 |          IF( JPV.NE.I )
+      |             ^
+Warning: ‘jpv’ may be used uninitialized [-Wmaybe-uninitialized]
+sgetc2.f:131:47:
+
+  131 |       INTEGER            I, IP, IPV, J, JP, JPV
+      |                                               ^
+note: ‘jpv’ was declared here
+sgetc2.f:217:9:
+
+  217 |       IF( ABS( A( N, N ) ).LT.SMIN ) THEN
+      |         ^
+Warning: ‘smin’ may be used uninitialized [-Wmaybe-uninitialized]
+sgetc2.f:132:42:
+
+  132 |       REAL               BIGNUM, EPS, SMIN, SMLNUM, XMAX
+      |                                          ^
+note: ‘smin’ was declared here
+sgesvx.f:438:72:
+
+  438 |                ROWCND = MAX( RCMIN, SMLNUM ) / MIN( RCMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘bignum’ may be used uninitialized [-Wmaybe-uninitialized]
+sgesvx.f:376:44:
+
+  376 |       REAL               AMAX, ANORM, BIGNUM, COLCND, RCMAX, RCMIN,
+      |                                            ^
+note: ‘bignum’ was declared here
+sgesvx.f:438:72:
+
+  438 |                ROWCND = MAX( RCMIN, SMLNUM ) / MIN( RCMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘smlnum’ may be used uninitialized [-Wmaybe-uninitialized]
+sgesvx.f:377:47:
+
+  377 |      $                   ROWCND, RPVGRW, SMLNUM
+      |                                               ^
+note: ‘smlnum’ was declared here
+sgesvdx.f:667:12:
+
+  667 |          IF( N.GE.MNTHR ) THEN
+      |            ^
+Warning: ‘mnthr’ may be used uninitialized [-Wmaybe-uninitialized]
+sgesvdx.f:290:56:
+
+  290 |      $                   J, MAXWRK, MINMN, MINWRK, MNTHR
+      |                                                        ^
+note: ‘mnthr’ was declared here
+slahr2.f:302:72:
+
+  302 |       A( K+NB, NB ) = EI
+      |                                                                        ^
+Warning: ‘ei’ may be used uninitialized [-Wmaybe-uninitialized]
+slahr2.f:203:26:
+
+  203 |       REAL              EI
+      |                          ^
+note: ‘ei’ was declared here
+slange.f:135:42:
+
+  135 |       REAL               SCALE, SUM, VALUE, TEMP
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+slangb.f:146:42:
+
+  146 |       REAL               SCALE, SUM, VALUE, TEMP
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+slaqz0.f:710:72:
+
+  710 |                ESHIFT = ESHIFT+ONE/( SAFMIN*REAL( MAXIT ) )
+      |                                                                        ^
+Warning: ‘eshift’ may be used uninitialized [-Wmaybe-uninitialized]
+slaqz0.f:321:33:
+
+  321 |       REAL :: SMLNUM, ULP, ESHIFT, SAFMIN, SAFMAX, C1, S1, TEMP, SWAP,
+      |                                 ^
+note: ‘eshift’ was declared here
+slanhs.f:129:42:
+
+  129 |       REAL               SCALE, SUM, VALUE
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+slangt.f:127:30:
+
+  127 |       REAL               ANORM, SCALE, SUM, TEMP
+      |                              ^
+Warning: ‘anorm’ may be used uninitialized [-Wmaybe-uninitialized]
+slansy.f:143:48:
+
+  143 |       REAL               ABSA, SCALE, SUM, VALUE
+      |                                                ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+slals0.f:409:72:
+
+  409 |      $                           DIFRJ ) / ( POLES( I, 2 )+DJ )
+      |                                                                        ^
+Warning: ‘difrj’ may be used uninitialized [-Wmaybe-uninitialized]
+slals0.f:293:37:
+
+  293 |       REAL               DIFLJ, DIFRJ, DJ, DSIGJ, DSIGJP, TEMP
+      |                                     ^
+note: ‘difrj’ was declared here
+slansp.f:135:48:
+
+  135 |       REAL               ABSA, SCALE, SUM, VALUE
+      |                                                ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+slansb.f:150:48:
+
+  150 |       REAL               ABSA, SCALE, SUM, VALUE
+      |                                                ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+slantr.f:163:42:
+
+  163 |       REAL               SCALE, SUM, VALUE
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+slantp.f:146:42:
+
+  146 |       REAL               SCALE, SUM, VALUE
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+slahqr.f:596:16:
+
+  596 |             IF( I2.GT.I )
+      |                ^
+Warning: ‘i2’ may be used uninitialized [-Wmaybe-uninitialized]
+slahqr.f:236:34:
+
+  236 |       INTEGER            I, I1, I2, ITS, ITMAX, J, K, L, M, NH, NR, NZ,
+      |                                  ^
+note: ‘i2’ was declared here
+slantb.f:162:42:
+
+  162 |       REAL               SCALE, SUM, VALUE
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+slaqp3rk.f:899:72:
+
+  899 |      $         F( KB+1, 1 ), LDF, ONE, A( IF+1, KB+1 ), LDA )
+      |                                                                        ^
+Warning: ‘i’ may be used uninitialized [-Wmaybe-uninitialized]
+slaqp3rk.f:429:38:
+
+  429 |      $                   LSTICC, KP, I, IF
+      |                                      ^
+note: ‘i’ was declared here
+shgeqz.f:466:15:
+
+  466 |             IF( ILSCHR ) THEN
+      |               ^
+Warning: ‘ilschr’ may be used uninitialized [-Wmaybe-uninitialized]
+shgeqz.f:328:60:
+
+  328 |       LOGICAL            ILAZR2, ILAZRO, ILPIVT, ILQ, ILSCHR, ILZ,
+      |                                                            ^
+note: ‘ilschr’ was declared here
+shgeqz.f:632:25:
+
+  632 |                      IF( ILQ )
+      |                         ^
+Warning: ‘ilq’ may be used uninitialized [-Wmaybe-uninitialized]
+shgeqz.f:328:52:
+
+  328 |       LOGICAL            ILAZR2, ILAZRO, ILPIVT, ILQ, ILSCHR, ILZ,
+      |                                                    ^
+note: ‘ilq’ was declared here
+shgeqz.f:423:28:
+
+  423 |       ELSE IF( LDZ.LT.1 .OR. ( ILZ .AND. LDZ.LT.N ) ) THEN
+      |                            ^
+Warning: ‘ilz’ may be used uninitialized [-Wmaybe-uninitialized]
+shgeqz.f:328:65:
+
+  328 |       LOGICAL            ILAZR2, ILAZRO, ILPIVT, ILQ, ILSCHR, ILZ,
+      |                                                                 ^
+note: ‘ilz’ was declared here
+slaqr4.f:504:72:
+
+  504 |                NDEC = NDEC + 1
+      |                                                                        ^
+Warning: ‘ndec’ may be used uninitialized [-Wmaybe-uninitialized]
+slaqr4.f:312:37:
+
+  312 |      $                   LWKOPT, NDEC, NDFL, NH, NHO, NIBBLE, NMIN, NS,
+      |                                     ^
+note: ‘ndec’ was declared here
+slarrv.f:287:34:
+
+  287 |       SUBROUTINE SLARRV( N, VL, VU, D, L, PIVMIN,
+      |                                  1
+Warning: Unused dummy argument ‘vu’ at (1) [-Wunused-dummy-argument]
+slaqr0.f:493:72:
+
+  493 |                NDEC = NDEC + 1
+      |                                                                        ^
+Warning: ‘ndec’ may be used uninitialized [-Wmaybe-uninitialized]
+slaqr0.f:302:37:
+
+  302 |      $                   LWKOPT, NDEC, NDFL, NH, NHO, NIBBLE, NMIN, NS,
+      |                                     ^
+note: ‘ndec’ was declared here
+sgesvd.f:3205:21:
+
+ 3205 |                   IF( LWORK.GE.M*M+MAX( N+M, 4*M, BDSPAC ) ) THEN
+      |                     ^
+Warning: ‘bdspac’ may be used uninitialized [-Wmaybe-uninitialized]
+sgesvd.f:234:31:
+
+  234 |       INTEGER            BDSPAC, BLK, CHUNK, I, IE, IERR, IR, ISCL,
+      |                               ^
+note: ‘bdspac’ was declared here
+sgesvd.f:2072:12:
+
+ 2072 |          IF( N.GE.MNTHR ) THEN
+      |            ^
+Warning: ‘mnthr’ may be used uninitialized [-Wmaybe-uninitialized]
+sgesvd.f:236:53:
+
+  236 |      $                   MAXWRK, MINMN, MINWRK, MNTHR, NCU, NCVT, NRU,
+      |                                                     ^
+note: ‘mnthr’ was declared here
+sgesvd.f:3210:24:
+
+ 3210 |                      IF( LWORK.GE.WRKBL+LDA*M ) THEN
+      |                        ^
+Warning: ‘wrkbl’ may be used uninitialized [-Wmaybe-uninitialized]
+sgesvd.f:237:36:
+
+  237 |      $                   NRVT, WRKBL
+      |                                    ^
+note: ‘wrkbl’ was declared here
+sgesvd.f:3465:12:
+
+ 3465 |          IF( IE.GT.2 ) THEN
+      |            ^
+Warning: ‘ie’ may be used uninitialized [-Wmaybe-uninitialized]
+sgesvd.f:234:50:
+
+  234 |       INTEGER            BDSPAC, BLK, CHUNK, I, IE, IERR, IR, ISCL,
+      |                                                  ^
+note: ‘ie’ was declared here
+slasy2.f:417:12:
+
+  417 |          IF( IPSV.NE.I ) THEN
+      |            ^
+Warning: ‘ipsv’ may be used uninitialized [-Wmaybe-uninitialized]
+slasy2.f:199:42:
+
+  199 |       INTEGER            I, IP, IPIV, IPSV, J, JP, JPSV, K
+      |                                          ^
+note: ‘ipsv’ was declared here
+slasy2.f:423:13:
+
+  423 |          IF( JPSV.NE.I )
+      |             ^
+Warning: ‘jpsv’ may be used uninitialized [-Wmaybe-uninitialized]
+slasy2.f:199:55:
+
+  199 |       INTEGER            I, IP, IPIV, IPSV, J, JP, JPSV, K
+      |                                                       ^
+note: ‘jpsv’ was declared here
+slatps.f:772:72:
+
+  772 |                   X( J ) = X( J ) / TJJS - SUMJ
+      |                                                                        ^
+Warning: ‘tjjs’ may be used uninitialized [-Wmaybe-uninitialized]
+slatps.f:252:67:
+
+  252 |       REAL               BIGNUM, GROW, REC, SMLNUM, SUMJ, TJJ, TJJS,
+      |                                                                   ^
+note: ‘tjjs’ was declared here
+sorgrq.f:208:23:
+
+  208 |       IF( NB.GT.1 .AND. NB.LT.K ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+sorgrq.f:149:35:
+
+  149 |      $                   LWKOPT, NB, NBMIN, NX
+      |                                   ^
+note: ‘nb’ was declared here
+sorgql.f:208:23:
+
+  208 |       IF( NB.GT.1 .AND. NB.LT.K ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+sorgql.f:149:27:
+
+  149 |      $                   NB, NBMIN, NX
+      |                           ^
+note: ‘nb’ was declared here
+slatbs.f:791:72:
+
+  791 |                   X( J ) = X( J ) / TJJS - SUMJ
+      |                                                                        ^
+Warning: ‘tjjs’ may be used uninitialized [-Wmaybe-uninitialized]
+slatbs.f:265:67:
+
+  265 |       REAL               BIGNUM, GROW, REC, SMLNUM, SUMJ, TJJ, TJJS,
+      |                                                                   ^
+note: ‘tjjs’ was declared here
+sormrq.f:272:23:
+
+  272 |       IF( NB.GT.1 .AND. NB.LT.K ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+sormrq.f:193:31:
+
+  193 |      $                   MI, NB, NBMIN, NI, NQ, NW
+      |                               ^
+note: ‘nb’ was declared here
+sormql.f:271:23:
+
+  271 |       IF( NB.GT.1 .AND. NB.LT.K ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+sormql.f:192:31:
+
+  192 |      $                   MI, NB, NBMIN, NI, NQ, NW
+      |                               ^
+note: ‘nb’ was declared here
+slatrs.f:828:72:
+
+  828 |                   X( J ) = X( J ) / TJJS - SUMJ
+      |                                                                        ^
+Warning: ‘tjjs’ may be used uninitialized [-Wmaybe-uninitialized]
+slatrs.f:261:67:
+
+  261 |       REAL               BIGNUM, GROW, REC, SMLNUM, SUMJ, TJJ, TJJS,
+      |                                                                   ^
+note: ‘tjjs’ was declared here
+slasyf_rk.f:780:45:
+
+  780 |                   ELSE IF( ( P.EQ.JMAX ) .OR. ( ROWMAX.LE.COLMAX ) )
+      |                                             ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+slasyf_rk.f:286:53:
+
+  286 |       INTEGER            IMAX, ITEMP, J, JB, JJ, JMAX, K, KK, KW, KKW,
+      |                                                     ^
+note: ‘jmax’ was declared here
+sormrz.f:293:23:
+
+  293 |       IF( NB.GT.1 .AND. NB.LT.K ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+sormrz.f:211:47:
+
+  211 |      $                   LDWORK, LWKOPT, MI, NB, NBMIN, NI, NQ, NW
+      |                                               ^
+note: ‘nb’ was declared here
+slasyf_rook.f:695:45:
+
+  695 |                   ELSE IF( ( P.EQ.JMAX ) .OR. ( ROWMAX.LE.COLMAX ) )
+      |                                             ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+slasyf_rook.f:208:53:
+
+  208 |       INTEGER            IMAX, ITEMP, J, JB, JJ, JMAX, JP1, JP2, K, KK,
+      |                                                     ^
+note: ‘jmax’ was declared here
+spbsvx.f:429:72:
+
+  429 |                SCOND = MAX( SMIN, SMLNUM ) / MIN( SMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘bignum’ may be used uninitialized [-Wmaybe-uninitialized]
+spbsvx.f:369:44:
+
+  369 |       REAL               AMAX, ANORM, BIGNUM, SCOND, SMAX, SMIN, SMLNUM
+      |                                            ^
+note: ‘bignum’ was declared here
+spbsvx.f:429:72:
+
+  429 |                SCOND = MAX( SMIN, SMLNUM ) / MIN( SMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘smlnum’ may be used uninitialized [-Wmaybe-uninitialized]
+spbsvx.f:369:71:
+
+  369 |       REAL               AMAX, ANORM, BIGNUM, SCOND, SMAX, SMIN, SMLNUM
+      |                                                                       ^
+note: ‘smlnum’ was declared here
+sposvx.f:391:72:
+
+  391 |                SCOND = MAX( SMIN, SMLNUM ) / MIN( SMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘bignum’ may be used uninitialized [-Wmaybe-uninitialized]
+sposvx.f:333:44:
+
+  333 |       REAL               AMAX, ANORM, BIGNUM, SCOND, SMAX, SMIN, SMLNUM
+      |                                            ^
+note: ‘bignum’ was declared here
+sposvx.f:391:72:
+
+  391 |                SCOND = MAX( SMIN, SMLNUM ) / MIN( SMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘smlnum’ may be used uninitialized [-Wmaybe-uninitialized]
+sposvx.f:333:71:
+
+  333 |       REAL               AMAX, ANORM, BIGNUM, SCOND, SMAX, SMIN, SMLNUM
+      |                                                                       ^
+note: ‘smlnum’ was declared here
+sstegr.f:263:23:
+
+  263 |      $           ABSTOL, M, W, Z, LDZ, ISUPPZ, WORK, LWORK, IWORK,
+      |                       1
+Warning: Unused dummy argument ‘abstol’ at (1) [-Wunused-dummy-argument]
+ssptrf.f:267:72:
+
+  267 |                KX = IMAX*( IMAX+1 ) / 2 + IMAX
+      |                                                                        ^
+Warning: ‘imax’ may be used uninitialized [-Wmaybe-uninitialized]
+ssptrf.f:181:32:
+
+  181 |       INTEGER            I, IMAX, J, JMAX, K, KC, KK, KNC, KP, KPC,
+      |                                ^
+note: ‘imax’ was declared here
+ssytf2.f:479:18:
+
+  479 |                IF( IMAX.LT.N ) THEN
+      |                  ^
+Warning: ‘imax’ may be used uninitialized [-Wmaybe-uninitialized]
+ssytf2.f:219:32:
+
+  219 |       INTEGER            I, IMAX, J, JMAX, K, KK, KP, KSTEP
+      |                                ^
+note: ‘imax’ was declared here
+ssytf2_rk.f:728:44:
+
+  728 |                   ELSE IF( ( P.EQ.JMAX ).OR.( ROWMAX.LE.COLMAX ) ) THEN
+      |                                            ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+ssytf2_rk.f:265:41:
+
+  265 |       INTEGER            I, IMAX, J, JMAX, ITEMP, K, KK, KP, KSTEP,
+      |                                         ^
+note: ‘jmax’ was declared here
+ssytf2_rook.f:627:44:
+
+  627 |                   ELSE IF( ( P.EQ.JMAX ).OR.( ROWMAX.LE.COLMAX ) ) THEN
+      |                                            ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+ssytf2_rook.f:218:41:
+
+  218 |       INTEGER            I, IMAX, J, JMAX, ITEMP, K, KK, KP, KSTEP,
+      |                                         ^
+note: ‘jmax’ was declared here
+stptri.f:226:72:
+
+  226 |      $                     AP( JCLAST ), AP( JC+1 ), 1 )
+      |                                                                        ^
+Warning: ‘jclast’ may be used uninitialized [-Wmaybe-uninitialized]
+stptri.f:138:38:
+
+  138 |       INTEGER            J, JC, JCLAST, JJ
+      |                                      ^
+note: ‘jclast’ was declared here
+strsen.f:424:40:
+
+  424 |          ELSE IF( LIWORK.LT.LIWMIN .AND. .NOT.LQUERY ) THEN
+      |                                        ^
+Warning: ‘liwmin’ may be used uninitialized [-Wmaybe-uninitialized]
+strsen.f:340:54:
+
+  340 |       INTEGER            IERR, K, KASE, KK, KS, LIWMIN, LWMIN, N1, N2,
+      |                                                      ^
+note: ‘liwmin’ was declared here
+stgsna.f:657:72:
+
+  657 |                DIF( KS ) = ZERO
+      |                                                                        ^
+Warning: ‘cond’ may be used uninitialized [-Wmaybe-uninitialized]
+stgsna.f:409:67:
+
+  409 |       REAL               ALPHAI, ALPHAR, ALPRQT, BETA, C1, C2, COND,
+      |                                                                   ^
+note: ‘cond’ was declared here
+stzrzf.f:239:23:
+
+  239 |       IF( NB.GT.1 .AND. NB.LT.M ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+stzrzf.f:172:35:
+
+  172 |      $                   M1, MU, NB, NBMIN, NX
+      |                                   ^
+note: ‘nb’ was declared here
+slansf.f:231:40:
+
+  231 |       REAL               SCALE, S, VALUE, AA, TEMP
+      |                                        ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+sorcsd.f:331:44:
+
+  331 |       INTEGER            CHILDINFO, I, IB11D, IB11E, IB12D, IB12E,
+      |                                            ^
+Warning: ‘ib11d’ may be used uninitialized [-Wmaybe-uninitialized]
+sorcsd.f:331:51:
+
+  331 |       INTEGER            CHILDINFO, I, IB11D, IB11E, IB12D, IB12E,
+      |                                                   ^
+Warning: ‘ib11e’ may be used uninitialized [-Wmaybe-uninitialized]
+sorcsd.f:331:58:
+
+  331 |       INTEGER            CHILDINFO, I, IB11D, IB11E, IB12D, IB12E,
+      |                                                          ^
+Warning: ‘ib12d’ may be used uninitialized [-Wmaybe-uninitialized]
+sorcsd.f:331:65:
+
+  331 |       INTEGER            CHILDINFO, I, IB11D, IB11E, IB12D, IB12E,
+      |                                                                 ^
+Warning: ‘ib12e’ may be used uninitialized [-Wmaybe-uninitialized]
+sorcsd.f:332:30:
+
+  332 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                              ^
+Warning: ‘ib21d’ may be used uninitialized [-Wmaybe-uninitialized]
+sorcsd.f:332:37:
+
+  332 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                                     ^
+Warning: ‘ib21e’ may be used uninitialized [-Wmaybe-uninitialized]
+sorcsd.f:332:44:
+
+  332 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                                            ^
+Warning: ‘ib22d’ may be used uninitialized [-Wmaybe-uninitialized]
+sorcsd.f:332:51:
+
+  332 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                                                   ^
+Warning: ‘ib22e’ may be used uninitialized [-Wmaybe-uninitialized]
+sorcsd.f:332:59:
+
+  332 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                                                           ^
+Warning: ‘ibbcsd’ may be used uninitialized [-Wmaybe-uninitialized]
+sorcsd.f:332:67:
+
+  332 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                                                                   ^
+Warning: ‘iorbdb’ may be used uninitialized [-Wmaybe-uninitialized]
+sorcsd.f:333:31:
+
+  333 |      $                   IORGLQ, IORGQR, IPHI, ITAUP1, ITAUP2, ITAUQ1,
+      |                               ^
+Warning: ‘iorglq’ may be used uninitialized [-Wmaybe-uninitialized]
+sorcsd.f:333:39:
+
+  333 |      $                   IORGLQ, IORGQR, IPHI, ITAUP1, ITAUP2, ITAUQ1,
+      |                                       ^
+Warning: ‘iorgqr’ may be used uninitialized [-Wmaybe-uninitialized]
+sorcsd.f:333:53:
+
+  333 |      $                   IORGLQ, IORGQR, IPHI, ITAUP1, ITAUP2, ITAUQ1,
+      |                                                     ^
+Warning: ‘itaup1’ may be used uninitialized [-Wmaybe-uninitialized]
+sorcsd.f:333:61:
+
+  333 |      $                   IORGLQ, IORGQR, IPHI, ITAUP1, ITAUP2, ITAUQ1,
+      |                                                             ^
+Warning: ‘itaup2’ may be used uninitialized [-Wmaybe-uninitialized]
+sorcsd.f:333:69:
+
+  333 |      $                   IORGLQ, IORGQR, IPHI, ITAUP1, ITAUP2, ITAUQ1,
+      |                                                                     ^
+Warning: ‘itauq1’ may be used uninitialized [-Wmaybe-uninitialized]
+sorcsd.f:334:31:
+
+  334 |      $                   ITAUQ2, J, LBBCSDWORK, LBBCSDWORKMIN,
+      |                               ^
+Warning: ‘itauq2’ may be used uninitialized [-Wmaybe-uninitialized]
+sgetsls.f:487:72:
+
+  487 |       WORK( 1 ) = SROUNDUP_LWORK( TSZO + LWO )
+      |                                                                        ^
+Warning: ‘lwo’ may be used uninitialized [-Wmaybe-uninitialized]
+sgetsls.f:185:48:
+
+  185 |      $                   SCLLEN, TSZO, TSZM, LWO, LWM, LW1, LW2,
+      |                                                ^
+note: ‘lwo’ was declared here
+sgetsls.f:282:72:
+
+  282 |         LW2 = LWM
+      |                                                                        ^
+Warning: ‘lwm’ may be used uninitialized [-Wmaybe-uninitialized]
+sgetsls.f:185:53:
+
+  185 |      $                   SCLLEN, TSZO, TSZM, LWO, LWM, LW1, LW2,
+      |                                                     ^
+note: ‘lwm’ was declared here
+dgbsvx.f:462:72:
+
+  462 |                ROWCND = MAX( RCMIN, SMLNUM ) / MIN( RCMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘bignum’ may be used uninitialized [-Wmaybe-uninitialized]
+dgbsvx.f:396:44:
+
+  396 |       DOUBLE PRECISION   AMAX, ANORM, BIGNUM, COLCND, RCMAX, RCMIN,
+      |                                            ^
+note: ‘bignum’ was declared here
+dgbsvx.f:462:72:
+
+  462 |                ROWCND = MAX( RCMIN, SMLNUM ) / MIN( RCMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘smlnum’ may be used uninitialized [-Wmaybe-uninitialized]
+dgbsvx.f:397:47:
+
+  397 |      $                   ROWCND, RPVGRW, SMLNUM
+      |                                               ^
+note: ‘smlnum’ was declared here
+dgehrd.f:305:72:
+
+  305 |          DO 40 I = ILO, IHI - 1 - NX, NB
+      |                                                                        ^
+Warning: ‘nx’ may be used uninitialized [-Wmaybe-uninitialized]
+dgehrd.f:192:38:
+
+  192 |      $                   NBMIN, NH, NX
+      |                                      ^
+note: ‘nx’ was declared here
+dgeesx.f:507:72:
+
+  507 |      $      MAXWRK = MAX( MAXWRK, N+2*SDIM*( N-SDIM ) )
+      |                                                                        ^
+Warning: ‘maxwrk’ may be used uninitialized [-Wmaybe-uninitialized]
+dgeesx.f:313:31:
+
+  313 |      $                   MAXWRK, MINWRK
+      |                               ^
+note: ‘maxwrk’ was declared here
+dgetc2.f:194:13:
+
+  194 |          IF( IPV.NE.I )
+      |             ^
+Warning: ‘ipv’ may be used uninitialized [-Wmaybe-uninitialized]
+dgetc2.f:131:35:
+
+  131 |       INTEGER            I, IP, IPV, J, JP, JPV
+      |                                   ^
+note: ‘ipv’ was declared here
+dgetc2.f:200:13:
+
+  200 |          IF( JPV.NE.I )
+      |             ^
+Warning: ‘jpv’ may be used uninitialized [-Wmaybe-uninitialized]
+dgetc2.f:131:47:
+
+  131 |       INTEGER            I, IP, IPV, J, JP, JPV
+      |                                               ^
+note: ‘jpv’ was declared here
+dgetc2.f:217:9:
+
+  217 |       IF( ABS( A( N, N ) ).LT.SMIN ) THEN
+      |         ^
+Warning: ‘smin’ may be used uninitialized [-Wmaybe-uninitialized]
+dgetc2.f:132:42:
+
+  132 |       DOUBLE PRECISION   BIGNUM, EPS, SMIN, SMLNUM, XMAX
+      |                                          ^
+note: ‘smin’ was declared here
+dgelss.f:536:31:
+
+  536 |       ELSE IF( N.GE.MNTHR .AND. LWORK.GE.4*M+M*M+
+      |                               ^
+Warning: ‘mnthr’ may be used uninitialized [-Wmaybe-uninitialized]
+dgelss.f:195:57:
+
+  195 |      $                   MAXWRK, MINMN, MINWRK, MM, MNTHR
+      |                                                         ^
+note: ‘mnthr’ was declared here
+dgesvx.f:438:72:
+
+  438 |                ROWCND = MAX( RCMIN, SMLNUM ) / MIN( RCMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘bignum’ may be used uninitialized [-Wmaybe-uninitialized]
+dgesvx.f:376:44:
+
+  376 |       DOUBLE PRECISION   AMAX, ANORM, BIGNUM, COLCND, RCMAX, RCMIN,
+      |                                            ^
+note: ‘bignum’ was declared here
+dgesvx.f:438:72:
+
+  438 |                ROWCND = MAX( RCMIN, SMLNUM ) / MIN( RCMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘smlnum’ may be used uninitialized [-Wmaybe-uninitialized]
+dgesvx.f:377:47:
+
+  377 |      $                   ROWCND, RPVGRW, SMLNUM
+      |                                               ^
+note: ‘smlnum’ was declared here
+dgesvdx.f:667:12:
+
+  667 |          IF( N.GE.MNTHR ) THEN
+      |            ^
+Warning: ‘mnthr’ may be used uninitialized [-Wmaybe-uninitialized]
+dgesvdx.f:290:56:
+
+  290 |      $                   J, MAXWRK, MINMN, MINWRK, MNTHR
+      |                                                        ^
+note: ‘mnthr’ was declared here
+sgesvdq.f:639:72:
+
+  639 |                  MINWRK = MAX( LWQP3, LWSVD, LWORQ )
+      |                                                                        ^
+Warning: ‘lworq’ may be used uninitialized [-Wmaybe-uninitialized]
+sgesvdq.f:436:66:
+
+  436 |      $            LWRK_SORMQR2, LWLQF, LWQRF, LWSVD, LWSVD2, LWORQ,
+      |                                                                  ^
+note: ‘lworq’ was declared here
+sgesvdq.f:1375:72:
+
+ 1375 |       IF ( CONDA ) RWORK(1) = SCONDA
+      |                                                                        ^
+Warning: ‘sconda’ may be used uninitialized [-Wmaybe-uninitialized]
+sgesvdq.f:442:42:
+
+  442 |       REAL        BIG, EPSLN, RTMP, SCONDA, SFMIN
+      |                                          ^
+note: ‘sconda’ was declared here
+dlaqz0.f:713:72:
+
+  713 |                ESHIFT = ESHIFT+ONE/( SAFMIN*DBLE( MAXIT ) )
+      |                                                                        ^
+Warning: ‘eshift’ may be used uninitialized [-Wmaybe-uninitialized]
+dlaqz0.f:324:45:
+
+  324 |       DOUBLE PRECISION :: SMLNUM, ULP, ESHIFT, SAFMIN, SAFMAX, C1, S1,
+      |                                             ^
+note: ‘eshift’ was declared here
+dlahr2.f:302:72:
+
+  302 |       A( K+NB, NB ) = EI
+      |                                                                        ^
+Warning: ‘ei’ may be used uninitialized [-Wmaybe-uninitialized]
+dlahr2.f:203:26:
+
+  203 |       DOUBLE PRECISION  EI
+      |                          ^
+note: ‘ei’ was declared here
+dlangt.f:127:30:
+
+  127 |       DOUBLE PRECISION   ANORM, SCALE, SUM, TEMP
+      |                              ^
+Warning: ‘anorm’ may be used uninitialized [-Wmaybe-uninitialized]
+dlansy.f:143:48:
+
+  143 |       DOUBLE PRECISION   ABSA, SCALE, SUM, VALUE
+      |                                                ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+dlanhs.f:129:42:
+
+  129 |       DOUBLE PRECISION   SCALE, SUM, VALUE
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+dlange.f:135:42:
+
+  135 |       DOUBLE PRECISION   SCALE, SUM, VALUE, TEMP
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+dlangb.f:146:42:
+
+  146 |       DOUBLE PRECISION   SCALE, SUM, VALUE, TEMP
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+dlals0.f:409:72:
+
+  409 |      $                           DIFRJ ) / ( POLES( I, 2 )+DJ )
+      |                                                                        ^
+Warning: ‘difrj’ may be used uninitialized [-Wmaybe-uninitialized]
+dlals0.f:293:37:
+
+  293 |       DOUBLE PRECISION   DIFLJ, DIFRJ, DJ, DSIGJ, DSIGJP, TEMP
+      |                                     ^
+note: ‘difrj’ was declared here
+dlansb.f:150:48:
+
+  150 |       DOUBLE PRECISION   ABSA, SCALE, SUM, VALUE
+      |                                                ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+dlansp.f:135:48:
+
+  135 |       DOUBLE PRECISION   ABSA, SCALE, SUM, VALUE
+      |                                                ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+dlahqr.f:596:16:
+
+  596 |             IF( I2.GT.I )
+      |                ^
+Warning: ‘i2’ may be used uninitialized [-Wmaybe-uninitialized]
+dlahqr.f:236:34:
+
+  236 |       INTEGER            I, I1, I2, ITS, ITMAX, J, K, L, M, NH, NR, NZ,
+      |                                  ^
+note: ‘i2’ was declared here
+dgesvd.f:3204:21:
+
+ 3204 |                   IF( LWORK.GE.M*M+MAX( N + M, 4*M, BDSPAC ) ) THEN
+      |                     ^
+Warning: ‘bdspac’ may be used uninitialized [-Wmaybe-uninitialized]
+dgesvd.f:234:31:
+
+  234 |       INTEGER            BDSPAC, BLK, CHUNK, I, IE, IERR, IR, ISCL,
+      |                               ^
+note: ‘bdspac’ was declared here
+dgesvd.f:2071:12:
+
+ 2071 |          IF( N.GE.MNTHR ) THEN
+      |            ^
+Warning: ‘mnthr’ may be used uninitialized [-Wmaybe-uninitialized]
+dgesvd.f:236:53:
+
+  236 |      $                   MAXWRK, MINMN, MINWRK, MNTHR, NCU, NCVT, NRU,
+      |                                                     ^
+note: ‘mnthr’ was declared here
+dgesvd.f:3209:24:
+
+ 3209 |                      IF( LWORK.GE.WRKBL+LDA*M ) THEN
+      |                        ^
+Warning: ‘wrkbl’ may be used uninitialized [-Wmaybe-uninitialized]
+dgesvd.f:237:36:
+
+  237 |      $                   NRVT, WRKBL
+      |                                    ^
+note: ‘wrkbl’ was declared here
+dgesvd.f:3464:12:
+
+ 3464 |          IF( IE.GT.2 ) THEN
+      |            ^
+Warning: ‘ie’ may be used uninitialized [-Wmaybe-uninitialized]
+dgesvd.f:234:50:
+
+  234 |       INTEGER            BDSPAC, BLK, CHUNK, I, IE, IERR, IR, ISCL,
+      |                                                  ^
+note: ‘ie’ was declared here
+dlantb.f:162:42:
+
+  162 |       DOUBLE PRECISION   SCALE, SUM, VALUE
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+dlaqp3rk.f:899:72:
+
+  899 |      $         F( KB+1, 1 ), LDF, ONE, A( IF+1, KB+1 ), LDA )
+      |                                                                        ^
+Warning: ‘i’ may be used uninitialized [-Wmaybe-uninitialized]
+dlaqp3rk.f:429:38:
+
+  429 |      $                   LSTICC, KP, I, IF
+      |                                      ^
+note: ‘i’ was declared here
+dlantp.f:146:42:
+
+  146 |       DOUBLE PRECISION   SCALE, SUM, VALUE
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+dlarrv.f:287:34:
+
+  287 |       SUBROUTINE DLARRV( N, VL, VU, D, L, PIVMIN,
+      |                                  1
+Warning: Unused dummy argument ‘vu’ at (1) [-Wunused-dummy-argument]
+dlantr.f:163:42:
+
+  163 |       DOUBLE PRECISION   SCALE, SUM, VALUE
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+dlaqr0.f:494:72:
+
+  494 |                NDEC = NDEC + 1
+      |                                                                        ^
+Warning: ‘ndec’ may be used uninitialized [-Wmaybe-uninitialized]
+dlaqr0.f:303:37:
+
+  303 |      $                   LWKOPT, NDEC, NDFL, NH, NHO, NIBBLE, NMIN, NS,
+      |                                     ^
+note: ‘ndec’ was declared here
+dlaqr4.f:500:72:
+
+  500 |                NDEC = NDEC + 1
+      |                                                                        ^
+Warning: ‘ndec’ may be used uninitialized [-Wmaybe-uninitialized]
+dlaqr4.f:309:37:
+
+  309 |      $                   LWKOPT, NDEC, NDFL, NH, NHO, NIBBLE, NMIN, NS,
+      |                                     ^
+note: ‘ndec’ was declared here
+dhgeqz.f:465:15:
+
+  465 |             IF( ILSCHR ) THEN
+      |               ^
+Warning: ‘ilschr’ may be used uninitialized [-Wmaybe-uninitialized]
+dhgeqz.f:328:60:
+
+  328 |       LOGICAL            ILAZR2, ILAZRO, ILPIVT, ILQ, ILSCHR, ILZ,
+      |                                                            ^
+note: ‘ilschr’ was declared here
+dhgeqz.f:631:25:
+
+  631 |                      IF( ILQ )
+      |                         ^
+Warning: ‘ilq’ may be used uninitialized [-Wmaybe-uninitialized]
+dhgeqz.f:328:52:
+
+  328 |       LOGICAL            ILAZR2, ILAZRO, ILPIVT, ILQ, ILSCHR, ILZ,
+      |                                                    ^
+note: ‘ilq’ was declared here
+dhgeqz.f:422:28:
+
+  422 |       ELSE IF( LDZ.LT.1 .OR. ( ILZ .AND. LDZ.LT.N ) ) THEN
+      |                            ^
+Warning: ‘ilz’ may be used uninitialized [-Wmaybe-uninitialized]
+dhgeqz.f:328:65:
+
+  328 |       LOGICAL            ILAZR2, ILAZRO, ILPIVT, ILQ, ILSCHR, ILZ,
+      |                                                                 ^
+note: ‘ilz’ was declared here
+dlasy2.f:417:12:
+
+  417 |          IF( IPSV.NE.I ) THEN
+      |            ^
+Warning: ‘ipsv’ may be used uninitialized [-Wmaybe-uninitialized]
+dlasy2.f:199:42:
+
+  199 |       INTEGER            I, IP, IPIV, IPSV, J, JP, JPSV, K
+      |                                          ^
+note: ‘ipsv’ was declared here
+dlasy2.f:423:13:
+
+  423 |          IF( JPSV.NE.I )
+      |             ^
+Warning: ‘jpsv’ may be used uninitialized [-Wmaybe-uninitialized]
+dlasy2.f:199:55:
+
+  199 |       INTEGER            I, IP, IPIV, IPSV, J, JP, JPSV, K
+      |                                                       ^
+note: ‘jpsv’ was declared here
+dlasyf_rook.f:695:45:
+
+  695 |                   ELSE IF( ( P.EQ.JMAX ) .OR. ( ROWMAX.LE.COLMAX ) )
+      |                                             ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+dlasyf_rook.f:208:53:
+
+  208 |       INTEGER            IMAX, ITEMP, J, JB, JJ, JMAX, JP1, JP2, K, KK,
+      |                                                     ^
+note: ‘jmax’ was declared here
+dorgql.f:207:23:
+
+  207 |       IF( NB.GT.1 .AND. NB.LT.K ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+dorgql.f:149:27:
+
+  149 |      $                   NB, NBMIN, NX
+      |                           ^
+note: ‘nb’ was declared here
+dlasyf_rk.f:780:45:
+
+  780 |                   ELSE IF( ( P.EQ.JMAX ) .OR. ( ROWMAX.LE.COLMAX ) )
+      |                                             ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+dlasyf_rk.f:286:53:
+
+  286 |       INTEGER            IMAX, ITEMP, J, JB, JJ, JMAX, K, KK, KW, KKW,
+      |                                                     ^
+note: ‘jmax’ was declared here
+dlatps.f:772:72:
+
+  772 |                   X( J ) = X( J ) / TJJS - SUMJ
+      |                                                                        ^
+Warning: ‘tjjs’ may be used uninitialized [-Wmaybe-uninitialized]
+dlatps.f:252:67:
+
+  252 |       DOUBLE PRECISION   BIGNUM, GROW, REC, SMLNUM, SUMJ, TJJ, TJJS,
+      |                                                                   ^
+note: ‘tjjs’ was declared here
+dlatbs.f:791:72:
+
+  791 |                   X( J ) = X( J ) / TJJS - SUMJ
+      |                                                                        ^
+Warning: ‘tjjs’ may be used uninitialized [-Wmaybe-uninitialized]
+dlatbs.f:265:67:
+
+  265 |       DOUBLE PRECISION   BIGNUM, GROW, REC, SMLNUM, SUMJ, TJJ, TJJS,
+      |                                                                   ^
+note: ‘tjjs’ was declared here
+dorgrq.f:207:23:
+
+  207 |       IF( NB.GT.1 .AND. NB.LT.K ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+dorgrq.f:149:35:
+
+  149 |      $                   LWKOPT, NB, NBMIN, NX
+      |                                   ^
+note: ‘nb’ was declared here
+dlatrs.f:828:72:
+
+  828 |                   X( J ) = X( J ) / TJJS - SUMJ
+      |                                                                        ^
+Warning: ‘tjjs’ may be used uninitialized [-Wmaybe-uninitialized]
+dlatrs.f:261:67:
+
+  261 |       DOUBLE PRECISION   BIGNUM, GROW, REC, SMLNUM, SUMJ, TJJ, TJJS,
+      |                                                                   ^
+note: ‘tjjs’ was declared here
+dormql.f:268:23:
+
+  268 |       IF( NB.GT.1 .AND. NB.LT.K ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+dormql.f:190:31:
+
+  190 |      $                   MI, NB, NBMIN, NI, NQ, NW
+      |                               ^
+note: ‘nb’ was declared here
+dormrq.f:269:23:
+
+  269 |       IF( NB.GT.1 .AND. NB.LT.K ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+dormrq.f:191:31:
+
+  191 |      $                   MI, NB, NBMIN, NI, NQ, NW
+      |                               ^
+note: ‘nb’ was declared here
+dormrz.f:293:23:
+
+  293 |       IF( NB.GT.1 .AND. NB.LT.K ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+dormrz.f:211:47:
+
+  211 |      $                   LDWORK, LWKOPT, MI, NB, NBMIN, NI, NQ, NW
+      |                                               ^
+note: ‘nb’ was declared here
+dpbsvx.f:429:72:
+
+  429 |                SCOND = MAX( SMIN, SMLNUM ) / MIN( SMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘bignum’ may be used uninitialized [-Wmaybe-uninitialized]
+dpbsvx.f:369:44:
+
+  369 |       DOUBLE PRECISION   AMAX, ANORM, BIGNUM, SCOND, SMAX, SMIN, SMLNUM
+      |                                            ^
+note: ‘bignum’ was declared here
+dpbsvx.f:429:72:
+
+  429 |                SCOND = MAX( SMIN, SMLNUM ) / MIN( SMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘smlnum’ may be used uninitialized [-Wmaybe-uninitialized]
+dpbsvx.f:369:71:
+
+  369 |       DOUBLE PRECISION   AMAX, ANORM, BIGNUM, SCOND, SMAX, SMIN, SMLNUM
+      |                                                                       ^
+note: ‘smlnum’ was declared here
+dposvx.f:391:72:
+
+  391 |                SCOND = MAX( SMIN, SMLNUM ) / MIN( SMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘bignum’ may be used uninitialized [-Wmaybe-uninitialized]
+dposvx.f:333:44:
+
+  333 |       DOUBLE PRECISION   AMAX, ANORM, BIGNUM, SCOND, SMAX, SMIN, SMLNUM
+      |                                            ^
+note: ‘bignum’ was declared here
+dposvx.f:391:72:
+
+  391 |                SCOND = MAX( SMIN, SMLNUM ) / MIN( SMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘smlnum’ may be used uninitialized [-Wmaybe-uninitialized]
+dposvx.f:333:71:
+
+  333 |       DOUBLE PRECISION   AMAX, ANORM, BIGNUM, SCOND, SMAX, SMIN, SMLNUM
+      |                                                                       ^
+note: ‘smlnum’ was declared here
+dstegr.f:263:23:
+
+  263 |      $           ABSTOL, M, W, Z, LDZ, ISUPPZ, WORK, LWORK, IWORK,
+      |                       1
+Warning: Unused dummy argument ‘abstol’ at (1) [-Wunused-dummy-argument]
+dsptrf.f:269:72:
+
+  269 |                KX = IMAX*( IMAX+1 ) / 2 + IMAX
+      |                                                                        ^
+Warning: ‘imax’ may be used uninitialized [-Wmaybe-uninitialized]
+dsptrf.f:183:32:
+
+  183 |       INTEGER            I, IMAX, J, JMAX, K, KC, KK, KNC, KP, KPC,
+      |                                ^
+note: ‘imax’ was declared here
+dsytf2.f:478:18:
+
+  478 |                IF( IMAX.LT.N ) THEN
+      |                  ^
+Warning: ‘imax’ may be used uninitialized [-Wmaybe-uninitialized]
+dsytf2.f:218:32:
+
+  218 |       INTEGER            I, IMAX, J, JMAX, K, KK, KP, KSTEP
+      |                                ^
+note: ‘imax’ was declared here
+dsytf2_rook.f:627:44:
+
+  627 |                   ELSE IF( ( P.EQ.JMAX ).OR.( ROWMAX.LE.COLMAX ) ) THEN
+      |                                            ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+dsytf2_rook.f:218:41:
+
+  218 |       INTEGER            I, IMAX, J, JMAX, ITEMP, K, KK, KP, KSTEP,
+      |                                         ^
+note: ‘jmax’ was declared here
+dtptri.f:226:72:
+
+  226 |      $                     AP( JCLAST ), AP( JC+1 ), 1 )
+      |                                                                        ^
+Warning: ‘jclast’ may be used uninitialized [-Wmaybe-uninitialized]
+dtptri.f:138:38:
+
+  138 |       INTEGER            J, JC, JCLAST, JJ
+      |                                      ^
+note: ‘jclast’ was declared here
+dsytf2_rk.f:728:44:
+
+  728 |                   ELSE IF( ( P.EQ.JMAX ).OR.( ROWMAX.LE.COLMAX ) ) THEN
+      |                                            ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+dsytf2_rk.f:265:41:
+
+  265 |       INTEGER            I, IMAX, J, JMAX, ITEMP, K, KK, KP, KSTEP,
+      |                                         ^
+note: ‘jmax’ was declared here
+dtgsna.f:656:72:
+
+  656 |                DIF( KS ) = ZERO
+      |                                                                        ^
+Warning: ‘cond’ may be used uninitialized [-Wmaybe-uninitialized]
+dtgsna.f:409:67:
+
+  409 |       DOUBLE PRECISION   ALPHAI, ALPHAR, ALPRQT, BETA, C1, C2, COND,
+      |                                                                   ^
+note: ‘cond’ was declared here
+dtrsen.f:423:40:
+
+  423 |          ELSE IF( LIWORK.LT.LIWMIN .AND. .NOT.LQUERY ) THEN
+      |                                        ^
+Warning: ‘liwmin’ may be used uninitialized [-Wmaybe-uninitialized]
+dtrsen.f:339:54:
+
+  339 |       INTEGER            IERR, K, KASE, KK, KS, LIWMIN, LWMIN, N1, N2,
+      |                                                      ^
+note: ‘liwmin’ was declared here
+dtrsen.f:421:33:
+
+  421 |          IF( LWORK.LT.LWMIN .AND. .NOT.LQUERY ) THEN
+      |                                 ^
+Warning: ‘lwmin’ may be used uninitialized [-Wmaybe-uninitialized]
+dtrsen.f:339:61:
+
+  339 |       INTEGER            IERR, K, KASE, KK, KS, LIWMIN, LWMIN, N1, N2,
+      |                                                             ^
+note: ‘lwmin’ was declared here
+dtzrzf.f:238:23:
+
+  238 |       IF( NB.GT.1 .AND. NB.LT.M ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+dtzrzf.f:172:35:
+
+  172 |      $                   M1, MU, NB, NBMIN, NX
+      |                                   ^
+note: ‘nb’ was declared here
+dorcsd.f:328:44:
+
+  328 |       INTEGER            CHILDINFO, I, IB11D, IB11E, IB12D, IB12E,
+      |                                            ^
+Warning: ‘ib11d’ may be used uninitialized [-Wmaybe-uninitialized]
+dorcsd.f:328:51:
+
+  328 |       INTEGER            CHILDINFO, I, IB11D, IB11E, IB12D, IB12E,
+      |                                                   ^
+Warning: ‘ib11e’ may be used uninitialized [-Wmaybe-uninitialized]
+dorcsd.f:328:58:
+
+  328 |       INTEGER            CHILDINFO, I, IB11D, IB11E, IB12D, IB12E,
+      |                                                          ^
+Warning: ‘ib12d’ may be used uninitialized [-Wmaybe-uninitialized]
+dorcsd.f:328:65:
+
+  328 |       INTEGER            CHILDINFO, I, IB11D, IB11E, IB12D, IB12E,
+      |                                                                 ^
+Warning: ‘ib12e’ may be used uninitialized [-Wmaybe-uninitialized]
+dorcsd.f:329:30:
+
+  329 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                              ^
+Warning: ‘ib21d’ may be used uninitialized [-Wmaybe-uninitialized]
+dorcsd.f:329:37:
+
+  329 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                                     ^
+Warning: ‘ib21e’ may be used uninitialized [-Wmaybe-uninitialized]
+dorcsd.f:329:44:
+
+  329 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                                            ^
+Warning: ‘ib22d’ may be used uninitialized [-Wmaybe-uninitialized]
+dorcsd.f:329:51:
+
+  329 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                                                   ^
+Warning: ‘ib22e’ may be used uninitialized [-Wmaybe-uninitialized]
+dorcsd.f:329:59:
+
+  329 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                                                           ^
+Warning: ‘ibbcsd’ may be used uninitialized [-Wmaybe-uninitialized]
+dorcsd.f:329:67:
+
+  329 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                                                                   ^
+Warning: ‘iorbdb’ may be used uninitialized [-Wmaybe-uninitialized]
+dorcsd.f:330:31:
+
+  330 |      $                   IORGLQ, IORGQR, IPHI, ITAUP1, ITAUP2, ITAUQ1,
+      |                               ^
+Warning: ‘iorglq’ may be used uninitialized [-Wmaybe-uninitialized]
+dorcsd.f:330:39:
+
+  330 |      $                   IORGLQ, IORGQR, IPHI, ITAUP1, ITAUP2, ITAUQ1,
+      |                                       ^
+Warning: ‘iorgqr’ may be used uninitialized [-Wmaybe-uninitialized]
+dorcsd.f:330:53:
+
+  330 |      $                   IORGLQ, IORGQR, IPHI, ITAUP1, ITAUP2, ITAUQ1,
+      |                                                     ^
+Warning: ‘itaup1’ may be used uninitialized [-Wmaybe-uninitialized]
+dorcsd.f:330:61:
+
+  330 |      $                   IORGLQ, IORGQR, IPHI, ITAUP1, ITAUP2, ITAUQ1,
+      |                                                             ^
+Warning: ‘itaup2’ may be used uninitialized [-Wmaybe-uninitialized]
+dorcsd.f:330:69:
+
+  330 |      $                   IORGLQ, IORGQR, IPHI, ITAUP1, ITAUP2, ITAUQ1,
+      |                                                                     ^
+Warning: ‘itauq1’ may be used uninitialized [-Wmaybe-uninitialized]
+dorcsd.f:331:31:
+
+  331 |      $                   ITAUQ2, J, LBBCSDWORK, LBBCSDWORKMIN,
+      |                               ^
+Warning: ‘itauq2’ may be used uninitialized [-Wmaybe-uninitialized]
+dgetsls.f:487:72:
+
+  487 |       WORK( 1 ) = DBLE( TSZO + LWO )
+      |                                                                        ^
+Warning: ‘lwo’ may be used uninitialized [-Wmaybe-uninitialized]
+dgetsls.f:185:48:
+
+  185 |      $                   SCLLEN, TSZO, TSZM, LWO, LWM, LW1, LW2,
+      |                                                ^
+note: ‘lwo’ was declared here
+dgetsls.f:282:72:
+
+  282 |         LW2 = LWM
+      |                                                                        ^
+Warning: ‘lwm’ may be used uninitialized [-Wmaybe-uninitialized]
+dgetsls.f:185:53:
+
+  185 |      $                   SCLLEN, TSZO, TSZM, LWO, LWM, LW1, LW2,
+      |                                                     ^
+note: ‘lwm’ was declared here
+dlansf.f:230:40:
+
+  230 |       DOUBLE PRECISION   SCALE, S, VALUE, AA, TEMP
+      |                                        ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+cgbsvx.f:467:72:
+
+  467 |                ROWCND = MAX( RCMIN, SMLNUM ) / MIN( RCMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘bignum’ may be used uninitialized [-Wmaybe-uninitialized]
+cgbsvx.f:401:44:
+
+  401 |       REAL               AMAX, ANORM, BIGNUM, COLCND, RCMAX, RCMIN,
+      |                                            ^
+note: ‘bignum’ was declared here
+cgbsvx.f:467:72:
+
+  467 |                ROWCND = MAX( RCMIN, SMLNUM ) / MIN( RCMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘smlnum’ may be used uninitialized [-Wmaybe-uninitialized]
+cgbsvx.f:402:47:
+
+  402 |      $                   ROWCND, RPVGRW, SMLNUM
+      |                                               ^
+note: ‘smlnum’ was declared here
+cgehrd.f:308:72:
+
+  308 |          DO 40 I = ILO, IHI - 1 - NX, NB
+      |                                                                        ^
+Warning: ‘nx’ may be used uninitialized [-Wmaybe-uninitialized]
+cgehrd.f:193:38:
+
+  193 |      $                   NBMIN, NH, NX
+      |                                      ^
+note: ‘nx’ was declared here
+cgelsd.f:520:31:
+
+  520 |       ELSE IF( N.GE.MNTHR .AND. LWORK.GE.4*M+M*M+
+      |                               ^
+Warning: ‘mnthr’ may be used uninitialized [-Wmaybe-uninitialized]
+cgelsd.f:246:42:
+
+  246 |      $                   MINWRK, MM, MNTHR, NLVL, NRWORK, NWORK, SMLSIZ
+      |                                          ^
+note: ‘mnthr’ was declared here
+cgelss.f:546:31:
+
+  546 |       ELSE IF( N.GE.MNTHR .AND. LWORK.GE.3*M+M*M+MAX( M, NRHS, N-2*M ) )
+      |                               ^
+Warning: ‘mnthr’ may be used uninitialized [-Wmaybe-uninitialized]
+cgelss.f:205:57:
+
+  205 |      $                   MAXWRK, MINMN, MINWRK, MM, MNTHR
+      |                                                         ^
+note: ‘mnthr’ was declared here
+dgesvdq.f:636:72:
+
+  636 |                  MINWRK = MAX( LWQP3, LWSVD, LWORQ )
+      |                                                                        ^
+Warning: ‘lworq’ may be used uninitialized [-Wmaybe-uninitialized]
+dgesvdq.f:435:66:
+
+  435 |      $            LWRK_DORMQR2, LWLQF, LWQRF, LWSVD, LWSVD2, LWORQ,
+      |                                                                  ^
+note: ‘lworq’ was declared here
+dgesvdq.f:1372:72:
+
+ 1372 |       IF ( CONDA ) RWORK(1) = SCONDA
+      |                                                                        ^
+Warning: ‘sconda’ may be used uninitialized [-Wmaybe-uninitialized]
+dgesvdq.f:441:47:
+
+  441 |       DOUBLE PRECISION BIG, EPSLN, RTMP, SCONDA, SFMIN
+      |                                               ^
+note: ‘sconda’ was declared here
+cgetc2.f:194:13:
+
+  194 |          IF( IPV.NE.I )
+      |             ^
+Warning: ‘ipv’ may be used uninitialized [-Wmaybe-uninitialized]
+cgetc2.f:131:35:
+
+  131 |       INTEGER            I, IP, IPV, J, JP, JPV
+      |                                   ^
+note: ‘ipv’ was declared here
+cgetc2.f:200:13:
+
+  200 |          IF( JPV.NE.I )
+      |             ^
+Warning: ‘jpv’ may be used uninitialized [-Wmaybe-uninitialized]
+cgetc2.f:131:47:
+
+  131 |       INTEGER            I, IP, IPV, J, JP, JPV
+      |                                               ^
+note: ‘jpv’ was declared here
+cgetc2.f:217:9:
+
+  217 |       IF( ABS( A( N, N ) ).LT.SMIN ) THEN
+      |         ^
+Warning: ‘smin’ may be used uninitialized [-Wmaybe-uninitialized]
+cgetc2.f:132:42:
+
+  132 |       REAL               BIGNUM, EPS, SMIN, SMLNUM, XMAX
+      |                                          ^
+note: ‘smin’ was declared here
+cgesvdx.f:674:12:
+
+  674 |          IF( N.GE.MNTHR ) THEN
+      |            ^
+Warning: ‘mnthr’ may be used uninitialized [-Wmaybe-uninitialized]
+cgesvdx.f:301:66:
+
+  301 |      $                   IUTGK, J, K, MAXWRK, MINMN, MINWRK, MNTHR
+      |                                                                  ^
+note: ‘mnthr’ was declared here
+cgesvx.f:440:72:
+
+  440 |                ROWCND = MAX( RCMIN, SMLNUM ) / MIN( RCMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘bignum’ may be used uninitialized [-Wmaybe-uninitialized]
+cgesvx.f:378:44:
+
+  378 |       REAL               AMAX, ANORM, BIGNUM, COLCND, RCMAX, RCMIN,
+      |                                            ^
+note: ‘bignum’ was declared here
+cgesvx.f:440:72:
+
+  440 |                ROWCND = MAX( RCMIN, SMLNUM ) / MIN( RCMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘smlnum’ may be used uninitialized [-Wmaybe-uninitialized]
+cgesvx.f:379:47:
+
+  379 |      $                   ROWCND, RPVGRW, SMLNUM
+      |                                               ^
+note: ‘smlnum’ was declared here
+cgesvd.f:2174:12:
+
+ 2174 |          IF( N.GE.MNTHR ) THEN
+      |            ^
+Warning: ‘mnthr’ may be used uninitialized [-Wmaybe-uninitialized]
+cgesvd.f:243:53:
+
+  243 |      $                   MAXWRK, MINMN, MINWRK, MNTHR, NCU, NCVT, NRU,
+      |                                                     ^
+note: ‘mnthr’ was declared here
+cgesvd.f:3403:24:
+
+ 3403 |                      IF( LWORK.GE.WRKBL+LDA*M ) THEN
+      |                        ^
+Warning: ‘wrkbl’ may be used uninitialized [-Wmaybe-uninitialized]
+cgesvd.f:244:36:
+
+  244 |      $                   NRVT, WRKBL
+      |                                    ^
+note: ‘wrkbl’ was declared here
+chetf2.f:493:18:
+
+  493 |                IF( IMAX.LT.N ) THEN
+      |                  ^
+Warning: ‘imax’ may be used uninitialized [-Wmaybe-uninitialized]
+chetf2.f:210:32:
+
+  210 |       INTEGER            I, IMAX, J, JMAX, K, KK, KP, KSTEP
+      |                                ^
+note: ‘imax’ was declared here
+chetf2_rk.f:789:45:
+
+  789 |                   ELSE IF( ( P.EQ.JMAX ) .OR. ( ROWMAX.LE.COLMAX ) )
+      |                                             ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+chetf2_rk.f:267:52:
+
+  267 |       INTEGER            I, II, IMAX, ITEMP, J, JMAX, K, KK, KP, KSTEP,
+      |                                                    ^
+note: ‘jmax’ was declared here
+chetf2_rook.f:688:45:
+
+  688 |                   ELSE IF( ( P.EQ.JMAX ) .OR. ( ROWMAX.LE.COLMAX ) )
+      |                                             ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+chetf2_rook.f:218:52:
+
+  218 |       INTEGER            I, II, IMAX, ITEMP, J, JMAX, K, KK, KP, KSTEP,
+      |                                                    ^
+note: ‘jmax’ was declared here
+claed8.f:452:72:
+
+  452 |       W( K ) = Z( JLAM )
+      |                                                                        ^
+Warning: ‘jlam’ may be used uninitialized [-Wmaybe-uninitialized]
+claed8.f:253:41:
+
+  253 |       INTEGER            I, IMAX, J, JLAM, JMAX, JP, K2, N1, N1P1, N2
+      |                                         ^
+note: ‘jlam’ was declared here
+chptrf.f:281:72:
+
+  281 |                KX = IMAX*( IMAX+1 ) / 2 + IMAX
+      |                                                                        ^
+Warning: ‘imax’ may be used uninitialized [-Wmaybe-uninitialized]
+chptrf.f:183:32:
+
+  183 |       INTEGER            I, IMAX, J, JMAX, K, KC, KK, KNC, KP, KPC,
+      |                                ^
+note: ‘imax’ was declared here
+clahr2.f:304:72:
+
+  304 |       A( K+NB, NB ) = EI
+      |                                                                        ^
+Warning: ‘REALPART_EXPR <ei>’ may be used uninitialized [-Wmaybe-uninitialized]
+clahr2.f:203:27:
+
+  203 |       COMPLEX            EI
+      |                           ^
+note: ‘REALPART_EXPR <ei>’ was declared here
+clahr2.f:304:72:
+
+  304 |       A( K+NB, NB ) = EI
+      |                                                                        ^
+Warning: ‘IMAGPART_EXPR <ei>’ may be used uninitialized [-Wmaybe-uninitialized]
+clahr2.f:203:27:
+
+  203 |       COMPLEX            EI
+      |                           ^
+note: ‘IMAGPART_EXPR <ei>’ was declared here
+clangb.f:147:42:
+
+  147 |       REAL               SCALE, SUM, VALUE, TEMP
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+cgejsv.f:604:61:
+
+  604 |      $        LWSVDJ, LWSVDJV, LRWQP3, LRWCON, LRWSVDJ, IWOFF
+      |                                                             ^
+Warning: ‘iwoff’ may be used uninitialized [-Wmaybe-uninitialized]
+clange.f:137:42:
+
+  137 |       REAL               SCALE, SUM, VALUE, TEMP
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+clahef.f:674:72:
+
+  674 |                CALL CCOPY( IMAX-K, A( IMAX, K ), LDA, W( K, K+1 ), 1 )
+      |                                                                        ^
+Warning: ‘imax’ may be used uninitialized [-Wmaybe-uninitialized]
+clahef.f:202:29:
+
+  202 |       INTEGER            IMAX, J, JB, JJ, JMAX, JP, K, KK, KKW, KP,
+      |                             ^
+note: ‘imax’ was declared here
+clangt.f:127:30:
+
+  127 |       REAL               ANORM, SCALE, SUM, TEMP
+      |                              ^
+Warning: ‘anorm’ may be used uninitialized [-Wmaybe-uninitialized]
+clanht.f:123:30:
+
+  123 |       REAL               ANORM, SCALE, SUM
+      |                              ^
+Warning: ‘anorm’ may be used uninitialized [-Wmaybe-uninitialized]
+clanhs.f:131:42:
+
+  131 |       REAL               SCALE, SUM, VALUE
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+clanhe.f:146:48:
+
+  146 |       REAL               ABSA, SCALE, SUM, VALUE
+      |                                                ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+clanhp.f:139:48:
+
+  139 |       REAL               ABSA, SCALE, SUM, VALUE
+      |                                                ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+clanhb.f:154:48:
+
+  154 |       REAL               ABSA, SCALE, SUM, VALUE
+      |                                                ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+clals0.f:412:72:
+
+  412 |      $                            DIFRJ ) / ( POLES( I, 2 )+DJ )
+      |                                                                        ^
+Warning: ‘difrj’ may be used uninitialized [-Wmaybe-uninitialized]
+clals0.f:296:37:
+
+  296 |       REAL               DIFLJ, DIFRJ, DJ, DSIGJ, DSIGJP, TEMP
+      |                                     ^
+note: ‘difrj’ was declared here
+clansp.f:137:48:
+
+  137 |       REAL               ABSA, SCALE, SUM, VALUE
+      |                                                ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+clantp.f:148:42:
+
+  148 |       REAL               SCALE, SUM, VALUE
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+clansy.f:145:48:
+
+  145 |       REAL               ABSA, SCALE, SUM, VALUE
+      |                                                ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+clansb.f:152:48:
+
+  152 |       REAL               ABSA, SCALE, SUM, VALUE
+      |                                                ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+clantb.f:164:42:
+
+  164 |       REAL               SCALE, SUM, VALUE
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+clahef_rook.f:857:45:
+
+  857 |                   ELSE IF( ( P.EQ.JMAX ) .OR. ( ROWMAX.LE.COLMAX ) )
+      |                                             ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+clahef_rook.f:210:57:
+
+  210 |       INTEGER            IMAX, ITEMP, II, J, JB, JJ, JMAX, JP1, JP2, K,
+      |                                                         ^
+note: ‘jmax’ was declared here
+clahef_rk.f:936:45:
+
+  936 |                   ELSE IF( ( P.EQ.JMAX ) .OR. ( ROWMAX.LE.COLMAX ) )
+      |                                             ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+clahef_rk.f:289:57:
+
+  289 |       INTEGER            IMAX, ITEMP, II, J, JB, JJ, JMAX, K, KK, KKW,
+      |                                                         ^
+note: ‘jmax’ was declared here
+clantr.f:165:42:
+
+  165 |       REAL               SCALE, SUM, VALUE
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+claqz0.f:302:52:
+
+  302 |       REAL :: SMLNUM, ULP, SAFMIN, SAFMAX, C1, TEMPR, BNORM, BTOL
+      |                                                    1
+Warning: Unused variable ‘tempr’ declared at (1) [-Wunused-variable]
+claqr0.f:487:72:
+
+  487 |                NDEC = NDEC + 1
+      |                                                                        ^
+Warning: ‘ndec’ may be used uninitialized [-Wmaybe-uninitialized]
+claqr0.f:289:37:
+
+  289 |      $                   LWKOPT, NDEC, NDFL, NH, NHO, NIBBLE, NMIN, NS,
+      |                                     ^
+note: ‘ndec’ was declared here
+claqp3rk.f:911:72:
+
+  911 |      $         F( KB+1, 1 ), LDF, CONE, A( IF+1, KB+1 ), LDA )
+      |                                                                        ^
+Warning: ‘i’ may be used uninitialized [-Wmaybe-uninitialized]
+claqp3rk.f:426:38:
+
+  426 |      $                   LSTICC, KP, I, IF
+      |                                      ^
+note: ‘i’ was declared here
+claqr4.f:497:72:
+
+  497 |                NDEC = NDEC + 1
+      |                                                                        ^
+Warning: ‘ndec’ may be used uninitialized [-Wmaybe-uninitialized]
+claqr4.f:299:37:
+
+  299 |      $                   LWKOPT, NDEC, NDFL, NH, NHO, NIBBLE, NMIN, NS,
+      |                                     ^
+note: ‘ndec’ was declared here
+clarrv.f:281:34:
+
+  281 |       SUBROUTINE CLARRV( N, VL, VU, D, L, PIVMIN,
+      |                                  1
+Warning: Unused dummy argument ‘vu’ at (1) [-Wunused-dummy-argument]
+claqz0.f:656:72:
+
+  656 |                ESHIFT = ESHIFT+CONE/( SAFMIN*REAL( MAXIT ) )
+      |                                                                        ^
+Warning: ‘REALPART_EXPR <eshift>’ may be used uninitialized [-Wmaybe-uninitialized]
+claqz0.f:303:23:
+
+  303 |       COMPLEX :: ESHIFT, S1, TEMP
+      |                       ^
+note: ‘REALPART_EXPR <eshift>’ was declared here
+claqz0.f:656:72:
+
+  656 |                ESHIFT = ESHIFT+CONE/( SAFMIN*REAL( MAXIT ) )
+      |                                                                        ^
+Warning: ‘IMAGPART_EXPR <eshift>’ may be used uninitialized [-Wmaybe-uninitialized]
+claqz0.f:303:23:
+
+  303 |       COMPLEX :: ESHIFT, S1, TEMP
+      |                       ^
+note: ‘IMAGPART_EXPR <eshift>’ was declared here
+cpbsvx.f:427:72:
+
+  427 |                SCOND = MAX( SMIN, SMLNUM ) / MIN( SMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘bignum’ may be used uninitialized [-Wmaybe-uninitialized]
+cpbsvx.f:367:44:
+
+  367 |       REAL               AMAX, ANORM, BIGNUM, SCOND, SMAX, SMIN, SMLNUM
+      |                                            ^
+note: ‘bignum’ was declared here
+cpbsvx.f:427:72:
+
+  427 |                SCOND = MAX( SMIN, SMLNUM ) / MIN( SMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘smlnum’ may be used uninitialized [-Wmaybe-uninitialized]
+cpbsvx.f:367:71:
+
+  367 |       REAL               AMAX, ANORM, BIGNUM, SCOND, SMAX, SMIN, SMLNUM
+      |                                                                       ^
+note: ‘smlnum’ was declared here
+cposvx.f:389:72:
+
+  389 |                SCOND = MAX( SMIN, SMLNUM ) / MIN( SMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘bignum’ may be used uninitialized [-Wmaybe-uninitialized]
+cposvx.f:331:44:
+
+  331 |       REAL               AMAX, ANORM, BIGNUM, SCOND, SMAX, SMIN, SMLNUM
+      |                                            ^
+note: ‘bignum’ was declared here
+cposvx.f:389:72:
+
+  389 |                SCOND = MAX( SMIN, SMLNUM ) / MIN( SMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘smlnum’ may be used uninitialized [-Wmaybe-uninitialized]
+cposvx.f:331:71:
+
+  331 |       REAL               AMAX, ANORM, BIGNUM, SCOND, SMAX, SMIN, SMLNUM
+      |                                                                       ^
+note: ‘smlnum’ was declared here
+clasyf_rook.f:703:45:
+
+  703 |                   ELSE IF( ( P.EQ.JMAX ) .OR. ( ROWMAX.LE.COLMAX ) )
+      |                                             ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+clasyf_rook.f:211:53:
+
+  211 |       INTEGER            IMAX, ITEMP, J, JB, JJ, JMAX, JP1, JP2, K, KK,
+      |                                                     ^
+note: ‘jmax’ was declared here
+cstegr.f:263:23:
+
+  263 |      $           ABSTOL, M, W, Z, LDZ, ISUPPZ, WORK, LWORK, IWORK,
+      |                       1
+Warning: Unused dummy argument ‘abstol’ at (1) [-Wunused-dummy-argument]
+clasyf_rk.f:789:45:
+
+  789 |                   ELSE IF( ( P.EQ.JMAX ) .OR. ( ROWMAX.LE.COLMAX ) )
+      |                                             ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+clasyf_rk.f:289:53:
+
+  289 |       INTEGER            IMAX, ITEMP, J, JB, JJ, JMAX, K, KK, KW, KKW,
+      |                                                     ^
+note: ‘jmax’ was declared here
+csytf2.f:483:18:
+
+  483 |                IF( IMAX.LT.N ) THEN
+      |                  ^
+Warning: ‘imax’ may be used uninitialized [-Wmaybe-uninitialized]
+csytf2.f:217:32:
+
+  217 |       INTEGER            I, IMAX, J, JMAX, K, KK, KP, KSTEP
+      |                                ^
+note: ‘imax’ was declared here
+csptrf.f:276:72:
+
+  276 |                KX = IMAX*( IMAX+1 ) / 2 + IMAX
+      |                                                                        ^
+Warning: ‘imax’ may be used uninitialized [-Wmaybe-uninitialized]
+csptrf.f:184:32:
+
+  184 |       INTEGER            I, IMAX, J, JMAX, K, KC, KK, KNC, KP, KPC,
+      |                                ^
+note: ‘imax’ was declared here
+cstein.f:384:72:
+
+  384 |      $            ABS( WORK( INDRV1+JMAX ) )
+      |                                                                        ^
+Warning: ‘onenrm’ may be used uninitialized [-Wmaybe-uninitialized]
+cstein.f:213:52:
+
+  213 |       REAL               CTR, EPS, EPS1, NRM, ONENRM, ORTOL, PERTOL,
+      |                                                    ^
+note: ‘onenrm’ was declared here
+cstein.f:398:15:
+
+  398 |             IF( ABS( XJ-XJM ).GT.ORTOL )
+      |               ^
+Warning: ‘ortol’ may be used uninitialized [-Wmaybe-uninitialized]
+cstein.f:213:59:
+
+  213 |       REAL               CTR, EPS, EPS1, NRM, ONENRM, ORTOL, PERTOL,
+      |                                                           ^
+note: ‘ortol’ was declared here
+cstein.f:423:16:
+
+  423 |             IF( NRM.LT.STPCRT )
+      |                ^
+Warning: ‘stpcrt’ may be used uninitialized [-Wmaybe-uninitialized]
+cstein.f:214:41:
+
+  214 |      $                   SCL, SEP, STPCRT, TOL, XJ, XJM
+      |                                         ^
+note: ‘stpcrt’ was declared here
+cstein.f:347:72:
+
+  347 |                SEP = XJ - XJM
+      |                                                                        ^
+Warning: ‘xjm’ may be used uninitialized [-Wmaybe-uninitialized]
+cstein.f:214:55:
+
+  214 |      $                   SCL, SEP, STPCRT, TOL, XJ, XJM
+      |                                                       ^
+note: ‘xjm’ was declared here
+cstein.f:400:15:
+
+  400 |             IF( GPIND.NE.J ) THEN
+      |               ^
+Warning: ‘gpind’ may be used uninitialized [-Wmaybe-uninitialized]
+cstein.f:210:46:
+
+  210 |       INTEGER            B1, BLKSIZ, BN, GPIND, I, IINFO, INDRV1,
+      |                                              ^
+note: ‘gpind’ was declared here
+csytf2_rook.f:635:44:
+
+  635 |                   ELSE IF( ( P.EQ.JMAX ).OR.( ROWMAX.LE.COLMAX ) ) THEN
+      |                                            ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+csytf2_rook.f:220:41:
+
+  220 |       INTEGER            I, IMAX, J, JMAX, ITEMP, K, KK, KP, KSTEP,
+      |                                         ^
+note: ‘jmax’ was declared here
+ctptri.f:227:72:
+
+  227 |      $                     AP( JCLAST ), AP( JC+1 ), 1 )
+      |                                                                        ^
+Warning: ‘jclast’ may be used uninitialized [-Wmaybe-uninitialized]
+ctptri.f:139:38:
+
+  139 |       INTEGER            J, JC, JCLAST, JJ
+      |                                      ^
+note: ‘jclast’ was declared here
+ctzrzf.f:239:23:
+
+  239 |       IF( NB.GT.1 .AND. NB.LT.M ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+ctzrzf.f:172:35:
+
+  172 |      $                   M1, MU, NB, NBMIN, NX
+      |                                   ^
+note: ‘nb’ was declared here
+csytf2_rk.f:737:44:
+
+  737 |                   ELSE IF( ( P.EQ.JMAX ).OR.( ROWMAX.LE.COLMAX ) ) THEN
+      |                                            ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+csytf2_rk.f:268:41:
+
+  268 |       INTEGER            I, IMAX, J, JMAX, ITEMP, K, KK, KP, KSTEP,
+      |                                         ^
+note: ‘jmax’ was declared here
+cungql.f:208:23:
+
+  208 |       IF( NB.GT.1 .AND. NB.LT.K ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+cungql.f:149:27:
+
+  149 |      $                   NB, NBMIN, NX
+      |                           ^
+note: ‘nb’ was declared here
+cungrq.f:208:23:
+
+  208 |       IF( NB.GT.1 .AND. NB.LT.K ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+cungrq.f:149:35:
+
+  149 |      $                   LWKOPT, NB, NBMIN, NX
+      |                                   ^
+note: ‘nb’ was declared here
+cunmlq.f:274:23:
+
+  274 |       IF( NB.GT.1 .AND. NB.LT.K ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+cunmlq.f:193:39:
+
+  193 |      $                   LWKOPT, MI, NB, NBMIN, NI, NQ, NW
+      |                                       ^
+note: ‘nb’ was declared here
+cunmrq.f:272:23:
+
+  272 |       IF( NB.GT.1 .AND. NB.LT.K ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+cunmrq.f:193:31:
+
+  193 |      $                   MI, NB, NBMIN, NI, NQ, NW
+      |                               ^
+note: ‘nb’ was declared here
+cunmql.f:273:23:
+
+  273 |       IF( NB.GT.1 .AND. NB.LT.K ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+cunmql.f:192:31:
+
+  192 |      $                   MI, NB, NBMIN, NI, NQ, NW
+      |                               ^
+note: ‘nb’ was declared here
+cuncsd.f:349:44:
+
+  349 |       INTEGER            CHILDINFO, I, IB11D, IB11E, IB12D, IB12E,
+      |                                            ^
+Warning: ‘ib11d’ may be used uninitialized [-Wmaybe-uninitialized]
+cuncsd.f:349:51:
+
+  349 |       INTEGER            CHILDINFO, I, IB11D, IB11E, IB12D, IB12E,
+      |                                                   ^
+Warning: ‘ib11e’ may be used uninitialized [-Wmaybe-uninitialized]
+cuncsd.f:349:58:
+
+  349 |       INTEGER            CHILDINFO, I, IB11D, IB11E, IB12D, IB12E,
+      |                                                          ^
+Warning: ‘ib12d’ may be used uninitialized [-Wmaybe-uninitialized]
+cuncsd.f:349:65:
+
+  349 |       INTEGER            CHILDINFO, I, IB11D, IB11E, IB12D, IB12E,
+      |                                                                 ^
+Warning: ‘ib12e’ may be used uninitialized [-Wmaybe-uninitialized]
+cuncsd.f:350:30:
+
+  350 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                              ^
+Warning: ‘ib21d’ may be used uninitialized [-Wmaybe-uninitialized]
+cuncsd.f:350:37:
+
+  350 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                                     ^
+Warning: ‘ib21e’ may be used uninitialized [-Wmaybe-uninitialized]
+cuncsd.f:350:44:
+
+  350 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                                            ^
+Warning: ‘ib22d’ may be used uninitialized [-Wmaybe-uninitialized]
+cuncsd.f:350:51:
+
+  350 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                                                   ^
+Warning: ‘ib22e’ may be used uninitialized [-Wmaybe-uninitialized]
+cuncsd.f:350:59:
+
+  350 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                                                           ^
+Warning: ‘ibbcsd’ may be used uninitialized [-Wmaybe-uninitialized]
+cuncsd.f:350:67:
+
+  350 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                                                                   ^
+Warning: ‘iorbdb’ may be used uninitialized [-Wmaybe-uninitialized]
+cuncsd.f:351:31:
+
+  351 |      $                   IORGLQ, IORGQR, IPHI, ITAUP1, ITAUP2, ITAUQ1,
+      |                               ^
+Warning: ‘iorglq’ may be used uninitialized [-Wmaybe-uninitialized]
+cuncsd.f:351:39:
+
+  351 |      $                   IORGLQ, IORGQR, IPHI, ITAUP1, ITAUP2, ITAUQ1,
+      |                                       ^
+Warning: ‘iorgqr’ may be used uninitialized [-Wmaybe-uninitialized]
+cuncsd.f:351:61:
+
+  351 |      $                   IORGLQ, IORGQR, IPHI, ITAUP1, ITAUP2, ITAUQ1,
+      |                                                             ^
+Warning: ‘itaup2’ may be used uninitialized [-Wmaybe-uninitialized]
+cuncsd.f:351:69:
+
+  351 |      $                   IORGLQ, IORGQR, IPHI, ITAUP1, ITAUP2, ITAUQ1,
+      |                                                                     ^
+Warning: ‘itauq1’ may be used uninitialized [-Wmaybe-uninitialized]
+cuncsd.f:352:31:
+
+  352 |      $                   ITAUQ2, J, LBBCSDWORK, LBBCSDWORKMIN,
+      |                               ^
+Warning: ‘itauq2’ may be used uninitialized [-Wmaybe-uninitialized]
+cgetsls.f:490:72:
+
+  490 |       WORK( 1 ) = SROUNDUP_LWORK( TSZO + LWO )
+      |                                                                        ^
+Warning: ‘lwo’ may be used uninitialized [-Wmaybe-uninitialized]
+cgetsls.f:187:48:
+
+  187 |      $                   SCLLEN, TSZO, TSZM, LWO, LWM, LW1, LW2,
+      |                                                ^
+note: ‘lwo’ was declared here
+cgetsls.f:285:72:
+
+  285 |         LW2 = LWM
+      |                                                                        ^
+Warning: ‘lwm’ may be used uninitialized [-Wmaybe-uninitialized]
+cgetsls.f:187:53:
+
+  187 |      $                   SCLLEN, TSZO, TSZM, LWO, LWM, LW1, LW2,
+      |                                                     ^
+note: ‘lwm’ was declared here
+zgeesx.f:459:72:
+
+  459 |      $      MAXWRK = MAX( MAXWRK, 2*SDIM*( N-SDIM ) )
+      |                                                                        ^
+Warning: ‘maxwrk’ may be used uninitialized [-Wmaybe-uninitialized]
+zgeesx.f:269:49:
+
+  269 |      $                   ITAU, IWRK, LWRK, MAXWRK, MINWRK
+      |                                                 ^
+note: ‘maxwrk’ was declared here
+zgbsvx.f:467:72:
+
+  467 |                ROWCND = MAX( RCMIN, SMLNUM ) / MIN( RCMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘bignum’ may be used uninitialized [-Wmaybe-uninitialized]
+zgbsvx.f:401:44:
+
+  401 |       DOUBLE PRECISION   AMAX, ANORM, BIGNUM, COLCND, RCMAX, RCMIN,
+      |                                            ^
+note: ‘bignum’ was declared here
+zgbsvx.f:467:72:
+
+  467 |                ROWCND = MAX( RCMIN, SMLNUM ) / MIN( RCMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘smlnum’ may be used uninitialized [-Wmaybe-uninitialized]
+zgbsvx.f:402:47:
+
+  402 |      $                   ROWCND, RPVGRW, SMLNUM
+      |                                               ^
+note: ‘smlnum’ was declared here
+zgehrd.f:305:72:
+
+  305 |          DO 40 I = ILO, IHI - 1 - NX, NB
+      |                                                                        ^
+Warning: ‘nx’ may be used uninitialized [-Wmaybe-uninitialized]
+zgehrd.f:192:38:
+
+  192 |      $                   NBMIN, NH, NX
+      |                                      ^
+note: ‘nx’ was declared here
+zgelsd.f:520:31:
+
+  520 |       ELSE IF( N.GE.MNTHR .AND. LWORK.GE.4*M+M*M+
+      |                               ^
+Warning: ‘mnthr’ may be used uninitialized [-Wmaybe-uninitialized]
+zgelsd.f:246:42:
+
+  246 |      $                   MINWRK, MM, MNTHR, NLVL, NRWORK, NWORK, SMLSIZ
+      |                                          ^
+note: ‘mnthr’ was declared here
+zgelss.f:546:31:
+
+  546 |       ELSE IF( N.GE.MNTHR .AND. LWORK.GE.3*M+M*M+MAX( M, NRHS, N-2*M ) )
+      |                               ^
+Warning: ‘mnthr’ may be used uninitialized [-Wmaybe-uninitialized]
+zgelss.f:205:57:
+
+  205 |      $                   MAXWRK, MINMN, MINWRK, MM, MNTHR
+      |                                                         ^
+note: ‘mnthr’ was declared here
+zgetc2.f:194:13:
+
+  194 |          IF( IPV.NE.I )
+      |             ^
+Warning: ‘ipv’ may be used uninitialized [-Wmaybe-uninitialized]
+zgetc2.f:131:35:
+
+  131 |       INTEGER            I, IP, IPV, J, JP, JPV
+      |                                   ^
+note: ‘ipv’ was declared here
+zgetc2.f:200:13:
+
+  200 |          IF( JPV.NE.I )
+      |             ^
+Warning: ‘jpv’ may be used uninitialized [-Wmaybe-uninitialized]
+zgetc2.f:131:47:
+
+  131 |       INTEGER            I, IP, IPV, J, JP, JPV
+      |                                               ^
+note: ‘jpv’ was declared here
+zgetc2.f:217:9:
+
+  217 |       IF( ABS( A( N, N ) ).LT.SMIN ) THEN
+      |         ^
+Warning: ‘smin’ may be used uninitialized [-Wmaybe-uninitialized]
+zgetc2.f:132:42:
+
+  132 |       DOUBLE PRECISION   BIGNUM, EPS, SMIN, SMLNUM, XMAX
+      |                                          ^
+note: ‘smin’ was declared here
+zgesvx.f:440:72:
+
+  440 |                ROWCND = MAX( RCMIN, SMLNUM ) / MIN( RCMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘bignum’ may be used uninitialized [-Wmaybe-uninitialized]
+zgesvx.f:378:44:
+
+  378 |       DOUBLE PRECISION   AMAX, ANORM, BIGNUM, COLCND, RCMAX, RCMIN,
+      |                                            ^
+note: ‘bignum’ was declared here
+zgesvx.f:440:72:
+
+  440 |                ROWCND = MAX( RCMIN, SMLNUM ) / MIN( RCMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘smlnum’ may be used uninitialized [-Wmaybe-uninitialized]
+zgesvx.f:379:47:
+
+  379 |      $                   ROWCND, RPVGRW, SMLNUM
+      |                                               ^
+note: ‘smlnum’ was declared here
+zgesvdx.f:673:12:
+
+  673 |          IF( N.GE.MNTHR ) THEN
+      |            ^
+Warning: ‘mnthr’ may be used uninitialized [-Wmaybe-uninitialized]
+zgesvdx.f:301:66:
+
+  301 |      $                   IUTGK, J, K, MAXWRK, MINMN, MINWRK, MNTHR
+      |                                                                  ^
+note: ‘mnthr’ was declared here
+cgesvdq.f:635:72:
+
+  635 |                  MINWRK = MAX( LWQP3, LWSVD, LWUNQ )
+      |                                                                        ^
+Warning: ‘lwunq’ may be used uninitialized [-Wmaybe-uninitialized]
+cgesvdq.f:436:66:
+
+  436 |      $            LWRK_CUNMQR2, LWLQF, LWQRF, LWSVD, LWSVD2, LWUNQ,
+      |                                                                  ^
+note: ‘lwunq’ was declared here
+cgesvdq.f:1378:72:
+
+ 1378 |       IF ( CONDA ) RWORK(1) = SCONDA
+      |                                                                        ^
+Warning: ‘sconda’ may be used uninitialized [-Wmaybe-uninitialized]
+cgesvdq.f:442:42:
+
+  442 |       REAL        BIG, EPSLN, RTMP, SCONDA, SFMIN
+      |                                          ^
+note: ‘sconda’ was declared here
+zheevx.f:555:72:
+
+  555 |       WORK( 1 ) = LWKOPT
+      |                                                                        ^
+Warning: ‘lwkopt’ may be used uninitialized [-Wmaybe-uninitialized]
+zheevx.f:289:61:
+
+  289 |      $                   ITMP1, J, JJ, LLWORK, LWKMIN, LWKOPT, NB,
+      |                                                             ^
+note: ‘lwkopt’ was declared here
+zhetf2.f:515:18:
+
+  515 |                IF( IMAX.LT.N ) THEN
+      |                  ^
+Warning: ‘imax’ may be used uninitialized [-Wmaybe-uninitialized]
+zhetf2.f:215:32:
+
+  215 |       INTEGER            I, IMAX, J, JMAX, K, KK, KP, KSTEP
+      |                                ^
+note: ‘imax’ was declared here
+zhetrf_aa_2stage.f:185:31:
+
+  185 |       INTEGER            LWKOPT, LDTB, NB, KB, JB, NT, IINFO
+      |                               1
+Warning: Unused variable ‘lwkopt’ declared at (1) [-Wunused-variable]
+zgesvd.f:2173:12:
+
+ 2173 |          IF( N.GE.MNTHR ) THEN
+      |            ^
+Warning: ‘mnthr’ may be used uninitialized [-Wmaybe-uninitialized]
+zgesvd.f:243:53:
+
+  243 |      $                   MAXWRK, MINMN, MINWRK, MNTHR, NCU, NCVT, NRU,
+      |                                                     ^
+note: ‘mnthr’ was declared here
+zgesvd.f:3402:24:
+
+ 3402 |                      IF( LWORK.GE.WRKBL+LDA*M ) THEN
+      |                        ^
+Warning: ‘wrkbl’ may be used uninitialized [-Wmaybe-uninitialized]
+zgesvd.f:244:36:
+
+  244 |      $                   NRVT, WRKBL
+      |                                    ^
+note: ‘wrkbl’ was declared here
+zhetf2_rook.f:688:45:
+
+  688 |                   ELSE IF( ( P.EQ.JMAX ) .OR. ( ROWMAX.LE.COLMAX ) )
+      |                                             ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+zhetf2_rook.f:218:52:
+
+  218 |       INTEGER            I, II, IMAX, ITEMP, J, JMAX, K, KK, KP, KSTEP,
+      |                                                    ^
+note: ‘jmax’ was declared here
+zhetf2_rk.f:789:45:
+
+  789 |                   ELSE IF( ( P.EQ.JMAX ) .OR. ( ROWMAX.LE.COLMAX ) )
+      |                                             ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+zhetf2_rk.f:267:52:
+
+  267 |       INTEGER            I, II, IMAX, ITEMP, J, JMAX, K, KK, KP, KSTEP,
+      |                                                    ^
+note: ‘jmax’ was declared here
+zhptrf.f:281:72:
+
+  281 |                KX = IMAX*( IMAX+1 ) / 2 + IMAX
+      |                                                                        ^
+Warning: ‘imax’ may be used uninitialized [-Wmaybe-uninitialized]
+zhptrf.f:183:32:
+
+  183 |       INTEGER            I, IMAX, J, JMAX, K, KC, KK, KNC, KP, KPC,
+      |                                ^
+note: ‘imax’ was declared here
+zlaed8.f:452:72:
+
+  452 |       W( K ) = Z( JLAM )
+      |                                                                        ^
+Warning: ‘jlam’ may be used uninitialized [-Wmaybe-uninitialized]
+zlaed8.f:253:41:
+
+  253 |       INTEGER            I, IMAX, J, JLAM, JMAX, JP, K2, N1, N1P1, N2
+      |                                         ^
+note: ‘jlam’ was declared here
+zlahr2.f:304:72:
+
+  304 |       A( K+NB, NB ) = EI
+      |                                                                        ^
+Warning: ‘REALPART_EXPR <ei>’ may be used uninitialized [-Wmaybe-uninitialized]
+zlahr2.f:203:26:
+
+  203 |       COMPLEX*16        EI
+      |                          ^
+note: ‘REALPART_EXPR <ei>’ was declared here
+zlahr2.f:304:72:
+
+  304 |       A( K+NB, NB ) = EI
+      |                                                                        ^
+Warning: ‘IMAGPART_EXPR <ei>’ may be used uninitialized [-Wmaybe-uninitialized]
+zlahr2.f:203:26:
+
+  203 |       COMPLEX*16        EI
+      |                          ^
+note: ‘IMAGPART_EXPR <ei>’ was declared here
+zgejsv.f:607:61:
+
+  607 |      $        LWSVDJ, LWSVDJV, LRWQP3, LRWCON, LRWSVDJ, IWOFF
+      |                                                             ^
+Warning: ‘iwoff’ may be used uninitialized [-Wmaybe-uninitialized]
+zlangt.f:127:30:
+
+  127 |       DOUBLE PRECISION   ANORM, SCALE, SUM, TEMP
+      |                              ^
+Warning: ‘anorm’ may be used uninitialized [-Wmaybe-uninitialized]
+zlange.f:137:42:
+
+  137 |       DOUBLE PRECISION   SCALE, SUM, VALUE, TEMP
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+zlangb.f:147:42:
+
+  147 |       DOUBLE PRECISION   SCALE, SUM, VALUE, TEMP
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+zlanhb.f:154:48:
+
+  154 |       DOUBLE PRECISION   ABSA, SCALE, SUM, VALUE
+      |                                                ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+zlals0.f:412:72:
+
+  412 |      $                            DIFRJ ) / ( POLES( I, 2 )+DJ )
+      |                                                                        ^
+Warning: ‘difrj’ may be used uninitialized [-Wmaybe-uninitialized]
+zlals0.f:296:37:
+
+  296 |       DOUBLE PRECISION   DIFLJ, DIFRJ, DJ, DSIGJ, DSIGJP, TEMP
+      |                                     ^
+note: ‘difrj’ was declared here
+zlanhe.f:146:48:
+
+  146 |       DOUBLE PRECISION   ABSA, SCALE, SUM, VALUE
+      |                                                ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+zlanht.f:123:30:
+
+  123 |       DOUBLE PRECISION   ANORM, SCALE, SUM
+      |                              ^
+Warning: ‘anorm’ may be used uninitialized [-Wmaybe-uninitialized]
+zlahef_rk.f:936:45:
+
+  936 |                   ELSE IF( ( P.EQ.JMAX ) .OR. ( ROWMAX.LE.COLMAX ) )
+      |                                             ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+zlahef_rk.f:290:57:
+
+  290 |       INTEGER            IMAX, ITEMP, II, J, JB, JJ, JMAX, K, KK, KKW,
+      |                                                         ^
+note: ‘jmax’ was declared here
+zlanhs.f:131:42:
+
+  131 |       DOUBLE PRECISION   SCALE, SUM, VALUE
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+zlahef.f:673:72:
+
+  673 |                CALL ZCOPY( IMAX-K, A( IMAX, K ), LDA, W( K, K+1 ), 1 )
+      |                                                                        ^
+Warning: ‘imax’ may be used uninitialized [-Wmaybe-uninitialized]
+zlahef.f:202:29:
+
+  202 |       INTEGER            IMAX, J, JB, JJ, JMAX, JP, K, KK, KKW, KP,
+      |                             ^
+note: ‘imax’ was declared here
+zlanhp.f:139:48:
+
+  139 |       DOUBLE PRECISION   ABSA, SCALE, SUM, VALUE
+      |                                                ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+zlansp.f:137:48:
+
+  137 |       DOUBLE PRECISION   ABSA, SCALE, SUM, VALUE
+      |                                                ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+zlansb.f:152:48:
+
+  152 |       DOUBLE PRECISION   ABSA, SCALE, SUM, VALUE
+      |                                                ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+zlansy.f:145:48:
+
+  145 |       DOUBLE PRECISION   ABSA, SCALE, SUM, VALUE
+      |                                                ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+zlahef_rook.f:857:45:
+
+  857 |                   ELSE IF( ( P.EQ.JMAX ) .OR. ( ROWMAX.LE.COLMAX ) )
+      |                                             ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+zlahef_rook.f:210:57:
+
+  210 |       INTEGER            IMAX, ITEMP, II, J, JB, JJ, JMAX, JP1, JP2, K,
+      |                                                         ^
+note: ‘jmax’ was declared here
+zlantr.f:165:42:
+
+  165 |       DOUBLE PRECISION   SCALE, SUM, VALUE
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+zlaqp3rk.f:911:72:
+
+  911 |      $         F( KB+1, 1 ), LDF, CONE, A( IF+1, KB+1 ), LDA )
+      |                                                                        ^
+Warning: ‘i’ may be used uninitialized [-Wmaybe-uninitialized]
+zlaqp3rk.f:426:38:
+
+  426 |      $                   LSTICC, KP, I, IF
+      |                                      ^
+note: ‘i’ was declared here
+zlantp.f:148:42:
+
+  148 |       DOUBLE PRECISION   SCALE, SUM, VALUE
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+zlantb.f:164:42:
+
+  164 |       DOUBLE PRECISION   SCALE, SUM, VALUE
+      |                                          ^
+Warning: ‘value’ may be used uninitialized [-Wmaybe-uninitialized]
+zlaqz0.f:303:64:
+
+  303 |       DOUBLE PRECISION :: SMLNUM, ULP, SAFMIN, SAFMAX, C1, TEMPR,
+      |                                                                1
+Warning: Unused variable ‘tempr’ declared at (1) [-Wunused-variable]
+zlaqr0.f:489:72:
+
+  489 |                NDEC = NDEC + 1
+      |                                                                        ^
+Warning: ‘ndec’ may be used uninitialized [-Wmaybe-uninitialized]
+zlaqr0.f:291:37:
+
+  291 |      $                   LWKOPT, NDEC, NDFL, NH, NHO, NIBBLE, NMIN, NS,
+      |                                     ^
+note: ‘ndec’ was declared here
+zlaqr4.f:495:72:
+
+  495 |                NDEC = NDEC + 1
+      |                                                                        ^
+Warning: ‘ndec’ may be used uninitialized [-Wmaybe-uninitialized]
+zlaqr4.f:297:37:
+
+  297 |      $                   LWKOPT, NDEC, NDFL, NH, NHO, NIBBLE, NMIN, NS,
+      |                                     ^
+note: ‘ndec’ was declared here
+zlarrv.f:281:34:
+
+  281 |       SUBROUTINE ZLARRV( N, VL, VU, D, L, PIVMIN,
+      |                                  1
+Warning: Unused dummy argument ‘vu’ at (1) [-Wunused-dummy-argument]
+zlaqz0.f:658:72:
+
+  658 |                ESHIFT = ESHIFT+CONE/( SAFMIN*DBLE( MAXIT ) )
+      |                                                                        ^
+Warning: ‘REALPART_EXPR <eshift>’ may be used uninitialized [-Wmaybe-uninitialized]
+zlaqz0.f:305:26:
+
+  305 |       COMPLEX*16 :: ESHIFT, S1, TEMP
+      |                          ^
+note: ‘REALPART_EXPR <eshift>’ was declared here
+zlaqz0.f:658:72:
+
+  658 |                ESHIFT = ESHIFT+CONE/( SAFMIN*DBLE( MAXIT ) )
+      |                                                                        ^
+Warning: ‘IMAGPART_EXPR <eshift>’ may be used uninitialized [-Wmaybe-uninitialized]
+zlaqz0.f:305:26:
+
+  305 |       COMPLEX*16 :: ESHIFT, S1, TEMP
+      |                          ^
+note: ‘IMAGPART_EXPR <eshift>’ was declared here
+zpbsvx.f:427:72:
+
+  427 |                SCOND = MAX( SMIN, SMLNUM ) / MIN( SMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘bignum’ may be used uninitialized [-Wmaybe-uninitialized]
+zpbsvx.f:367:44:
+
+  367 |       DOUBLE PRECISION   AMAX, ANORM, BIGNUM, SCOND, SMAX, SMIN, SMLNUM
+      |                                            ^
+note: ‘bignum’ was declared here
+zpbsvx.f:427:72:
+
+  427 |                SCOND = MAX( SMIN, SMLNUM ) / MIN( SMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘smlnum’ may be used uninitialized [-Wmaybe-uninitialized]
+zpbsvx.f:367:71:
+
+  367 |       DOUBLE PRECISION   AMAX, ANORM, BIGNUM, SCOND, SMAX, SMIN, SMLNUM
+      |                                                                       ^
+note: ‘smlnum’ was declared here
+zposvx.f:389:72:
+
+  389 |                SCOND = MAX( SMIN, SMLNUM ) / MIN( SMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘bignum’ may be used uninitialized [-Wmaybe-uninitialized]
+zposvx.f:331:44:
+
+  331 |       DOUBLE PRECISION   AMAX, ANORM, BIGNUM, SCOND, SMAX, SMIN, SMLNUM
+      |                                            ^
+note: ‘bignum’ was declared here
+zposvx.f:389:72:
+
+  389 |                SCOND = MAX( SMIN, SMLNUM ) / MIN( SMAX, BIGNUM )
+      |                                                                        ^
+Warning: ‘smlnum’ may be used uninitialized [-Wmaybe-uninitialized]
+zposvx.f:331:71:
+
+  331 |       DOUBLE PRECISION   AMAX, ANORM, BIGNUM, SCOND, SMAX, SMIN, SMLNUM
+      |                                                                       ^
+note: ‘smlnum’ was declared here
+zlasyf_rook.f:703:45:
+
+  703 |                   ELSE IF( ( P.EQ.JMAX ) .OR. ( ROWMAX.LE.COLMAX ) )
+      |                                             ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+zlasyf_rook.f:211:53:
+
+  211 |       INTEGER            IMAX, ITEMP, J, JB, JJ, JMAX, JP1, JP2, K, KK,
+      |                                                     ^
+note: ‘jmax’ was declared here
+zlasyf_rk.f:789:45:
+
+  789 |                   ELSE IF( ( P.EQ.JMAX ) .OR. ( ROWMAX.LE.COLMAX ) )
+      |                                             ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+zlasyf_rk.f:289:53:
+
+  289 |       INTEGER            IMAX, ITEMP, J, JB, JJ, JMAX, K, KK, KW, KKW,
+      |                                                     ^
+note: ‘jmax’ was declared here
+zstegr.f:263:23:
+
+  263 |      $           ABSTOL, M, W, Z, LDZ, ISUPPZ, WORK, LWORK, IWORK,
+      |                       1
+Warning: Unused dummy argument ‘abstol’ at (1) [-Wunused-dummy-argument]
+zstein.f:423:16:
+
+  423 |             IF( NRM.LT.DTPCRT )
+      |                ^
+Warning: ‘dtpcrt’ may be used uninitialized [-Wmaybe-uninitialized]
+zstein.f:213:31:
+
+  213 |       DOUBLE PRECISION   DTPCRT, EPS, EPS1, NRM, ONENRM, ORTOL, PERTOL,
+      |                               ^
+note: ‘dtpcrt’ was declared here
+zstein.f:384:72:
+
+  384 |      $            ABS( WORK( INDRV1+JMAX ) )
+      |                                                                        ^
+Warning: ‘onenrm’ may be used uninitialized [-Wmaybe-uninitialized]
+zstein.f:213:55:
+
+  213 |       DOUBLE PRECISION   DTPCRT, EPS, EPS1, NRM, ONENRM, ORTOL, PERTOL,
+      |                                                       ^
+note: ‘onenrm’ was declared here
+zstein.f:398:15:
+
+  398 |             IF( ABS( XJ-XJM ).GT.ORTOL )
+      |               ^
+Warning: ‘ortol’ may be used uninitialized [-Wmaybe-uninitialized]
+zstein.f:213:62:
+
+  213 |       DOUBLE PRECISION   DTPCRT, EPS, EPS1, NRM, ONENRM, ORTOL, PERTOL,
+      |                                                              ^
+note: ‘ortol’ was declared here
+zstein.f:347:72:
+
+  347 |                SEP = XJ - XJM
+      |                                                                        ^
+Warning: ‘xjm’ may be used uninitialized [-Wmaybe-uninitialized]
+zstein.f:214:47:
+
+  214 |      $                   SCL, SEP, TOL, XJ, XJM, ZTR
+      |                                               ^
+note: ‘xjm’ was declared here
+zstein.f:400:15:
+
+  400 |             IF( GPIND.NE.J ) THEN
+      |               ^
+Warning: ‘gpind’ may be used uninitialized [-Wmaybe-uninitialized]
+zstein.f:210:46:
+
+  210 |       INTEGER            B1, BLKSIZ, BN, GPIND, I, IINFO, INDRV1,
+      |                                              ^
+note: ‘gpind’ was declared here
+zsptrf.f:276:72:
+
+  276 |                KX = IMAX*( IMAX+1 ) / 2 + IMAX
+      |                                                                        ^
+Warning: ‘imax’ may be used uninitialized [-Wmaybe-uninitialized]
+zsptrf.f:184:32:
+
+  184 |       INTEGER            I, IMAX, J, JMAX, K, KC, KK, KNC, KP, KPC,
+      |                                ^
+note: ‘imax’ was declared here
+zsytf2.f:483:18:
+
+  483 |                IF( IMAX.LT.N ) THEN
+      |                  ^
+Warning: ‘imax’ may be used uninitialized [-Wmaybe-uninitialized]
+zsytf2.f:217:32:
+
+  217 |       INTEGER            I, IMAX, J, JMAX, K, KK, KP, KSTEP
+      |                                ^
+note: ‘imax’ was declared here
+zsytf2_rook.f:635:44:
+
+  635 |                   ELSE IF( ( P.EQ.JMAX ).OR.( ROWMAX.LE.COLMAX ) ) THEN
+      |                                            ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+zsytf2_rook.f:220:41:
+
+  220 |       INTEGER            I, IMAX, J, JMAX, ITEMP, K, KK, KP, KSTEP,
+      |                                         ^
+note: ‘jmax’ was declared here
+ztptri.f:227:72:
+
+  227 |      $                     AP( JCLAST ), AP( JC+1 ), 1 )
+      |                                                                        ^
+Warning: ‘jclast’ may be used uninitialized [-Wmaybe-uninitialized]
+ztptri.f:139:38:
+
+  139 |       INTEGER            J, JC, JCLAST, JJ
+      |                                      ^
+note: ‘jclast’ was declared here
+ztzrzf.f:238:23:
+
+  238 |       IF( NB.GT.1 .AND. NB.LT.M ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+ztzrzf.f:172:35:
+
+  172 |      $                   M1, MU, NB, NBMIN, NX
+      |                                   ^
+note: ‘nb’ was declared here
+ztrsen.f:348:35:
+
+  348 |       ELSE IF( LWORK.LT.LWMIN .AND. .NOT.LQUERY ) THEN
+      |                                   ^
+Warning: ‘lwmin’ may be used uninitialized [-Wmaybe-uninitialized]
+ztrsen.f:287:49:
+
+  287 |       INTEGER            IERR, K, KASE, KS, LWMIN, N1, N2, NN
+      |                                                 ^
+note: ‘lwmin’ was declared here
+zsytf2_rk.f:737:44:
+
+  737 |                   ELSE IF( ( P.EQ.JMAX ).OR.( ROWMAX.LE.COLMAX ) ) THEN
+      |                                            ^
+Warning: ‘jmax’ may be used uninitialized [-Wmaybe-uninitialized]
+zsytf2_rk.f:268:41:
+
+  268 |       INTEGER            I, IMAX, J, JMAX, ITEMP, K, KK, KP, KSTEP,
+      |                                         ^
+note: ‘jmax’ was declared here
+zungql.f:207:23:
+
+  207 |       IF( NB.GT.1 .AND. NB.LT.K ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+zungql.f:149:27:
+
+  149 |      $                   NB, NBMIN, NX
+      |                           ^
+note: ‘nb’ was declared here
+zungrq.f:207:23:
+
+  207 |       IF( NB.GT.1 .AND. NB.LT.K ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+zungrq.f:149:35:
+
+  149 |      $                   LWKOPT, NB, NBMIN, NX
+      |                                   ^
+note: ‘nb’ was declared here
+zunmql.f:268:23:
+
+  268 |       IF( NB.GT.1 .AND. NB.LT.K ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+zunmql.f:190:31:
+
+  190 |      $                   MI, NB, NBMIN, NI, NQ, NW
+      |                               ^
+note: ‘nb’ was declared here
+zunmrq.f:269:23:
+
+  269 |       IF( NB.GT.1 .AND. NB.LT.K ) THEN
+      |                       ^
+Warning: ‘nb’ may be used uninitialized [-Wmaybe-uninitialized]
+zunmrq.f:191:31:
+
+  191 |      $                   MI, NB, NBMIN, NI, NQ, NW
+      |                               ^
+note: ‘nb’ was declared here
+zuncsd.f:349:44:
+
+  349 |       INTEGER            CHILDINFO, I, IB11D, IB11E, IB12D, IB12E,
+      |                                            ^
+Warning: ‘ib11d’ may be used uninitialized [-Wmaybe-uninitialized]
+zuncsd.f:349:51:
+
+  349 |       INTEGER            CHILDINFO, I, IB11D, IB11E, IB12D, IB12E,
+      |                                                   ^
+Warning: ‘ib11e’ may be used uninitialized [-Wmaybe-uninitialized]
+zuncsd.f:349:58:
+
+  349 |       INTEGER            CHILDINFO, I, IB11D, IB11E, IB12D, IB12E,
+      |                                                          ^
+Warning: ‘ib12d’ may be used uninitialized [-Wmaybe-uninitialized]
+zuncsd.f:349:65:
+
+  349 |       INTEGER            CHILDINFO, I, IB11D, IB11E, IB12D, IB12E,
+      |                                                                 ^
+Warning: ‘ib12e’ may be used uninitialized [-Wmaybe-uninitialized]
+zuncsd.f:350:30:
+
+  350 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                              ^
+Warning: ‘ib21d’ may be used uninitialized [-Wmaybe-uninitialized]
+zuncsd.f:350:37:
+
+  350 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                                     ^
+Warning: ‘ib21e’ may be used uninitialized [-Wmaybe-uninitialized]
+zuncsd.f:350:44:
+
+  350 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                                            ^
+Warning: ‘ib22d’ may be used uninitialized [-Wmaybe-uninitialized]
+zuncsd.f:350:51:
+
+  350 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                                                   ^
+Warning: ‘ib22e’ may be used uninitialized [-Wmaybe-uninitialized]
+zuncsd.f:350:59:
+
+  350 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                                                           ^
+Warning: ‘ibbcsd’ may be used uninitialized [-Wmaybe-uninitialized]
+zuncsd.f:350:67:
+
+  350 |      $                   IB21D, IB21E, IB22D, IB22E, IBBCSD, IORBDB,
+      |                                                                   ^
+Warning: ‘iorbdb’ may be used uninitialized [-Wmaybe-uninitialized]
+zuncsd.f:351:31:
+
+  351 |      $                   IORGLQ, IORGQR, IPHI, ITAUP1, ITAUP2, ITAUQ1,
+      |                               ^
+Warning: ‘iorglq’ may be used uninitialized [-Wmaybe-uninitialized]
+zuncsd.f:351:39:
+
+  351 |      $                   IORGLQ, IORGQR, IPHI, ITAUP1, ITAUP2, ITAUQ1,
+      |                                       ^
+Warning: ‘iorgqr’ may be used uninitialized [-Wmaybe-uninitialized]
+zuncsd.f:351:61:
+
+  351 |      $                   IORGLQ, IORGQR, IPHI, ITAUP1, ITAUP2, ITAUQ1,
+      |                                                             ^
+Warning: ‘itaup2’ may be used uninitialized [-Wmaybe-uninitialized]
+zuncsd.f:351:69:
+
+  351 |      $                   IORGLQ, IORGQR, IPHI, ITAUP1, ITAUP2, ITAUQ1,
+      |                                                                     ^
+Warning: ‘itauq1’ may be used uninitialized [-Wmaybe-uninitialized]
+zuncsd.f:352:31:
+
+  352 |      $                   ITAUQ2, J, LBBCSDWORK, LBBCSDWORKMIN,
+      |                               ^
+Warning: ‘itauq2’ may be used uninitialized [-Wmaybe-uninitialized]
+zgetsls.f:490:72:
+
+  490 |       WORK( 1 ) = DBLE( TSZO + LWO )
+      |                                                                        ^
+Warning: ‘lwo’ may be used uninitialized [-Wmaybe-uninitialized]
+zgetsls.f:187:48:
+
+  187 |      $                   SCLLEN, TSZO, TSZM, LWO, LWM, LW1, LW2,
+      |                                                ^
+note: ‘lwo’ was declared here
+zgetsls.f:285:72:
+
+  285 |         LW2 = LWM
+      |                                                                        ^
+Warning: ‘lwm’ may be used uninitialized [-Wmaybe-uninitialized]
+zgetsls.f:187:53:
+
+  187 |      $                   SCLLEN, TSZO, TSZM, LWO, LWM, LW1, LW2,
+      |                                                     ^
+note: ‘lwm’ was declared here
+slaebz.f:317:45:
+
+  317 |      $                   RELTOL, PIVMIN, D, E, E2, NVAL, AB, C, MOUT,
+      |                                             1
+Warning: Unused dummy argument ‘e’ at (1) [-Wunused-dummy-argument]
+sstein.f:373:72:
+
+  373 |      $            ABS( WORK( INDRV1+JMAX ) )
+      |                                                                        ^
+Warning: ‘onenrm’ may be used uninitialized [-Wmaybe-uninitialized]
+sstein.f:201:52:
+
+  201 |       REAL               CTR, EPS, EPS1, NRM, ONENRM, ORTOL, PERTOL,
+      |                                                    ^
+note: ‘onenrm’ was declared here
+sstein.f:387:15:
+
+  387 |             IF( ABS( XJ-XJM ).GT.ORTOL )
+      |               ^
+Warning: ‘ortol’ may be used uninitialized [-Wmaybe-uninitialized]
+sstein.f:201:59:
+
+  201 |       REAL               CTR, EPS, EPS1, NRM, ONENRM, ORTOL, PERTOL,
+      |                                                           ^
+note: ‘ortol’ was declared here
+sstein.f:407:16:
+
+  407 |             IF( NRM.LT.STPCRT )
+      |                ^
+Warning: ‘stpcrt’ may be used uninitialized [-Wmaybe-uninitialized]
+sstein.f:202:41:
+
+  202 |      $                   SCL, SEP, STPCRT, TOL, XJ, XJM
+      |                                         ^
+note: ‘stpcrt’ was declared here
+sstein.f:336:72:
+
+  336 |                SEP = XJ - XJM
+      |                                                                        ^
+Warning: ‘xjm’ may be used uninitialized [-Wmaybe-uninitialized]
+sstein.f:202:55:
+
+  202 |      $                   SCL, SEP, STPCRT, TOL, XJ, XJM
+      |                                                       ^
+note: ‘xjm’ was declared here
+sstein.f:389:15:
+
+  389 |             IF( GPIND.NE.J ) THEN
+      |               ^
+Warning: ‘gpind’ may be used uninitialized [-Wmaybe-uninitialized]
+sstein.f:198:46:
+
+  198 |       INTEGER            B1, BLKSIZ, BN, GPIND, I, IINFO, INDRV1,
+      |                                              ^
+note: ‘gpind’ was declared here
+sbdsdc.f:454:72:
+
+  454 |      $                      WORK( WSTART ), IWORK, INFO )
+      |                                                                        ^
+Warning: ‘difl’ may be used uninitialized [-Wmaybe-uninitialized]
+sbdsdc.f:223:29:
+
+  223 |       INTEGER            DIFL, DIFR, GIVCOL, GIVNUM, GIVPTR, I, IC,
+      |                             ^
+note: ‘difl’ was declared here
+sbdsdc.f:454:72:
+
+  454 |      $                      WORK( WSTART ), IWORK, INFO )
+      |                                                                        ^
+Warning: ‘difr’ may be used uninitialized [-Wmaybe-uninitialized]
+sbdsdc.f:223:35:
+
+  223 |       INTEGER            DIFL, DIFR, GIVCOL, GIVNUM, GIVPTR, I, IC,
+      |                                   ^
+note: ‘difr’ was declared here
+sbdsdc.f:454:72:
+
+  454 |      $                      WORK( WSTART ), IWORK, INFO )
+      |                                                                        ^
+Warning: ‘givcol’ may be used uninitialized [-Wmaybe-uninitialized]
+sbdsdc.f:223:43:
+
+  223 |       INTEGER            DIFL, DIFR, GIVCOL, GIVNUM, GIVPTR, I, IC,
+      |                                           ^
+note: ‘givcol’ was declared here
+sbdsdc.f:454:72:
+
+  454 |      $                      WORK( WSTART ), IWORK, INFO )
+      |                                                                        ^
+Warning: ‘givnum’ may be used uninitialized [-Wmaybe-uninitialized]
+sbdsdc.f:223:51:
+
+  223 |       INTEGER            DIFL, DIFR, GIVCOL, GIVNUM, GIVPTR, I, IC,
+      |                                                   ^
+note: ‘givnum’ was declared here
+sbdsdc.f:454:72:
+
+  454 |      $                      WORK( WSTART ), IWORK, INFO )
+      |                                                                        ^
+Warning: ‘ic’ may be used uninitialized [-Wmaybe-uninitialized]
+sbdsdc.f:223:66:
+
+  223 |       INTEGER            DIFL, DIFR, GIVCOL, GIVNUM, GIVPTR, I, IC,
+      |                                                                  ^
+note: ‘ic’ was declared here
+sbdsdc.f:454:72:
+
+  454 |      $                      WORK( WSTART ), IWORK, INFO )
+      |                                                                        ^
+Warning: ‘is’ may be used uninitialized [-Wmaybe-uninitialized]
+sbdsdc.f:224:45:
+
+  224 |      $                   ICOMPQ, IERR, II, IS, IU, IUPLO, IVT, J, K, KK,
+      |                                             ^
+note: ‘is’ was declared here
+sbdsdc.f:454:72:
+
+  454 |      $                      WORK( WSTART ), IWORK, INFO )
+      |                                                                        ^
+Warning: ‘ivt’ may be used uninitialized [-Wmaybe-uninitialized]
+sbdsdc.f:224:61:
+
+  224 |      $                   ICOMPQ, IERR, II, IS, IU, IUPLO, IVT, J, K, KK,
+      |                                                             ^
+note: ‘ivt’ was declared here
+sbdsdc.f:454:72:
+
+  454 |      $                      WORK( WSTART ), IWORK, INFO )
+      |                                                                        ^
+Warning: ‘poles’ may be used uninitialized [-Wmaybe-uninitialized]
+sbdsdc.f:225:54:
+
+  225 |      $                   MLVL, NM1, NSIZE, PERM, POLES, QSTART, SMLSIZ,
+      |                                                      ^
+note: ‘poles’ was declared here
+sbdsdc.f:454:72:
+
+  454 |      $                      WORK( WSTART ), IWORK, INFO )
+      |                                                                        ^
+Warning: ‘z’ may be used uninitialized [-Wmaybe-uninitialized]
+sbdsdc.f:226:55:
+
+  226 |      $                   SMLSZP, SQRE, START, WSTART, Z
+      |                                                       ^
+note: ‘z’ was declared here
+slaed0.f:383:72:
+
+  383 |      $                      IWORK( SUBPBS+1 ), INFO )
+      |                                                                        ^
+Warning: ‘igivcl’ may be used uninitialized [-Wmaybe-uninitialized]
+slaed0.f:193:56:
+
+  193 |       INTEGER            CURLVL, CURPRB, CURR, I, IGIVCL, IGIVNM,
+      |                                                        ^
+note: ‘igivcl’ was declared here
+slaed0.f:194:31:
+
+  194 |      $                   IGIVPT, INDXQ, IPERM, IPRMPT, IQ, IQPTR, IWREM,
+      |                               ^
+Warning: ‘igivpt’ may be used uninitialized [-Wmaybe-uninitialized]
+slaed0.f:383:72:
+
+  383 |      $                      IWORK( SUBPBS+1 ), INFO )
+      |                                                                        ^
+Warning: ‘iperm’ may be used uninitialized [-Wmaybe-uninitialized]
+slaed0.f:194:45:
+
+  194 |      $                   IGIVPT, INDXQ, IPERM, IPRMPT, IQ, IQPTR, IWREM,
+      |                                             ^
+note: ‘iperm’ was declared here
+slaed0.f:194:53:
+
+  194 |      $                   IGIVPT, INDXQ, IPERM, IPRMPT, IQ, IQPTR, IWREM,
+      |                                                     ^
+Warning: ‘iprmpt’ may be used uninitialized [-Wmaybe-uninitialized]
+slaed0.f:321:72:
+
+  321 |      $                   INFO )
+      |                                                                        ^
+Warning: ‘iq’ may be used uninitialized [-Wmaybe-uninitialized]
+slaed0.f:194:57:
+
+  194 |      $                   IGIVPT, INDXQ, IPERM, IPRMPT, IQ, IQPTR, IWREM,
+      |                                                         ^
+note: ‘iq’ was declared here
+slaed0.f:321:72:
+
+  321 |      $                   INFO )
+      |                                                                        ^
+Warning: ‘iqptr’ may be used uninitialized [-Wmaybe-uninitialized]
+slaed0.f:194:64:
+
+  194 |      $                   IGIVPT, INDXQ, IPERM, IPRMPT, IQ, IQPTR, IWREM,
+      |                                                                ^
+note: ‘iqptr’ was declared here
+slaed0.f:194:71:
+
+  194 |      $                   IGIVPT, INDXQ, IPERM, IPRMPT, IQ, IQPTR, IWREM,
+      |                                                                       ^
+Warning: ‘iwrem’ may be used uninitialized [-Wmaybe-uninitialized]
+slanst.f:121:30:
+
+  121 |       REAL               ANORM, SCALE, SUM
+      |                              ^
+Warning: ‘anorm’ may be used uninitialized [-Wmaybe-uninitialized]
+slaed8.f:417:72:
+
+  417 |          S = Z( JLAM )
+      |                                                                        ^
+Warning: ‘jlam’ may be used uninitialized [-Wmaybe-uninitialized]
+slaed8.f:269:41:
+
+  269 |       INTEGER            I, IMAX, J, JLAM, JMAX, JP, K2, N1, N1P1, N2
+      |                                         ^
+note: ‘jlam’ was declared here
+slarrc.f:135:54:
+
+  135 |       SUBROUTINE SLARRC( JOBT, N, VL, VU, D, E, PIVMIN,
+      |                                                      1
+Warning: Unused dummy argument ‘pivmin’ at (1) [-Wunused-dummy-argument]
+slaed2.f:436:72:
+
+  436 |       DLAMBDA( K ) = D( PJ )
+      |                                                                        ^
+Warning: ‘pj’ may be used uninitialized [-Wmaybe-uninitialized]
+slaed2.f:240:35:
+
+  240 |      $                   N2, NJ, PJ
+      |                                   ^
+note: ‘pj’ was declared here
+slaneg.f:117:55:
+
+  117 |       INTEGER FUNCTION SLANEG( N, D, LLD, SIGMA, PIVMIN, R )
+      |                                                       1
+Warning: Unused dummy argument ‘pivmin’ at (1) [-Wunused-dummy-argument]
+slasd8.f:303:72:
+
+  303 |      $                   / ( DSIGMA( I )+DJ )
+      |                                                                        ^
+Warning: ‘difrj’ may be used uninitialized [-Wmaybe-uninitialized]
+slasd8.f:186:37:
+
+  186 |       REAL               DIFLJ, DIFRJ, DJ, DSIGJ, DSIGJP, RHO, TEMP
+      |                                     ^
+note: ‘difrj’ was declared here
+slarrd.f:727:39:
+
+  727 |                IF( W( JE ).LE.WLU .AND. IDISCL.GT.0 ) THEN
+      |                                       ^
+Warning: ‘wlu’ may be used uninitialized [-Wmaybe-uninitialized]
+slarrd.f:363:49:
+
+  363 |      $                   TNORM, UFLOW, WKILL, WLU, WUL
+      |                                                 ^
+note: ‘wlu’ was declared here
+slarrd.f:744:39:
+
+  744 |                IF( W( JE ).GE.WUL .AND. IDISCU.GT.0 ) THEN
+      |                                       ^
+Warning: ‘wul’ may be used uninitialized [-Wmaybe-uninitialized]
+slarrd.f:363:54:
+
+  363 |      $                   TNORM, UFLOW, WKILL, WLU, WUL
+      |                                                      ^
+note: ‘wul’ was declared here
+slasq4.f:416:72:
+
+  416 |       TAU = S
+      |                                                                        ^
+Warning: ‘s’ may be used uninitialized [-Wmaybe-uninitialized]
+slasq4.f:177:55:
+
+  177 |       REAL               A2, B1, B2, GAM, GAP1, GAP2, S
+      |                                                       ^
+note: ‘s’ was declared here
+slasd7.f:444:72:
+
+  444 |       J = J + 1
+      |                                                                        ^
+Warning: ‘jprev’ may be used uninitialized [-Wmaybe-uninitialized]
+slasd7.f:307:59:
+
+  307 |       INTEGER            I, IDXI, IDXJ, IDXJP, J, JP, JPREV, K2, M, N,
+      |                                                           ^
+note: ‘jprev’ was declared here
+slasd2.f:440:72:
+
+  440 |       J = J + 1
+      |                                                                        ^
+Warning: ‘jprev’ may be used uninitialized [-Wmaybe-uninitialized]
+slasd2.f:297:63:
+
+  297 |       INTEGER            CT, I, IDXI, IDXJ, IDXJP, J, JP, JPREV, K2, M,
+      |                                                               ^
+note: ‘jprev’ was declared here
+../INSTALL/second_INT_ETIME.f:36:6:
+
+   36 |       REAL FUNCTION SECOND( )
+      |      1
+Warning: ‘second’ declared at (1) is also the name of an intrinsic.  It can only be called via an explicit interface or if declared EXTERNAL. [-Wintrinsic-shadow]
+../INSTALL/second_INT_ETIME.f:52:30:
+
+   52 |       REAL               ETIME
+      |                              1
+Warning: Type specified for intrinsic function ‘etime’ at (1) is ignored [-Wsurprising]
+slarre.f:404:71:
+
+  404 |      $       ((IRANGE.EQ.VALRNG).AND.(D(1).GT.VL).AND.(D(1).LE.VU)).OR.
+      |                                                                       ^
+Warning: ‘irange’ may be used uninitialized [-Wmaybe-uninitialized]
+slarre.f:340:47:
+
+  340 |      $                   IN, INDL, INDU, IRANGE, J, JBLK, MB, MM,
+      |                                               ^
+note: ‘irange’ was declared here
+slarre.f:640:12:
+
+  640 |          IF(MB.GT.1) THEN
+      |            ^
+Warning: ‘mb’ may be used uninitialized [-Wmaybe-uninitialized]
+slarre.f:340:60:
+
+  340 |      $                   IN, INDL, INDU, IRANGE, J, JBLK, MB, MM,
+      |                                                            ^
+note: ‘mb’ was declared here
+slarre.f:897:72:
+
+  897 |          WBEGIN = WEND + 1
+      |                                                                        ^
+Warning: ‘wend’ may be used uninitialized [-Wmaybe-uninitialized]
+slarre.f:341:37:
+
+  341 |      $                   WBEGIN, WEND
+      |                                     ^
+note: ‘wend’ was declared here
+../INSTALL/second_INT_ETIME.f:58:72:
+
+   58 |       SECOND = TARRAY( 1 )
+      |                                                                        ^
+Warning: ‘tarray’ is used uninitialized [-Wuninitialized]
+../INSTALL/second_INT_ETIME.f:49:36:
+
+   49 |       REAL               TARRAY( 2 )
+      |                                    ^
+note: ‘tarray’ declared here
+dlaebz.f:317:45:
+
+  317 |      $                   RELTOL, PIVMIN, D, E, E2, NVAL, AB, C, MOUT,
+      |                                             1
+Warning: Unused dummy argument ‘e’ at (1) [-Wunused-dummy-argument]
+dstein.f:407:16:
+
+  407 |             IF( NRM.LT.DTPCRT )
+      |                ^
+Warning: ‘dtpcrt’ may be used uninitialized [-Wmaybe-uninitialized]
+dstein.f:201:31:
+
+  201 |       DOUBLE PRECISION   DTPCRT, EPS, EPS1, NRM, ONENRM, ORTOL, PERTOL,
+      |                               ^
+note: ‘dtpcrt’ was declared here
+dstein.f:373:72:
+
+  373 |      $            ABS( WORK( INDRV1+JMAX ) )
+      |                                                                        ^
+Warning: ‘onenrm’ may be used uninitialized [-Wmaybe-uninitialized]
+dstein.f:201:55:
+
+  201 |       DOUBLE PRECISION   DTPCRT, EPS, EPS1, NRM, ONENRM, ORTOL, PERTOL,
+      |                                                       ^
+note: ‘onenrm’ was declared here
+dstein.f:387:15:
+
+  387 |             IF( ABS( XJ-XJM ).GT.ORTOL )
+      |               ^
+Warning: ‘ortol’ may be used uninitialized [-Wmaybe-uninitialized]
+dstein.f:201:62:
+
+  201 |       DOUBLE PRECISION   DTPCRT, EPS, EPS1, NRM, ONENRM, ORTOL, PERTOL,
+      |                                                              ^
+note: ‘ortol’ was declared here
+dstein.f:336:72:
+
+  336 |                SEP = XJ - XJM
+      |                                                                        ^
+Warning: ‘xjm’ may be used uninitialized [-Wmaybe-uninitialized]
+dstein.f:202:47:
+
+  202 |      $                   SCL, SEP, TOL, XJ, XJM, ZTR
+      |                                               ^
+note: ‘xjm’ was declared here
+dstein.f:389:15:
+
+  389 |             IF( GPIND.NE.J ) THEN
+      |               ^
+Warning: ‘gpind’ may be used uninitialized [-Wmaybe-uninitialized]
+dstein.f:198:46:
+
+  198 |       INTEGER            B1, BLKSIZ, BN, GPIND, I, IINFO, INDRV1,
+      |                                              ^
+note: ‘gpind’ was declared here
+zgesvdq.f:633:72:
+
+  633 |                  MINWRK = MAX( LWQP3, LWSVD, LWUNQ )
+      |                                                                        ^
+Warning: ‘lwunq’ may be used uninitialized [-Wmaybe-uninitialized]
+zgesvdq.f:436:66:
+
+  436 |      $            LWRK_ZUNMQR2, LWLQF, LWQRF, LWSVD, LWSVD2, LWUNQ,
+      |                                                                  ^
+note: ‘lwunq’ was declared here
+zgesvdq.f:1376:72:
+
+ 1376 |       IF ( CONDA ) RWORK(1) = SCONDA
+      |                                                                        ^
+Warning: ‘sconda’ may be used uninitialized [-Wmaybe-uninitialized]
+zgesvdq.f:442:47:
+
+  442 |       DOUBLE PRECISION BIG, EPSLN, RTMP, SCONDA, SFMIN
+      |                                               ^
+note: ‘sconda’ was declared here
+dbdsdc.f:454:72:
+
+  454 |      $                      WORK( WSTART ), IWORK, INFO )
+      |                                                                        ^
+Warning: ‘difl’ may be used uninitialized [-Wmaybe-uninitialized]
+dbdsdc.f:223:29:
+
+  223 |       INTEGER            DIFL, DIFR, GIVCOL, GIVNUM, GIVPTR, I, IC,
+      |                             ^
+note: ‘difl’ was declared here
+dbdsdc.f:454:72:
+
+  454 |      $                      WORK( WSTART ), IWORK, INFO )
+      |                                                                        ^
+Warning: ‘difr’ may be used uninitialized [-Wmaybe-uninitialized]
+dbdsdc.f:223:35:
+
+  223 |       INTEGER            DIFL, DIFR, GIVCOL, GIVNUM, GIVPTR, I, IC,
+      |                                   ^
+note: ‘difr’ was declared here
+dbdsdc.f:454:72:
+
+  454 |      $                      WORK( WSTART ), IWORK, INFO )
+      |                                                                        ^
+Warning: ‘givcol’ may be used uninitialized [-Wmaybe-uninitialized]
+dbdsdc.f:223:43:
+
+  223 |       INTEGER            DIFL, DIFR, GIVCOL, GIVNUM, GIVPTR, I, IC,
+      |                                           ^
+note: ‘givcol’ was declared here
+dbdsdc.f:454:72:
+
+  454 |      $                      WORK( WSTART ), IWORK, INFO )
+      |                                                                        ^
+Warning: ‘givnum’ may be used uninitialized [-Wmaybe-uninitialized]
+dbdsdc.f:223:51:
+
+  223 |       INTEGER            DIFL, DIFR, GIVCOL, GIVNUM, GIVPTR, I, IC,
+      |                                                   ^
+note: ‘givnum’ was declared here
+dbdsdc.f:454:72:
+
+  454 |      $                      WORK( WSTART ), IWORK, INFO )
+      |                                                                        ^
+Warning: ‘ic’ may be used uninitialized [-Wmaybe-uninitialized]
+dbdsdc.f:223:66:
+
+  223 |       INTEGER            DIFL, DIFR, GIVCOL, GIVNUM, GIVPTR, I, IC,
+      |                                                                  ^
+note: ‘ic’ was declared here
+dbdsdc.f:454:72:
+
+  454 |      $                      WORK( WSTART ), IWORK, INFO )
+      |                                                                        ^
+Warning: ‘is’ may be used uninitialized [-Wmaybe-uninitialized]
+dbdsdc.f:224:45:
+
+  224 |      $                   ICOMPQ, IERR, II, IS, IU, IUPLO, IVT, J, K, KK,
+      |                                             ^
+note: ‘is’ was declared here
+dbdsdc.f:454:72:
+
+  454 |      $                      WORK( WSTART ), IWORK, INFO )
+      |                                                                        ^
+Warning: ‘ivt’ may be used uninitialized [-Wmaybe-uninitialized]
+dbdsdc.f:224:61:
+
+  224 |      $                   ICOMPQ, IERR, II, IS, IU, IUPLO, IVT, J, K, KK,
+      |                                                             ^
+note: ‘ivt’ was declared here
+dbdsdc.f:454:72:
+
+  454 |      $                      WORK( WSTART ), IWORK, INFO )
+      |                                                                        ^
+Warning: ‘poles’ may be used uninitialized [-Wmaybe-uninitialized]
+dbdsdc.f:225:54:
+
+  225 |      $                   MLVL, NM1, NSIZE, PERM, POLES, QSTART, SMLSIZ,
+      |                                                      ^
+note: ‘poles’ was declared here
+dbdsdc.f:454:72:
+
+  454 |      $                      WORK( WSTART ), IWORK, INFO )
+      |                                                                        ^
+Warning: ‘z’ may be used uninitialized [-Wmaybe-uninitialized]
+dbdsdc.f:226:55:
+
+  226 |      $                   SMLSZP, SQRE, START, WSTART, Z
+      |                                                       ^
+note: ‘z’ was declared here
+sstebz.f:665:39:
+
+  665 |                IF( W( JE ).LE.WLU .AND. IDISCL.GT.0 ) THEN
+      |                                       ^
+Warning: ‘wlu’ may be used uninitialized [-Wmaybe-uninitialized]
+sstebz.f:304:63:
+
+  304 |      $                   TMP1, TMP2, TNORM, ULP, WKILL, WL, WLU, WU, WUL
+      |                                                               ^
+note: ‘wlu’ was declared here
+sstebz.f:667:44:
+
+  667 |                ELSE IF( W( JE ).GE.WUL .AND. IDISCU.GT.0 ) THEN
+      |                                            ^
+Warning: ‘wul’ may be used uninitialized [-Wmaybe-uninitialized]
+sstebz.f:304:72:
+
+  304 |      $                   TMP1, TMP2, TNORM, ULP, WKILL, WL, WLU, WU, WUL
+      |                                                                        ^
+note: ‘wul’ was declared here
+dlanst.f:121:30:
+
+  121 |       DOUBLE PRECISION   ANORM, SCALE, SUM
+      |                              ^
+Warning: ‘anorm’ may be used uninitialized [-Wmaybe-uninitialized]
+dlarrc.f:135:54:
+
+  135 |       SUBROUTINE DLARRC( JOBT, N, VL, VU, D, E, PIVMIN,
+      |                                                      1
+Warning: Unused dummy argument ‘pivmin’ at (1) [-Wunused-dummy-argument]
+dlaed8.f:417:72:
+
+  417 |          S = Z( JLAM )
+      |                                                                        ^
+Warning: ‘jlam’ may be used uninitialized [-Wmaybe-uninitialized]
+dlaed8.f:269:41:
+
+  269 |       INTEGER            I, IMAX, J, JLAM, JMAX, JP, K2, N1, N1P1, N2
+      |                                         ^
+note: ‘jlam’ was declared here
+dlaneg.f:117:55:
+
+  117 |       INTEGER FUNCTION DLANEG( N, D, LLD, SIGMA, PIVMIN, R )
+      |                                                       1
+Warning: Unused dummy argument ‘pivmin’ at (1) [-Wunused-dummy-argument]
+dlaed0.f:383:72:
+
+  383 |      $                      IWORK( SUBPBS+1 ), INFO )
+      |                                                                        ^
+Warning: ‘igivcl’ may be used uninitialized [-Wmaybe-uninitialized]
+dlaed0.f:193:56:
+
+  193 |       INTEGER            CURLVL, CURPRB, CURR, I, IGIVCL, IGIVNM,
+      |                                                        ^
+note: ‘igivcl’ was declared here
+dlaed0.f:194:31:
+
+  194 |      $                   IGIVPT, INDXQ, IPERM, IPRMPT, IQ, IQPTR, IWREM,
+      |                               ^
+Warning: ‘igivpt’ may be used uninitialized [-Wmaybe-uninitialized]
+dlaed0.f:383:72:
+
+  383 |      $                      IWORK( SUBPBS+1 ), INFO )
+      |                                                                        ^
+Warning: ‘iperm’ may be used uninitialized [-Wmaybe-uninitialized]
+dlaed0.f:194:45:
+
+  194 |      $                   IGIVPT, INDXQ, IPERM, IPRMPT, IQ, IQPTR, IWREM,
+      |                                             ^
+note: ‘iperm’ was declared here
+dlaed0.f:194:53:
+
+  194 |      $                   IGIVPT, INDXQ, IPERM, IPRMPT, IQ, IQPTR, IWREM,
+      |                                                     ^
+Warning: ‘iprmpt’ may be used uninitialized [-Wmaybe-uninitialized]
+dlaed0.f:321:72:
+
+  321 |      $                   INFO )
+      |                                                                        ^
+Warning: ‘iq’ may be used uninitialized [-Wmaybe-uninitialized]
+dlaed0.f:194:57:
+
+  194 |      $                   IGIVPT, INDXQ, IPERM, IPRMPT, IQ, IQPTR, IWREM,
+      |                                                         ^
+note: ‘iq’ was declared here
+dlaed0.f:321:72:
+
+  321 |      $                   INFO )
+      |                                                                        ^
+Warning: ‘iqptr’ may be used uninitialized [-Wmaybe-uninitialized]
+dlaed0.f:194:64:
+
+  194 |      $                   IGIVPT, INDXQ, IPERM, IPRMPT, IQ, IQPTR, IWREM,
+      |                                                                ^
+note: ‘iqptr’ was declared here
+dlaed0.f:194:71:
+
+  194 |      $                   IGIVPT, INDXQ, IPERM, IPRMPT, IQ, IQPTR, IWREM,
+      |                                                                       ^
+Warning: ‘iwrem’ may be used uninitialized [-Wmaybe-uninitialized]
+dlaed2.f:436:72:
+
+  436 |       DLAMBDA( K ) = D( PJ )
+      |                                                                        ^
+Warning: ‘pj’ may be used uninitialized [-Wmaybe-uninitialized]
+dlaed2.f:240:35:
+
+  240 |      $                   N2, NJ, PJ
+      |                                   ^
+note: ‘pj’ was declared here
+dlasd8.f:303:72:
+
+  303 |      $                   / ( DSIGMA( I )+DJ )
+      |                                                                        ^
+Warning: ‘difrj’ may be used uninitialized [-Wmaybe-uninitialized]
+dlasd8.f:186:37:
+
+  186 |       DOUBLE PRECISION   DIFLJ, DIFRJ, DJ, DSIGJ, DSIGJP, RHO, TEMP
+      |                                     ^
+note: ‘difrj’ was declared here
+dlarrd.f:727:39:
+
+  727 |                IF( W( JE ).LE.WLU .AND. IDISCL.GT.0 ) THEN
+      |                                       ^
+Warning: ‘wlu’ may be used uninitialized [-Wmaybe-uninitialized]
+dlarrd.f:363:49:
+
+  363 |      $                   TNORM, UFLOW, WKILL, WLU, WUL
+      |                                                 ^
+note: ‘wlu’ was declared here
+dlarrd.f:744:39:
+
+  744 |                IF( W( JE ).GE.WUL .AND. IDISCU.GT.0 ) THEN
+      |                                       ^
+Warning: ‘wul’ may be used uninitialized [-Wmaybe-uninitialized]
+dlarrd.f:363:54:
+
+  363 |      $                   TNORM, UFLOW, WKILL, WLU, WUL
+      |                                                      ^
+note: ‘wul’ was declared here
+dlasd2.f:440:72:
+
+  440 |       J = J + 1
+      |                                                                        ^
+Warning: ‘jprev’ may be used uninitialized [-Wmaybe-uninitialized]
+dlasd2.f:297:63:
+
+  297 |       INTEGER            CT, I, IDXI, IDXJ, IDXJP, J, JP, JPREV, K2, M,
+      |                                                               ^
+note: ‘jprev’ was declared here
+dlarre.f:400:71:
+
+  400 |      $       ((IRANGE.EQ.VALRNG).AND.(D(1).GT.VL).AND.(D(1).LE.VU)).OR.
+      |                                                                       ^
+Warning: ‘irange’ may be used uninitialized [-Wmaybe-uninitialized]
+dlarre.f:340:47:
+
+  340 |      $                   IN, INDL, INDU, IRANGE, J, JBLK, MB, MM,
+      |                                               ^
+note: ‘irange’ was declared here
+dlarre.f:636:12:
+
+  636 |          IF(MB.GT.1) THEN
+      |            ^
+Warning: ‘mb’ may be used uninitialized [-Wmaybe-uninitialized]
+dlarre.f:340:60:
+
+  340 |      $                   IN, INDL, INDU, IRANGE, J, JBLK, MB, MM,
+      |                                                            ^
+note: ‘mb’ was declared here
+dlarre.f:893:72:
+
+  893 |          WBEGIN = WEND + 1
+      |                                                                        ^
+Warning: ‘wend’ may be used uninitialized [-Wmaybe-uninitialized]
+dlarre.f:341:37:
+
+  341 |      $                   WBEGIN, WEND
+      |                                     ^
+note: ‘wend’ was declared here
+../INSTALL/dsecnd_INT_ETIME.f:52:30:
+
+   52 |       REAL               ETIME
+      |                              1
+Warning: Type specified for intrinsic function ‘etime’ at (1) is ignored [-Wsurprising]
+dlasd7.f:444:72:
+
+  444 |       J = J + 1
+      |                                                                        ^
+Warning: ‘jprev’ may be used uninitialized [-Wmaybe-uninitialized]
+dlasd7.f:307:59:
+
+  307 |       INTEGER            I, IDXI, IDXJ, IDXJP, J, JP, JPREV, K2, M, N,
+      |                                                           ^
+note: ‘jprev’ was declared here
+../INSTALL/dsecnd_INT_ETIME.f:58:72:
+
+   58 |       DSECND = TARRAY( 1 )
+      |                                                                        ^
+Warning: ‘tarray’ is used uninitialized [-Wuninitialized]
+../INSTALL/dsecnd_INT_ETIME.f:49:36:
+
+   49 |       REAL               TARRAY( 2 )
+      |                                    ^
+note: ‘tarray’ declared here
+dlasq4.f:416:72:
+
+  416 |       TAU = S
+      |                                                                        ^
+Warning: ‘s’ may be used uninitialized [-Wmaybe-uninitialized]
+dlasq4.f:177:55:
+
+  177 |       DOUBLE PRECISION   A2, B1, B2, GAM, GAP1, GAP2, S
+      |                                                       ^
+note: ‘s’ was declared here
+iparmq.f:229:68:
+
+  229 |       INTEGER FUNCTION IPARMQ( ISPEC, NAME, OPTS, N, ILO, IHI, LWORK )
+      |                                                                    1
+Warning: Unused dummy argument ‘lwork’ at (1) [-Wunused-dummy-argument]
+iparmq.f:229:51:
+
+  229 |       INTEGER FUNCTION IPARMQ( ISPEC, NAME, OPTS, N, ILO, IHI, LWORK )
+      |                                                   1
+Warning: Unused dummy argument ‘n’ at (1) [-Wunused-dummy-argument]
+iparmq.f:229:48:
+
+  229 |       INTEGER FUNCTION IPARMQ( ISPEC, NAME, OPTS, N, ILO, IHI, LWORK )
+      |                                                1
+Warning: Unused dummy argument ‘opts’ at (1) [-Wunused-dummy-argument]
+iparmq.f:308:12:
+
+  308 |          IF( NH.LE.KNWSWP ) THEN
+      |            ^
+Warning: ‘nh’ may be used uninitialized [-Wmaybe-uninitialized]
+iparmq.f:251:27:
+
+  251 |       INTEGER            NH, NS
+      |                           ^
+note: ‘nh’ was declared here
+iparmq.f:311:72:
+
+  311 |             IPARMQ = 3*NS / 2
+      |                                                                        ^
+Warning: ‘ns’ may be used uninitialized [-Wmaybe-uninitialized]
+iparmq.f:251:31:
+
+  251 |       INTEGER            NH, NS
+      |                               ^
+note: ‘ns’ was declared here
+dstebz.f:666:39:
+
+  666 |                IF( W( JE ).LE.WLU .AND. IDISCL.GT.0 ) THEN
+      |                                       ^
+Warning: ‘wlu’ may be used uninitialized [-Wmaybe-uninitialized]
+dstebz.f:304:63:
+
+  304 |      $                   TMP1, TMP2, TNORM, ULP, WKILL, WL, WLU, WU, WUL
+      |                                                               ^
+note: ‘wlu’ was declared here
+dstebz.f:668:44:
+
+  668 |                ELSE IF( W( JE ).GE.WUL .AND. IDISCU.GT.0 ) THEN
+      |                                            ^
+Warning: ‘wul’ may be used uninitialized [-Wmaybe-uninitialized]
+dstebz.f:304:72:
+
+  304 |      $                   TMP1, TMP2, TNORM, ULP, WKILL, WL, WLU, WU, WUL
+      |                                                                        ^
+note: ‘wul’ was declared here
+DEPRECATED/slahrd.f:277:72:
+
+  277 |       A( K+NB, NB ) = EI
+      |                                                                        ^
+Warning: ‘ei’ may be used uninitialized [-Wmaybe-uninitialized]
+DEPRECATED/slahrd.f:188:27:
+
+  188 |       REAL               EI
+      |                           ^
+note: ‘ei’ was declared here
+DEPRECATED/cgegv.f:690:20:
+
+  690 |             SBETA = ( SCALE*BETA( JC ) )*BNRM
+      |                    1
+Warning: Possible change of value in conversion from COMPLEX(4) to REAL(4) at (1) [-Wconversion]
+DEPRECATED/dlahrd.f:277:72:
+
+  277 |       A( K+NB, NB ) = EI
+      |                                                                        ^
+Warning: ‘ei’ may be used uninitialized [-Wmaybe-uninitialized]
+DEPRECATED/dlahrd.f:188:27:
+
+  188 |       DOUBLE PRECISION   EI
+      |                           ^
+note: ‘ei’ was declared here
+DEPRECATED/zgegv.f:690:20:
+
+  690 |             SBETA = ( SCALE*BETA( JC ) )*BNRM
+      |                    1
+Warning: Possible change of value in conversion from COMPLEX(8) to REAL(8) at (1) [-Wconversion]
+dgedmdq.f90:620:27:
+
+  620 |           WORK(2)  = OLWORK
+      |                           ^
+Warning: ‘olwork’ may be used uninitialized [-Wmaybe-uninitialized]
+dgedmdq.f90:454:57:
+
+  454 |                            OLWDMD, OLWGQR, OLWMQR, OLWORK, &
+      |                                                         ^
+note: ‘olwork’ was declared here
+sgedmdq.f90:619:27:
+
+  619 |           WORK(2)  = OLWORK
+      |                           ^
+Warning: ‘olwork’ may be used uninitialized [-Wmaybe-uninitialized]
+sgedmdq.f90:454:57:
+
+  454 |                            OLWDMD, OLWGQR, OLWMQR, OLWORK, &
+      |                                                         ^
+note: ‘olwork’ was declared here
+ar: `u' modifier ignored since `D' is the default (see `U')
+slatms.f:1094:72:
+
+ 1094 |                DO 410 JR = IROW + 1, LDA
+      |                                                                        ^
+Warning: ‘irow’ may be used uninitialized [-Wmaybe-uninitialized]
+slatms.f:350:29:
+
+  350 |      $                   IROW, IRSIGN, ISKEW, ISYM, ISYMPK, J, JC, JCH,
+      |                             ^
+note: ‘irow’ was declared here
+slatms.f:1093:23:
+
+ 1093 |             DO 420 JC = ICOL, M
+      |                       ^
+Warning: ‘icol’ may be used uninitialized [-Wmaybe-uninitialized]
+slatms.f:348:36:
+
+  348 |       INTEGER            I, IC, ICOL, IDIST, IENDCH, IINFO, IL, ILDA,
+      |                                    ^
+note: ‘icol’ was declared here
+slatmt.f:1105:72:
+
+ 1105 |                DO 500 JR = IROW + 1, LDA
+      |                                                                        ^
+Warning: ‘irow’ may be used uninitialized [-Wmaybe-uninitialized]
+slatmt.f:360:29:
+
+  360 |      $                   IROW, IRSIGN, ISKEW, ISYM, ISYMPK, J, JC, JCH,
+      |                             ^
+note: ‘irow’ was declared here
+slatmt.f:1104:23:
+
+ 1104 |             DO 510 JC = ICOL, M
+      |                       ^
+Warning: ‘icol’ may be used uninitialized [-Wmaybe-uninitialized]
+slatmt.f:358:36:
+
+  358 |       INTEGER            I, IC, ICOL, IDIST, IENDCH, IINFO, IL, ILDA,
+      |                                    ^
+note: ‘icol’ was declared here
+slarot.f:307:72:
+
+  307 |          A( IYT ) = YT( NT )
+      |                                                                        ^
+Warning: ‘iyt’ may be used uninitialized [-Wmaybe-uninitialized]
+slarot.f:243:49:
+
+  243 |       INTEGER            IINC, INEXT, IX, IY, IYT, NT
+      |                                                 ^
+note: ‘iyt’ was declared here
+slatm2.f:291:9:
+
+  291 |       IF( ISUB.EQ.JSUB ) THEN
+      |         ^
+Warning: ‘isub’ may be used uninitialized [-Wmaybe-uninitialized]
+slatm2.f:235:29:
+
+  235 |       INTEGER            ISUB, JSUB
+      |                             ^
+note: ‘isub’ was declared here
+slatm2.f:291:9:
+
+  291 |       IF( ISUB.EQ.JSUB ) THEN
+      |         ^
+Warning: ‘jsub’ may be used uninitialized [-Wmaybe-uninitialized]
+slatm2.f:235:35:
+
+  235 |       INTEGER            ISUB, JSUB
+      |                                   ^
+note: ‘jsub’ was declared here
+clatms.f:1121:15:
+
+ 1121 |             IF( CSYM ) THEN
+      |               ^
+Warning: ‘csym’ may be used uninitialized [-Wmaybe-uninitialized]
+clatms.f:361:29:
+
+  361 |       LOGICAL            CSYM, GIVENS, ILEXTR, ILTEMP, TOPDWN
+      |                             ^
+note: ‘csym’ was declared here
+clatms.f:1221:23:
+
+ 1221 |             DO 490 JC = ICOL, M
+      |                       ^
+Warning: ‘icol’ may be used uninitialized [-Wmaybe-uninitialized]
+clatms.f:362:36:
+
+  362 |       INTEGER            I, IC, ICOL, IDIST, IENDCH, IINFO, IL, ILDA,
+      |                                    ^
+note: ‘icol’ was declared here
+clatmt.f:1130:15:
+
+ 1130 |             IF( CSYM ) THEN
+      |               ^
+Warning: ‘csym’ may be used uninitialized [-Wmaybe-uninitialized]
+clatmt.f:376:29:
+
+  376 |       LOGICAL            CSYM, GIVENS, ILEXTR, ILTEMP, TOPDWN
+      |                             ^
+note: ‘csym’ was declared here
+clatmt.f:1230:23:
+
+ 1230 |             DO 580 JC = ICOL, M
+      |                       ^
+Warning: ‘icol’ may be used uninitialized [-Wmaybe-uninitialized]
+clatmt.f:371:36:
+
+  371 |       INTEGER            I, IC, ICOL, IDIST, IENDCH, IINFO, IL, ILDA,
+      |                                    ^
+note: ‘icol’ was declared here
+clarnd.f:74:29:
+
+   74 |       COMPLEX FUNCTION CLARND( IDIST, ISEED )
+      |                             ^
+Warning: ‘__result_clarnd’ may be used uninitialized [-Wmaybe-uninitialized]
+clatm2.f:303:9:
+
+  303 |       IF( ISUB.EQ.JSUB ) THEN
+      |         ^
+Warning: ‘isub’ may be used uninitialized [-Wmaybe-uninitialized]
+clatm2.f:241:29:
+
+  241 |       INTEGER            ISUB, JSUB
+      |                             ^
+note: ‘isub’ was declared here
+clatm2.f:303:9:
+
+  303 |       IF( ISUB.EQ.JSUB ) THEN
+      |         ^
+Warning: ‘jsub’ may be used uninitialized [-Wmaybe-uninitialized]
+clatm2.f:241:35:
+
+  241 |       INTEGER            ISUB, JSUB
+      |                                   ^
+note: ‘jsub’ was declared here
+slarnd.f:72:38:
+
+   72 |       REAL             FUNCTION SLARND( IDIST, ISEED )
+      |                                      ^
+Warning: ‘__result_slarnd’ may be used uninitialized [-Wmaybe-uninitialized]
+dlatms.f:1094:72:
+
+ 1094 |                DO 410 JR = IROW + 1, LDA
+      |                                                                        ^
+Warning: ‘irow’ may be used uninitialized [-Wmaybe-uninitialized]
+dlatms.f:350:29:
+
+  350 |      $                   IROW, IRSIGN, ISKEW, ISYM, ISYMPK, J, JC, JCH,
+      |                             ^
+note: ‘irow’ was declared here
+dlatms.f:1093:23:
+
+ 1093 |             DO 420 JC = ICOL, M
+      |                       ^
+Warning: ‘icol’ may be used uninitialized [-Wmaybe-uninitialized]
+dlatms.f:348:36:
+
+  348 |       INTEGER            I, IC, ICOL, IDIST, IENDCH, IINFO, IL, ILDA,
+      |                                    ^
+note: ‘icol’ was declared here
+dlatmt.f:1105:72:
+
+ 1105 |                DO 500 JR = IROW + 1, LDA
+      |                                                                        ^
+Warning: ‘irow’ may be used uninitialized [-Wmaybe-uninitialized]
+dlatmt.f:360:29:
+
+  360 |      $                   IROW, IRSIGN, ISKEW, ISYM, ISYMPK, J, JC, JCH,
+      |                             ^
+note: ‘irow’ was declared here
+dlatmt.f:1104:23:
+
+ 1104 |             DO 510 JC = ICOL, M
+      |                       ^
+Warning: ‘icol’ may be used uninitialized [-Wmaybe-uninitialized]
+dlatmt.f:358:36:
+
+  358 |       INTEGER            I, IC, ICOL, IDIST, IENDCH, IINFO, IL, ILDA,
+      |                                    ^
+note: ‘icol’ was declared here
+dlarot.f:307:72:
+
+  307 |          A( IYT ) = YT( NT )
+      |                                                                        ^
+Warning: ‘iyt’ may be used uninitialized [-Wmaybe-uninitialized]
+dlarot.f:243:49:
+
+  243 |       INTEGER            IINC, INEXT, IX, IY, IYT, NT
+      |                                                 ^
+note: ‘iyt’ was declared here
+dlatm2.f:291:9:
+
+  291 |       IF( ISUB.EQ.JSUB ) THEN
+      |         ^
+Warning: ‘isub’ may be used uninitialized [-Wmaybe-uninitialized]
+dlatm2.f:235:29:
+
+  235 |       INTEGER            ISUB, JSUB
+      |                             ^
+note: ‘isub’ was declared here
+dlatm2.f:291:9:
+
+  291 |       IF( ISUB.EQ.JSUB ) THEN
+      |         ^
+Warning: ‘jsub’ may be used uninitialized [-Wmaybe-uninitialized]
+dlatm2.f:235:35:
+
+  235 |       INTEGER            ISUB, JSUB
+      |                                   ^
+note: ‘jsub’ was declared here
+zlatms.f:1121:15:
+
+ 1121 |             IF( ZSYM ) THEN
+      |               ^
+Warning: ‘zsym’ may be used uninitialized [-Wmaybe-uninitialized]
+zlatms.f:361:61:
+
+  361 |       LOGICAL            GIVENS, ILEXTR, ILTEMP, TOPDWN, ZSYM
+      |                                                             ^
+note: ‘zsym’ was declared here
+zlatms.f:1221:23:
+
+ 1221 |             DO 490 JC = ICOL, M
+      |                       ^
+Warning: ‘icol’ may be used uninitialized [-Wmaybe-uninitialized]
+zlatms.f:362:36:
+
+  362 |       INTEGER            I, IC, ICOL, IDIST, IENDCH, IINFO, IL, ILDA,
+      |                                    ^
+note: ‘icol’ was declared here
+zlatmt.f:1130:15:
+
+ 1130 |             IF( CSYM ) THEN
+      |               ^
+Warning: ‘csym’ may be used uninitialized [-Wmaybe-uninitialized]
+zlatmt.f:376:29:
+
+  376 |       LOGICAL            CSYM, GIVENS, ILEXTR, ILTEMP, TOPDWN
+      |                             ^
+note: ‘csym’ was declared here
+zlatmt.f:1230:23:
+
+ 1230 |             DO 580 JC = ICOL, M
+      |                       ^
+Warning: ‘icol’ may be used uninitialized [-Wmaybe-uninitialized]
+zlatmt.f:371:36:
+
+  371 |       INTEGER            I, IC, ICOL, IDIST, IENDCH, IINFO, IL, ILDA,
+      |                                    ^
+note: ‘icol’ was declared here
+zlarnd.f:74:34:
+
+   74 |       COMPLEX*16   FUNCTION ZLARND( IDIST, ISEED )
+      |                                  ^
+Warning: ‘__result_zlarnd’ may be used uninitialized [-Wmaybe-uninitialized]
+zlatm2.f:302:9:
+
+  302 |       IF( ISUB.EQ.JSUB ) THEN
+      |         ^
+Warning: ‘isub’ may be used uninitialized [-Wmaybe-uninitialized]
+zlatm2.f:240:29:
+
+  240 |       INTEGER            ISUB, JSUB
+      |                             ^
+note: ‘isub’ was declared here
+zlatm2.f:302:9:
+
+  302 |       IF( ISUB.EQ.JSUB ) THEN
+      |         ^
+Warning: ‘jsub’ may be used uninitialized [-Wmaybe-uninitialized]
+zlatm2.f:240:35:
+
+  240 |       INTEGER            ISUB, JSUB
+      |                                   ^
+note: ‘jsub’ was declared here
+dlarnd.f:72:38:
+
+   72 |       DOUBLE PRECISION FUNCTION DLARND( IDIST, ISEED )
+      |                                      ^
+Warning: ‘__result_dlarnd’ may be used uninitialized [-Wmaybe-uninitialized]
+ar: `u' modifier ignored since `D' is the default (see `U')
+make[1]: warning: -j32 forced in makefile: resetting jobserver mode.
+dblat2.f:1734:55:
+
+ 1734 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                       1
+Warning: Unused dummy argument ‘y’ at (1) [-Wunused-dummy-argument]
+dblat2.f:1734:63:
+
+ 1734 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                               1
+Warning: Unused dummy argument ‘ys’ at (1) [-Wunused-dummy-argument]
+dblat2.f:1734:59:
+
+ 1734 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                           1
+Warning: Unused dummy argument ‘yy’ at (1) [-Wunused-dummy-argument]
+cblat2.f:1770:55:
+
+ 1770 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                       1
+Warning: Unused dummy argument ‘y’ at (1) [-Wunused-dummy-argument]
+cblat2.f:1770:63:
+
+ 1770 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                               1
+Warning: Unused dummy argument ‘ys’ at (1) [-Wunused-dummy-argument]
+cblat2.f:1770:59:
+
+ 1770 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                           1
+Warning: Unused dummy argument ‘yy’ at (1) [-Wunused-dummy-argument]
+cblat3_3m.f:3274:5:
+
+ 3274 |    60 CONTINUE
+      |     1
+Warning: Label 60 at (1) defined but not used [-Wunused-label]
+cblat3_3m.f:1243:36:
+
+ 1243 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G )
+      |                                    1
+Warning: Unused dummy argument ‘b’ at (1) [-Wunused-dummy-argument]
+cblat3_3m.f:1243:40:
+
+ 1243 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G )
+      |                                        1
+Warning: Unused dummy argument ‘bb’ at (1) [-Wunused-dummy-argument]
+cblat3_3m.f:1243:44:
+
+ 1243 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G )
+      |                                            1
+Warning: Unused dummy argument ‘bs’ at (1) [-Wunused-dummy-argument]
+sblat3.f:1253:36:
+
+ 1253 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G )
+      |                                    1
+Warning: Unused dummy argument ‘b’ at (1) [-Wunused-dummy-argument]
+sblat3.f:1253:40:
+
+ 1253 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G )
+      |                                        1
+Warning: Unused dummy argument ‘bb’ at (1) [-Wunused-dummy-argument]
+sblat3.f:1253:44:
+
+ 1253 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G )
+      |                                            1
+Warning: Unused dummy argument ‘bs’ at (1) [-Wunused-dummy-argument]
+dblat3.f:1253:36:
+
+ 1253 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G )
+      |                                    1
+Warning: Unused dummy argument ‘b’ at (1) [-Wunused-dummy-argument]
+dblat3.f:1253:40:
+
+ 1253 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G )
+      |                                        1
+Warning: Unused dummy argument ‘bb’ at (1) [-Wunused-dummy-argument]
+dblat3.f:1253:44:
+
+ 1253 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G )
+      |                                            1
+Warning: Unused dummy argument ‘bs’ at (1) [-Wunused-dummy-argument]
+zblat2.f:1775:55:
+
+ 1775 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                       1
+Warning: Unused dummy argument ‘y’ at (1) [-Wunused-dummy-argument]
+zblat2.f:1775:63:
+
+ 1775 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                               1
+Warning: Unused dummy argument ‘ys’ at (1) [-Wunused-dummy-argument]
+zblat2.f:1775:59:
+
+ 1775 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                           1
+Warning: Unused dummy argument ‘yy’ at (1) [-Wunused-dummy-argument]
+sblat2.f:1734:55:
+
+ 1734 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                       1
+Warning: Unused dummy argument ‘y’ at (1) [-Wunused-dummy-argument]
+sblat2.f:1734:63:
+
+ 1734 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                               1
+Warning: Unused dummy argument ‘ys’ at (1) [-Wunused-dummy-argument]
+sblat2.f:1734:59:
+
+ 1734 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                           1
+Warning: Unused dummy argument ‘yy’ at (1) [-Wunused-dummy-argument]
+zblat3_3m.f:3280:5:
+
+ 3280 |    60 CONTINUE
+      |     1
+Warning: Label 60 at (1) defined but not used [-Wunused-label]
+zblat3_3m.f:1245:36:
+
+ 1245 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G )
+      |                                    1
+Warning: Unused dummy argument ‘b’ at (1) [-Wunused-dummy-argument]
+zblat3_3m.f:1245:40:
+
+ 1245 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G )
+      |                                        1
+Warning: Unused dummy argument ‘bb’ at (1) [-Wunused-dummy-argument]
+zblat3_3m.f:1245:44:
+
+ 1245 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G )
+      |                                            1
+Warning: Unused dummy argument ‘bs’ at (1) [-Wunused-dummy-argument]
+cblat3.f:1281:36:
+
+ 1281 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G )
+      |                                    1
+Warning: Unused dummy argument ‘b’ at (1) [-Wunused-dummy-argument]
+cblat3.f:1281:40:
+
+ 1281 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G )
+      |                                        1
+Warning: Unused dummy argument ‘bb’ at (1) [-Wunused-dummy-argument]
+cblat3.f:1281:44:
+
+ 1281 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G )
+      |                                            1
+Warning: Unused dummy argument ‘bs’ at (1) [-Wunused-dummy-argument]
+zblat3.f:1284:36:
+
+ 1284 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G )
+      |                                    1
+Warning: Unused dummy argument ‘b’ at (1) [-Wunused-dummy-argument]
+zblat3.f:1284:40:
+
+ 1284 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G )
+      |                                        1
+Warning: Unused dummy argument ‘bb’ at (1) [-Wunused-dummy-argument]
+zblat3.f:1284:44:
+
+ 1284 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G )
+      |                                            1
+Warning: Unused dummy argument ‘bs’ at (1) [-Wunused-dummy-argument]
+cblat3.f:1480:72:
+
+ 1480 |                            ISAME( 8 ) = RBETS.EQ.RBETA
+      |                                                                        ^
+Warning: ‘rbets’ may be used uninitialized [-Wmaybe-uninitialized]
+cblat3.f:1313:64:
+
+ 1313 |       REAL               ERR, ERRMAX, RALPHA, RALS, RBETA, RBETS
+      |                                                                ^
+note: ‘rbets’ was declared here
+cblat3.f:1482:72:
+
+ 1482 |                            ISAME( 8 ) = BETS.EQ.BETA
+      |                                                                        ^
+Warning: ‘IMAGPART_EXPR <bets>’ may be used uninitialized [-Wmaybe-uninitialized]
+cblat3.f:1312:47:
+
+ 1312 |       COMPLEX            ALPHA, ALS, BETA, BETS
+      |                                               ^
+note: ‘IMAGPART_EXPR <bets>’ was declared here
+cblat3.f:1482:72:
+
+ 1482 |                            ISAME( 8 ) = BETS.EQ.BETA
+      |                                                                        ^
+Warning: ‘REALPART_EXPR <bets>’ may be used uninitialized [-Wmaybe-uninitialized]
+cblat3.f:1312:47:
+
+ 1312 |       COMPLEX            ALPHA, ALS, BETA, BETS
+      |                                               ^
+note: ‘REALPART_EXPR <bets>’ was declared here
+zblat3_3m.f:1448:72:
+
+ 1448 |                            ISAME( 8 ) = BETS.EQ.BETA
+      |                                                                        ^
+Warning: ‘IMAGPART_EXPR <bets>’ may be used uninitialized [-Wmaybe-uninitialized]
+zblat3_3m.f:1276:47:
+
+ 1276 |       COMPLEX*16         ALPHA, ALS, BETA, BETS
+      |                                               ^
+note: ‘IMAGPART_EXPR <bets>’ was declared here
+zblat3_3m.f:1448:72:
+
+ 1448 |                            ISAME( 8 ) = BETS.EQ.BETA
+      |                                                                        ^
+Warning: ‘REALPART_EXPR <bets>’ may be used uninitialized [-Wmaybe-uninitialized]
+zblat3_3m.f:1276:47:
+
+ 1276 |       COMPLEX*16         ALPHA, ALS, BETA, BETS
+      |                                               ^
+note: ‘REALPART_EXPR <bets>’ was declared here
+zblat3.f:1483:72:
+
+ 1483 |                            ISAME( 8 ) = RBETS.EQ.RBETA
+      |                                                                        ^
+Warning: ‘rbets’ may be used uninitialized [-Wmaybe-uninitialized]
+zblat3.f:1316:64:
+
+ 1316 |       DOUBLE PRECISION   ERR, ERRMAX, RALPHA, RALS, RBETA, RBETS
+      |                                                                ^
+note: ‘rbets’ was declared here
+zblat3.f:1485:72:
+
+ 1485 |                            ISAME( 8 ) = BETS.EQ.BETA
+      |                                                                        ^
+Warning: ‘IMAGPART_EXPR <bets>’ may be used uninitialized [-Wmaybe-uninitialized]
+zblat3.f:1315:47:
+
+ 1315 |       COMPLEX*16         ALPHA, ALS, BETA, BETS
+      |                                               ^
+note: ‘IMAGPART_EXPR <bets>’ was declared here
+zblat3.f:1485:72:
+
+ 1485 |                            ISAME( 8 ) = BETS.EQ.BETA
+      |                                                                        ^
+Warning: ‘REALPART_EXPR <bets>’ may be used uninitialized [-Wmaybe-uninitialized]
+zblat3.f:1315:47:
+
+ 1315 |       COMPLEX*16         ALPHA, ALS, BETA, BETS
+      |                                               ^
+note: ‘REALPART_EXPR <bets>’ was declared here
+cblat3_3m.f:1446:72:
+
+ 1446 |                            ISAME( 8 ) = BETS.EQ.BETA
+      |                                                                        ^
+Warning: ‘IMAGPART_EXPR <bets>’ may be used uninitialized [-Wmaybe-uninitialized]
+cblat3_3m.f:1274:47:
+
+ 1274 |       COMPLEX            ALPHA, ALS, BETA, BETS
+      |                                               ^
+note: ‘IMAGPART_EXPR <bets>’ was declared here
+cblat3_3m.f:1446:72:
+
+ 1446 |                            ISAME( 8 ) = BETS.EQ.BETA
+      |                                                                        ^
+Warning: ‘REALPART_EXPR <bets>’ may be used uninitialized [-Wmaybe-uninitialized]
+cblat3_3m.f:1274:47:
+
+ 1274 |       COMPLEX            ALPHA, ALS, BETA, BETS
+      |                                               ^
+note: ‘REALPART_EXPR <bets>’ was declared here
+dblat2.f:805:33:
+
+  805 |      $                   N, NARGS, NC, NK, NS
+      |                                 ^
+Warning: ‘nargs’ may be used uninitialized [-Wmaybe-uninitialized]
+sblat2.f:805:33:
+
+  805 |      $                   N, NARGS, NC, NK, NS
+      |                                 ^
+Warning: ‘nargs’ may be used uninitialized [-Wmaybe-uninitialized]
+dblat2.f:464:58:
+
+  464 |      $                   LDAS, LX, LY, M, ML, MS, N, NARGS, NC, ND, NK,
+      |                                                          ^
+Warning: ‘nargs’ may be used uninitialized [-Wmaybe-uninitialized]
+cblat2.f:819:33:
+
+  819 |      $                   N, NARGS, NC, NK, NS
+      |                                 ^
+Warning: ‘nargs’ may be used uninitialized [-Wmaybe-uninitialized]
+sblat2.f:464:58:
+
+  464 |      $                   LDAS, LX, LY, M, ML, MS, N, NARGS, NC, ND, NK,
+      |                                                          ^
+Warning: ‘nargs’ may be used uninitialized [-Wmaybe-uninitialized]
+zblat2.f:822:33:
+
+  822 |      $                   N, NARGS, NC, NK, NS
+      |                                 ^
+Warning: ‘nargs’ may be used uninitialized [-Wmaybe-uninitialized]
+cblat2.f:474:58:
+
+  474 |      $                   LDAS, LX, LY, M, ML, MS, N, NARGS, NC, ND, NK,
+      |                                                          ^
+Warning: ‘nargs’ may be used uninitialized [-Wmaybe-uninitialized]
+zblat2.f:476:58:
+
+  476 |      $                   LDAS, LX, LY, M, ML, MS, N, NARGS, NC, ND, NK,
+      |                                                          ^
+Warning: ‘nargs’ may be used uninitialized [-Wmaybe-uninitialized]
+make[1]: warning: -j32 forced in makefile: resetting jobserver mode.
+test_post_fork.c: In function ‘__ctest_fork_safety_after_fork_in_parent_run’:
+test_post_fork.c:80:12: warning: unused variable ‘nthreads_omp’ [-Wunused-variable]
+   80 |     int i, nthreads_omp;
+      |            ^~~~~~~~~~~~
+test_extensions/test_cgemv_t.c: In function ‘check_cgemv.constprop’:
+test_extensions/test_cgemv_t.c:171:9: warning: ‘ctrans_copy’ may be used uninitialized [-Wmaybe-uninitialized]
+  171 |         cblas_comatcopy(corder, ctrans_copy, m, n, alpha_one, data_cgemv_t.a_test, lda, data_cgemv_t.a_verify, lda);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+test_extensions/test_cgemv_t.c:121:10: note: ‘ctrans_copy’ was declared here
+  121 |     char ctrans_copy;
+      |          ^~~~~~~~~~~
+test_extensions/test_zgemv_t.c: In function ‘check_zgemv.constprop’:
+test_extensions/test_zgemv_t.c:175:9: warning: ‘ctrans_copy’ may be used uninitialized [-Wmaybe-uninitialized]
+  175 |         cblas_zomatcopy(corder, ctrans_copy, m, n, alpha_one, data_zgemv_t.a_test, lda, data_zgemv_t.a_verify, lda);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+test_extensions/test_zgemv_t.c:121:10: note: ‘ctrans_copy’ was declared here
+  121 |     char ctrans_copy;
+      |          ^~~~~~~~~~~
+make[1]: warning: -j32 forced in makefile: resetting jobserver mode.
+c_sblat2.f:1837:55:
+
+ 1837 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                       1
+Warning: Unused dummy argument ‘y’ at (1) [-Wunused-dummy-argument]
+c_sblat2.f:1837:63:
+
+ 1837 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                               1
+Warning: Unused dummy argument ‘ys’ at (1) [-Wunused-dummy-argument]
+c_sblat2.f:1837:59:
+
+ 1837 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                           1
+Warning: Unused dummy argument ‘yy’ at (1) [-Wunused-dummy-argument]
+c_z2chke.c: In function ‘chkxer’:
+c_z2chke.c:7:5: warning: unused variable ‘link_xerbla’ [-Wunused-variable]
+    7 | int link_xerbla=TRUE;
+      |     ^~~~~~~~~~~
+c_cblat2.f:1833:55:
+
+ 1833 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                       1
+Warning: Unused dummy argument ‘y’ at (1) [-Wunused-dummy-argument]
+c_cblat2.f:1833:63:
+
+ 1833 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                               1
+Warning: Unused dummy argument ‘ys’ at (1) [-Wunused-dummy-argument]
+c_cblat2.f:1833:59:
+
+ 1833 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                           1
+Warning: Unused dummy argument ‘yy’ at (1) [-Wunused-dummy-argument]
+c_dblat2.f:1837:55:
+
+ 1837 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                       1
+Warning: Unused dummy argument ‘y’ at (1) [-Wunused-dummy-argument]
+c_dblat2.f:1837:63:
+
+ 1837 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                               1
+Warning: Unused dummy argument ‘ys’ at (1) [-Wunused-dummy-argument]
+c_dblat2.f:1837:59:
+
+ 1837 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                           1
+Warning: Unused dummy argument ‘yy’ at (1) [-Wunused-dummy-argument]
+c_s2chke.c: In function ‘chkxer’:
+c_s2chke.c:7:5: warning: unused variable ‘link_xerbla’ [-Wunused-variable]
+    7 | int link_xerbla=TRUE;
+      |     ^~~~~~~~~~~
+c_dblat3.f:1412:36:
+
+ 1412 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G, IORDER)
+      |                                    1
+Warning: Unused dummy argument ‘b’ at (1) [-Wunused-dummy-argument]
+c_dblat3.f:1412:40:
+
+ 1412 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G, IORDER)
+      |                                        1
+Warning: Unused dummy argument ‘bb’ at (1) [-Wunused-dummy-argument]
+c_dblat3.f:1412:44:
+
+ 1412 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G, IORDER)
+      |                                            1
+Warning: Unused dummy argument ‘bs’ at (1) [-Wunused-dummy-argument]
+c_cblat3.f:1443:36:
+
+ 1443 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G,
+      |                                    1
+Warning: Unused dummy argument ‘b’ at (1) [-Wunused-dummy-argument]
+c_cblat3.f:1443:40:
+
+ 1443 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G,
+      |                                        1
+Warning: Unused dummy argument ‘bb’ at (1) [-Wunused-dummy-argument]
+c_cblat3.f:1443:44:
+
+ 1443 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G,
+      |                                            1
+Warning: Unused dummy argument ‘bs’ at (1) [-Wunused-dummy-argument]
+c_zblat2.f:2669:5:
+
+ 2669 |    60 CONTINUE
+      |     1
+Warning: Label 60 at (1) defined but not used [-Wunused-label]
+c_d2chke.c: In function ‘chkxer’:
+c_d2chke.c:7:5: warning: unused variable ‘link_xerbla’ [-Wunused-variable]
+    7 | int link_xerbla=TRUE;
+      |     ^~~~~~~~~~~
+c_sblat3.f:1416:36:
+
+ 1416 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G,
+      |                                    1
+Warning: Unused dummy argument ‘b’ at (1) [-Wunused-dummy-argument]
+c_sblat3.f:1416:40:
+
+ 1416 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G,
+      |                                        1
+Warning: Unused dummy argument ‘bb’ at (1) [-Wunused-dummy-argument]
+c_sblat3.f:1416:44:
+
+ 1416 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G,
+      |                                            1
+Warning: Unused dummy argument ‘bs’ at (1) [-Wunused-dummy-argument]
+c_c2chke.c: In function ‘chkxer’:
+c_c2chke.c:7:5: warning: unused variable ‘link_xerbla’ [-Wunused-variable]
+    7 | int link_xerbla=TRUE;
+      |     ^~~~~~~~~~~
+c_zblat2.f:1837:55:
+
+ 1837 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                       1
+Warning: Unused dummy argument ‘y’ at (1) [-Wunused-dummy-argument]
+c_zblat2.f:1837:63:
+
+ 1837 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                               1
+Warning: Unused dummy argument ‘ys’ at (1) [-Wunused-dummy-argument]
+c_zblat2.f:1837:59:
+
+ 1837 |      $                  INCMAX, A, AA, AS, X, XX, XS, Y, YY, YS, YT, G,
+      |                                                           1
+Warning: Unused dummy argument ‘yy’ at (1) [-Wunused-dummy-argument]
+c_s3chke.c: In function ‘chkxer’:
+c_s3chke.c:7:5: warning: unused variable ‘link_xerbla’ [-Wunused-variable]
+    7 | int link_xerbla=TRUE;
+      |     ^~~~~~~~~~~
+c_dblas1.c: In function ‘drotmtest_’:
+c_dblas1.c:59:40: warning: passing argument 6 of ‘cblas_drotm’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   59 |    cblas_drotm(*N, X, *incX, Y, *incY, dparam);
+      |                                        ^~~~~~
+In file included from ../common.h:835,
+                 from c_dblas1.c:9:
+../cblas.h:159:147: note: expected ‘double *’ but argument is of type ‘const double *’
+  159 | void cblas_drotm(OPENBLAS_CONST blasint N, double *X, OPENBLAS_CONST blasint incX, double *Y, OPENBLAS_CONST blasint incY, OPENBLAS_CONST double *P);
+      |                                                                                                                                           ~~~~~~~~^
+c_c3chke.c: In function ‘chkxer’:
+c_c3chke.c:7:5: warning: unused variable ‘link_xerbla’ [-Wunused-variable]
+    7 | int link_xerbla=TRUE;
+      |     ^~~~~~~~~~~
+c_d3chke.c: In function ‘chkxer’:
+c_d3chke.c:7:5: warning: unused variable ‘link_xerbla’ [-Wunused-variable]
+    7 | int link_xerbla=TRUE;
+      |     ^~~~~~~~~~~
+c_cblat3_3m.f:332:8:
+
+  332 |      $          0 )
+      |         1~~~~~~~
+Warning: Nonconforming tab character at (1) [-Wtabs]
+c_cblat3_3m.f:338:8:
+
+  338 |      $          1 )
+      |         1~~~~~~~
+Warning: Nonconforming tab character at (1) [-Wtabs]
+c_cblat3_3m.f:360:8:
+
+  360 |      $          0 )
+      |         1~~~~~~~
+Warning: Nonconforming tab character at (1) [-Wtabs]
+c_cblat3_3m.f:366:8:
+
+  366 |      $          1 )
+      |         1~~~~~~~
+Warning: Nonconforming tab character at (1) [-Wtabs]
+c_cblat3_3m.f:97:33:
+
+   97 |       DATA               SNAMES/'cblas_cgemm3m ', 'cblas_chemm ',
+      |                                 1
+Warning: Initialization string at (1) was truncated to fit the variable (13/14)
+c_cblat3_3m.f:710:5:
+
+  710 |  9995 FORMAT( 1X, I6, ': ', A13,'(''', A1, ''',''', A1, ''',',
+      |     1
+Warning: Label 9995 at (1) defined but not used [-Wunused-label]
+c_cblat3_3m.f:2705:5:
+
+ 2705 |    60 CONTINUE
+      |     1
+Warning: Label 60 at (1) defined but not used [-Wunused-label]
+c_cblat3_3m.f:1036:5:
+
+ 1036 |  9995 FORMAT(1X, I6, ': ', A13,'(', 2( '''', A1, ''',' ), 2( I3, ',' ),
+      |     1
+Warning: Label 9995 at (1) defined but not used [-Wunused-label]
+c_cblat3_3m.f:1388:5:
+
+ 1388 |  9995 FORMAT(1X, I6, ': ', A13,'(', 4( '''', A1, ''',' ), 2( I3, ',' ),
+      |     1
+Warning: Label 9995 at (1) defined but not used [-Wunused-label]
+c_cblat3_3m.f:1771:5:
+
+ 1771 |  9994 FORMAT(1X, I6, ': ', A13,'(', 2( '''', A1, ''',' ), 2( I3, ',' ),
+      |     1
+Warning: Label 9994 at (1) defined but not used [-Wunused-label]
+c_cblat3_3m.f:1774:5:
+
+ 1774 |  9993 FORMAT(1X, I6, ': ', A13,'(', 2( '''', A1, ''',' ), 2( I3, ',' ),
+      |     1
+Warning: Label 9993 at (1) defined but not used [-Wunused-label]
+c_cblat3_3m.f:2224:5:
+
+ 2224 |  9994 FORMAT(1X, I6, ': ', A13,'(', 2( '''', A1, ''',' ), 2( I3, ',' ),
+      |     1
+Warning: Label 9994 at (1) defined but not used [-Wunused-label]
+c_cblat3_3m.f:2227:5:
+
+ 2227 |  9993 FORMAT(1X, I6, ': ', A13,'(', 2( '''', A1, ''',' ), 2( I3, ',' ),
+      |     1
+Warning: Label 9993 at (1) defined but not used [-Wunused-label]
+c_cblat3_3m.f:1443:36:
+
+ 1443 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G,
+      |                                    1
+Warning: Unused dummy argument ‘b’ at (1) [-Wunused-dummy-argument]
+c_cblat3_3m.f:1443:40:
+
+ 1443 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G,
+      |                                        1
+Warning: Unused dummy argument ‘bb’ at (1) [-Wunused-dummy-argument]
+c_cblat3_3m.f:1443:44:
+
+ 1443 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G,
+      |                                            1
+Warning: Unused dummy argument ‘bs’ at (1) [-Wunused-dummy-argument]
+c_zblat3_3m.f:333:8:
+
+  333 |      $                 0 )
+      |         1~~~~~~~
+Warning: Nonconforming tab character at (1) [-Wtabs]
+c_zblat3_3m.f:339:8:
+
+  339 |      $                 1 )
+      |         1~~~~~~~
+Warning: Nonconforming tab character at (1) [-Wtabs]
+c_zblat3_3m.f:361:8:
+
+  361 |      $                 0 )
+      |         1~~~~~~~
+Warning: Nonconforming tab character at (1) [-Wtabs]
+c_zblat3_3m.f:367:8:
+
+  367 |      $                 1 )
+      |         1~~~~~~~
+Warning: Nonconforming tab character at (1) [-Wtabs]
+c_c3chke_3m.c: In function ‘chkxer’:
+c_c3chke_3m.c:7:5: warning: unused variable ‘link_xerbla’ [-Wunused-variable]
+    7 | int link_xerbla=TRUE;
+      |     ^~~~~~~~~~~
+c_zblat3.f:1444:36:
+
+ 1444 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G,
+      |                                    1
+Warning: Unused dummy argument ‘b’ at (1) [-Wunused-dummy-argument]
+c_zblat3.f:1444:40:
+
+ 1444 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G,
+      |                                        1
+Warning: Unused dummy argument ‘bb’ at (1) [-Wunused-dummy-argument]
+c_zblat3.f:1444:44:
+
+ 1444 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G,
+      |                                            1
+Warning: Unused dummy argument ‘bs’ at (1) [-Wunused-dummy-argument]
+c_z3chke.c: In function ‘chkxer’:
+c_z3chke.c:7:5: warning: unused variable ‘link_xerbla’ [-Wunused-variable]
+    7 | int link_xerbla=TRUE;
+      |     ^~~~~~~~~~~
+c_zblat3_3m.f:98:33:
+
+   98 |       DATA               SNAMES/'cblas_zgemm3m ', 'cblas_zhemm ',
+      |                                 1
+Warning: Initialization string at (1) was truncated to fit the variable (13/14)
+c_zblat3_3m.f:711:5:
+
+  711 |  9995 FORMAT( 1X, I6, ': ', A13,'(''', A1, ''',''', A1, ''',',
+      |     1
+Warning: Label 9995 at (1) defined but not used [-Wunused-label]
+c_zblat3_3m.f:2709:5:
+
+ 2709 |    60 CONTINUE
+      |     1
+Warning: Label 60 at (1) defined but not used [-Wunused-label]
+c_zblat3_3m.f:1037:5:
+
+ 1037 |  9995 FORMAT(1X, I6, ': ', A13,'(', 2( '''', A1, ''',' ), 2( I3, ',' ),
+      |     1
+Warning: Label 9995 at (1) defined but not used [-Wunused-label]
+c_zblat3_3m.f:1389:5:
+
+ 1389 |  9995 FORMAT(1X, I6, ': ', A13,'(', 4( '''', A1, ''',' ), 2( I3, ',' ),
+      |     1
+Warning: Label 9995 at (1) defined but not used [-Wunused-label]
+c_zblat3_3m.f:1772:5:
+
+ 1772 |  9994 FORMAT(1X, I6, ': ', A13,'(', 2( '''', A1, ''',' ), 2( I3, ',' ),
+      |     1
+Warning: Label 9994 at (1) defined but not used [-Wunused-label]
+c_zblat3_3m.f:1775:5:
+
+ 1775 |  9993 FORMAT(1X, I6, ': ', A13,'(', 2( '''', A1, ''',' ), 2( I3, ',' ),
+      |     1
+Warning: Label 9993 at (1) defined but not used [-Wunused-label]
+c_zblat3_3m.f:2225:5:
+
+ 2225 |  9994 FORMAT(1X, I6, ': ', A13,'(', 2( '''', A1, ''',' ), 2( I3, ',' ),
+      |     1
+Warning: Label 9994 at (1) defined but not used [-Wunused-label]
+c_zblat3_3m.f:2228:5:
+
+ 2228 |  9993 FORMAT(1X, I6, ': ', A13,'(', 2( '''', A1, ''',' ), 2( I3, ',' ),
+      |     1
+Warning: Label 9993 at (1) defined but not used [-Wunused-label]
+c_zblat3_3m.f:1444:36:
+
+ 1444 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G,
+      |                                    1
+Warning: Unused dummy argument ‘b’ at (1) [-Wunused-dummy-argument]
+c_zblat3_3m.f:1444:40:
+
+ 1444 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G,
+      |                                        1
+Warning: Unused dummy argument ‘bb’ at (1) [-Wunused-dummy-argument]
+c_zblat3_3m.f:1444:44:
+
+ 1444 |      $                  A, AA, AS, B, BB, BS, C, CC, CS, CT, G,
+      |                                            1
+Warning: Unused dummy argument ‘bs’ at (1) [-Wunused-dummy-argument]
+c_z3chke_3m.c: In function ‘chkxer’:
+c_z3chke_3m.c:7:5: warning: unused variable ‘link_xerbla’ [-Wunused-variable]
+    7 | int link_xerbla=TRUE;
+      |     ^~~~~~~~~~~
+c_zblat3.f:1650:72:
+
+ 1650 |                            ISAME( 8 ) = BETS.EQ.BETA
+      |                                                                        ^
+Warning: ‘IMAGPART_EXPR <bets>’ may be used uninitialized [-Wmaybe-uninitialized]
+c_zblat3.f:1476:47:
+
+ 1476 |       COMPLEX*16         ALPHA, ALS, BETA, BETS
+      |                                               ^
+note: ‘IMAGPART_EXPR <bets>’ was declared here
+c_zblat3.f:1650:72:
+
+ 1650 |                            ISAME( 8 ) = BETS.EQ.BETA
+      |                                                                        ^
+Warning: ‘REALPART_EXPR <bets>’ may be used uninitialized [-Wmaybe-uninitialized]
+c_zblat3.f:1476:47:
+
+ 1476 |       COMPLEX*16         ALPHA, ALS, BETA, BETS
+      |                                               ^
+note: ‘REALPART_EXPR <bets>’ was declared here
+c_cblat3.f:1649:72:
+
+ 1649 |                            ISAME( 8 ) = BETS.EQ.BETA
+      |                                                                        ^
+Warning: ‘IMAGPART_EXPR <bets>’ may be used uninitialized [-Wmaybe-uninitialized]
+c_cblat3.f:1475:47:
+
+ 1475 |       COMPLEX            ALPHA, ALS, BETA, BETS
+      |                                               ^
+note: ‘IMAGPART_EXPR <bets>’ was declared here
+c_cblat3.f:1649:72:
+
+ 1649 |                            ISAME( 8 ) = BETS.EQ.BETA
+      |                                                                        ^
+Warning: ‘REALPART_EXPR <bets>’ may be used uninitialized [-Wmaybe-uninitialized]
+c_cblat3.f:1475:47:
+
+ 1475 |       COMPLEX            ALPHA, ALS, BETA, BETS
+      |                                               ^
+note: ‘REALPART_EXPR <bets>’ was declared here
+c_dblat2.f:850:33:
+
+  850 |      $                   N, NARGS, NC, NK, NS
+      |                                 ^
+Warning: ‘nargs’ may be used uninitialized [-Wmaybe-uninitialized]
+c_cblat3_3m.f:1645:72:
+
+ 1645 |                            ISAME( 8 ) = RBETS.EQ.RBETA
+      |                                                                        ^
+Warning: ‘rbets’ may be used uninitialized [-Wmaybe-uninitialized]
+c_cblat3_3m.f:1476:64:
+
+ 1476 |       REAL               ERR, ERRMAX, RALPHA, RALS, RBETA, RBETS
+      |                                                                ^
+note: ‘rbets’ was declared here
+c_cblat3_3m.f:1647:72:
+
+ 1647 |                            ISAME( 8 ) = BETS.EQ.BETA
+      |                                                                        ^
+Warning: ‘IMAGPART_EXPR <bets>’ may be used uninitialized [-Wmaybe-uninitialized]
+c_cblat3_3m.f:1475:47:
+
+ 1475 |       COMPLEX            ALPHA, ALS, BETA, BETS
+      |                                               ^
+note: ‘IMAGPART_EXPR <bets>’ was declared here
+c_cblat3_3m.f:1647:72:
+
+ 1647 |                            ISAME( 8 ) = BETS.EQ.BETA
+      |                                                                        ^
+Warning: ‘REALPART_EXPR <bets>’ may be used uninitialized [-Wmaybe-uninitialized]
+c_cblat3_3m.f:1475:47:
+
+ 1475 |       COMPLEX            ALPHA, ALS, BETA, BETS
+      |                                               ^
+note: ‘REALPART_EXPR <bets>’ was declared here
+c_dblat2.f:490:58:
+
+  490 |      $                   LDAS, LX, LY, M, ML, MS, N, NARGS, NC, ND, NK,
+      |                                                          ^
+Warning: ‘nargs’ may be used uninitialized [-Wmaybe-uninitialized]
+c_zblat3_3m.f:1646:72:
+
+ 1646 |                            ISAME( 8 ) = RBETS.EQ.RBETA
+      |                                                                        ^
+Warning: ‘rbets’ may be used uninitialized [-Wmaybe-uninitialized]
+c_zblat3_3m.f:1477:64:
+
+ 1477 |       DOUBLE PRECISION   ERR, ERRMAX, RALPHA, RALS, RBETA, RBETS
+      |                                                                ^
+note: ‘rbets’ was declared here
+c_zblat3_3m.f:1648:72:
+
+ 1648 |                            ISAME( 8 ) = BETS.EQ.BETA
+      |                                                                        ^
+Warning: ‘IMAGPART_EXPR <bets>’ may be used uninitialized [-Wmaybe-uninitialized]
+c_zblat3_3m.f:1476:47:
+
+ 1476 |       COMPLEX*16         ALPHA, ALS, BETA, BETS
+      |                                               ^
+note: ‘IMAGPART_EXPR <bets>’ was declared here
+c_zblat3_3m.f:1648:72:
+
+ 1648 |                            ISAME( 8 ) = BETS.EQ.BETA
+      |                                                                        ^
+Warning: ‘REALPART_EXPR <bets>’ may be used uninitialized [-Wmaybe-uninitialized]
+c_zblat3_3m.f:1476:47:
+
+ 1476 |       COMPLEX*16         ALPHA, ALS, BETA, BETS
+      |                                               ^
+note: ‘REALPART_EXPR <bets>’ was declared here
+c_zblat2.f:856:33:
+
+  856 |      $                   N, NARGS, NC, NK, NS
+      |                                 ^
+Warning: ‘nargs’ may be used uninitialized [-Wmaybe-uninitialized]
+c_cblat2.f:854:33:
+
+  854 |      $                   N, NARGS, NC, NK, NS
+      |                                 ^
+Warning: ‘nargs’ may be used uninitialized [-Wmaybe-uninitialized]
+c_sblat2.f:850:33:
+
+  850 |      $                   N, NARGS, NC, NK, NS
+      |                                 ^
+Warning: ‘nargs’ may be used uninitialized [-Wmaybe-uninitialized]
+c_zblat2.f:500:58:
+
+  500 |      $                   LDAS, LX, LY, M, ML, MS, N, NARGS, NC, ND, NK,
+      |                                                          ^
+Warning: ‘nargs’ may be used uninitialized [-Wmaybe-uninitialized]
+c_sblat2.f:490:58:
+
+  490 |      $                   LDAS, LX, LY, M, ML, MS, N, NARGS, NC, ND, NK,
+      |                                                          ^
+Warning: ‘nargs’ may be used uninitialized [-Wmaybe-uninitialized]
+c_cblat2.f:499:58:
+
+  499 |      $                   LDAS, LX, LY, M, ML, MS, N, NARGS, NC, ND, NK,
+      |                                                          ^
+Warning: ‘nargs’ may be used uninitialized [-Wmaybe-uninitialized]
