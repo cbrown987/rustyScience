@@ -1,0 +1,11 @@
+/home/jackles123/vscode/rustyScience/target/debug/deps/libciborium_ll-206d2dbf18e5490e.rmeta: /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ciborium-ll-0.2.2/src/lib.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ciborium-ll-0.2.2/src/dec.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ciborium-ll-0.2.2/src/enc.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ciborium-ll-0.2.2/src/hdr.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ciborium-ll-0.2.2/src/seg.rs
+
+/home/jackles123/vscode/rustyScience/target/debug/deps/libciborium_ll-206d2dbf18e5490e.rlib: /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ciborium-ll-0.2.2/src/lib.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ciborium-ll-0.2.2/src/dec.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ciborium-ll-0.2.2/src/enc.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ciborium-ll-0.2.2/src/hdr.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ciborium-ll-0.2.2/src/seg.rs
+
+/home/jackles123/vscode/rustyScience/target/debug/deps/ciborium_ll-206d2dbf18e5490e.d: /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ciborium-ll-0.2.2/src/lib.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ciborium-ll-0.2.2/src/dec.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ciborium-ll-0.2.2/src/enc.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ciborium-ll-0.2.2/src/hdr.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ciborium-ll-0.2.2/src/seg.rs
+
+/home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ciborium-ll-0.2.2/src/lib.rs:
+/home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ciborium-ll-0.2.2/src/dec.rs:
+/home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ciborium-ll-0.2.2/src/enc.rs:
+/home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ciborium-ll-0.2.2/src/hdr.rs:
+/home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/ciborium-ll-0.2.2/src/seg.rs:

@@ -15,3 +15,32 @@ fn test_multi_class_perceptron() {
 
     assert_eq!(prediction, target_label)
 }
+
+#[test]
+fn test_binary_perceptron_second_row() {
+    let brest_cancer_data = load_brest_cancer();
+    let (mut data, mut labels) = brest_cancer_data.to_numerical_labels();
+    let target_feature = data.remove(1); 
+    let target_label = labels.remove(1);
+    let mut model = BinaryPerceptron::new();
+    model.set_epochs(100);
+    model.fit(data, labels);
+
+    let prediction = model.predict(target_feature);
+    assert_eq!(prediction, target_label);
+}
+
+// test with longer training
+#[test]
+fn test_binary_perceptron_more_epochs() {
+    let brest_cancer_data = load_brest_cancer();
+    let (mut data, mut labels) = brest_cancer_data.to_numerical_labels();
+    let target_feature = data.remove(0);
+    let target_label = labels.remove(0);
+    let mut model = BinaryPerceptron::new();
+    model.set_epochs(1000); // longer training
+    model.fit(data, labels);
+
+    let prediction = model.predict(target_feature);
+    assert_eq!(prediction, target_label);
+}

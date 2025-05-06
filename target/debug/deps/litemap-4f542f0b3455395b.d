@@ -1,0 +1,11 @@
+/home/jackles123/vscode/rustyScience/target/debug/deps/liblitemap-4f542f0b3455395b.rmeta: /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/litemap-0.7.5/src/lib.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/litemap-0.7.5/src/map.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/litemap-0.7.5/src/store/mod.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/litemap-0.7.5/src/store/slice_impl.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/litemap-0.7.5/src/store/vec_impl.rs
+
+/home/jackles123/vscode/rustyScience/target/debug/deps/liblitemap-4f542f0b3455395b.rlib: /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/litemap-0.7.5/src/lib.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/litemap-0.7.5/src/map.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/litemap-0.7.5/src/store/mod.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/litemap-0.7.5/src/store/slice_impl.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/litemap-0.7.5/src/store/vec_impl.rs
+
+/home/jackles123/vscode/rustyScience/target/debug/deps/litemap-4f542f0b3455395b.d: /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/litemap-0.7.5/src/lib.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/litemap-0.7.5/src/map.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/litemap-0.7.5/src/store/mod.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/litemap-0.7.5/src/store/slice_impl.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/litemap-0.7.5/src/store/vec_impl.rs
+
+/home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/litemap-0.7.5/src/lib.rs:
+/home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/litemap-0.7.5/src/map.rs:
+/home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/litemap-0.7.5/src/store/mod.rs:
+/home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/litemap-0.7.5/src/store/slice_impl.rs:
+/home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/litemap-0.7.5/src/store/vec_impl.rs:

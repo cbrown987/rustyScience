@@ -134,22 +134,21 @@ where
     fn _fit(&mut self, data: Vec<Vec<D>>, labels: Vec<L>) {
         self.data = data;
 
-        // Identify unique labels
         let mut unique_labels = labels.iter().cloned().collect::<Vec<L>>();
         unique_labels.sort_by(|a, b| format!("{:?}", a).cmp(&format!("{:?}", b)));
         unique_labels.dedup();
+
         if unique_labels.len() != 2 {
             panic!("Binary SVC supports only binary classification.");
         }
 
-        // Assign labels to internal variables
         self.label_neg = Some(unique_labels[0].clone());
         self.label_pos = Some(unique_labels[1].clone());
 
-        // Map labels to internal representations as f64
         let internal_labels: Vec<f64> = labels
             .iter()
             .map(|label| {
+
                 if *label == *self.label_neg.as_ref().unwrap() {
                     -1.0
                 } else if *label == *self.label_pos.as_ref().unwrap() {
@@ -160,11 +159,14 @@ where
             })
             .collect();
 
+
+
         let n_samples = self.data.len();
+
         let n_features = self.data[0].len();
 
-        // Initialize weights and bias
         self.weights = vec![0.0; n_features];
+
         self.bias = 0.0;
 
         let eta = self.learning_rate;
@@ -217,6 +219,8 @@ where
         }
     }
 }
+
+//move these tests to test folder
 
 #[cfg(test)]
 mod tests {
@@ -314,4 +318,3 @@ mod tests {
         svc.fit(data, labels); // Should panic
     }
 }
-

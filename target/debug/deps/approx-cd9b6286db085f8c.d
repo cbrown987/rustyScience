@@ -1,0 +1,11 @@
+/home/jackles123/vscode/rustyScience/target/debug/deps/libapprox-cd9b6286db085f8c.rmeta: /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/lib.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/abs_diff_eq.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/relative_eq.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/ulps_eq.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/macros.rs
+
+/home/jackles123/vscode/rustyScience/target/debug/deps/libapprox-cd9b6286db085f8c.rlib: /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/lib.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/abs_diff_eq.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/relative_eq.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/ulps_eq.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/macros.rs
+
+/home/jackles123/vscode/rustyScience/target/debug/deps/approx-cd9b6286db085f8c.d: /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/lib.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/abs_diff_eq.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/relative_eq.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/ulps_eq.rs /home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/macros.rs
+
+/home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/lib.rs:
+/home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/abs_diff_eq.rs:
+/home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/relative_eq.rs:
+/home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/ulps_eq.rs:
+/home/jackles123/.cargo/registry/src/index.crates.io-6f17d22bba15001f/approx-0.5.1/src/macros.rs:
