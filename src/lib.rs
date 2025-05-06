@@ -58,3 +58,5 @@ pub mod regression;
 pub mod metrics;
 
 pub mod data;
+
+pub mod neural_network;

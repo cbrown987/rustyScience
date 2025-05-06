@@ -17,6 +17,7 @@ num = "0.4"
 num-traits = "0.2"
 ndarray = "0.15"
 ndarray-linalg = { version = "0.16", features = ["openblas-static"] }
+ndarray-rand = "0.14"
 kdtree = "0.7.0"
 
 [dev-dependencies]
